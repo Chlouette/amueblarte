@@ -1,0 +1,8 @@
+<h1>This is the form for adding a new piece of furniture</h1>
+
+<%= simple_form_for(@item) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+  <%= f.submit %>
+<% end %>
