@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :artists, only: [:index, :show] do
     resources :favorite_artists, only: [:create]
   end
-  resources :items, only: [:index, :show, :new, :create] do
+  resources :items, only: [:index, :show, :new, :create, :update] do
     resources :favorite_items, only: [:create]
   end
-  resources :favorites, only [:index]
+  resources :favorites, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
