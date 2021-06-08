@@ -25,9 +25,30 @@ artist_biography =
   pieces into new compositions but also stripping away further layers to 
   accentuate their distressed appearance."
 
+item_category = [
+  "Sofa", "Chair", "Bench",
+  "Bed", "Drawers", "Table",
+  "Desk", "Stool", "Cupboard",
+  "Side Table", "Lamp", "Coat Stand",
+  "Shelves", "Wine Rack", "Coffee Table"
+]
+
+item_description = 
+  "Contemporary designers explore new technologies, experiment with materials, 
+  and rely on cutting-edge fabrication techniques. Zaha Hadid and Frank Gehry 
+  create works that are conceived in virtual modeling programs and fabricated using 
+  modern techniques such as 3D printing and laser cutting. Others are part of a 
+  shift toward DIY, with designers like Wendell Castle emphasizing a return to 
+  hand-craftsmanship and sculptural form in their work."
+
+status = [
+  "Donated",
+  "Decorated"
+]
+
 puts "Creating users..."
 
-4.times {
+5.times {
   User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -41,7 +62,7 @@ puts "Creating Artists..."
 
 4.times {
   ArtistProfile.create!(
-    biography: artist_biography;
+    biography: artist_biography
   )
 }
 
@@ -49,6 +70,10 @@ puts "Creating Items..."
 
 15.times {
   Item.create!(
-    
+    category: item_category.sample,
+    name: "Contemporary upholstered bench with wood detail",
+    description: item_description,
+    color: Faker::Color.color_name,
+    status: status.sample
   )
 }
