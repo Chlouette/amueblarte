@@ -9,21 +9,16 @@
 require 'faker'
 
 puts "Cleaning database..."
-User.destroy_all
 Artist.destroy_all
 Item.destroy_all
+User.destroy_all
 # Booking.destroy_all
 # FavoriteArtist.destroy_all
 # FavoriteItem.destroy_all
 
 artist_biography = 
-  "In the early 1950s, Rotella began to rip posters away from the walls of 
-  outdoor hoardings in Rome, and used them to create elaborate collages. 
-  Many of these were film posters but he also used advertisements for appliances 
-  and other goods, so that his works became a commentary on the post-war consumer boom. 
-  In the studio he would mount the poster fragments onto canvas, rearranging the 
-  pieces into new compositions but also stripping away further layers to 
-  accentuate their distressed appearance."
+  "Pablo Ruiz Picasso was a Spanish painter, sculptor, printmaker, 
+  ceramicist and theatre designer."
 
 item_category = [
   "Sofa", "Chair", "Bench",
@@ -46,23 +41,21 @@ status = [
   "Decorated"
 ]
 
-puts "Creating users..."
+puts "Creating Users..."
+
+puts "Creating Artists..."
 
 5.times {
-  User.create!(
+  user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: '123456',
     address: Faker::Address.full_address
   )
-}
-
-puts "Creating Artists..."
-
-4.times {
   Artist.create!(
-    biography: artist_biography
+    biography: artist_biography,
+    user: user
   )
 }
 
@@ -74,6 +67,7 @@ puts "Creating Items..."
     name: "Contemporary upholstered bench with wood detail",
     description: item_description,
     color: Faker::Color.color_name,
-    status: status.sample
+    status: status.sample,
+    user: User.all.sample
   )
 }
