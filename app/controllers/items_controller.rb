@@ -29,7 +29,11 @@ class ItemsController < ApplicationController
     
     def update
         @item = Item.find(params[:id])
-        @item.save
+        if @item.save
+            redirect_to item_path
+        else
+            render :edit
+        end
     end
 
     private
