@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :artists, only: [:index, :show] do
     resources :favorite_artists, only: [:create]
   end
-  resources :items, only: [:index, :show, :new, :create, :update] do
+  resources :items, only: [:index, :show, :new, :create, :update, :edit] do
     resources :favorite_items, only: [:create]
   end
   resources :favorites, only: [:index]
