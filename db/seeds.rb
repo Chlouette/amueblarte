@@ -12,9 +12,9 @@ puts "Cleaning database..."
 Artist.destroy_all
 Item.destroy_all
 User.destroy_all
-# Booking.destroy_all
-# FavoriteArtist.destroy_all
-# FavoriteItem.destroy_all
+Booking.destroy_all
+FavoriteArtist.destroy_all
+FavoriteItem.destroy_all
 
 artist_biography = 
   "Pablo Ruiz Picasso was a Spanish painter, sculptor, printmaker, 
