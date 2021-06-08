@@ -16,4 +16,39 @@ Booking.destroy_all
 FavoriteArtist.destroy_all
 FavoriteItem.destroy_all
 
-puts "Creating database..."
+artist_biography = 
+  "In the early 1950s, Rotella began to rip posters away from the walls of 
+  outdoor hoardings in Rome, and used them to create elaborate collages. 
+  Many of these were film posters but he also used advertisements for appliances 
+  and other goods, so that his works became a commentary on the post-war consumer boom. 
+  In the studio he would mount the poster fragments onto canvas, rearranging the 
+  pieces into new compositions but also stripping away further layers to 
+  accentuate their distressed appearance."
+
+puts "Creating users..."
+
+4.times {
+  User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: '123456',
+    address: Faker::Address.full_address
+  )
+}
+
+puts "Creating Artists..."
+
+4.times {
+  ArtistProfile.create!(
+    biography: artist_biography;
+  )
+}
+
+puts "Creating Items..."
+
+15.times {
+  Item.create!(
+    
+  )
+}
