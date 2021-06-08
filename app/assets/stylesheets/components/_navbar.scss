@@ -10,3 +10,27 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+a {
+  font-size: 24px !important;
+  color: black  !important;
+  margin-left: 50px !important;
+}
+
+.nav-link {
+  font-family: $headers-font;
+  font-weight: 400;
+  font-size: 50px !important;
+  color: black  !important;
+}
+
+.underline--magical {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  &:hover {
+    background-size: 100% 88%;
+  }
+}
