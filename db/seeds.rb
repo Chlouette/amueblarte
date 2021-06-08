@@ -10,11 +10,11 @@ require 'faker'
 
 puts "Cleaning database..."
 User.destroy_all
-ArtistProfile.destroy_all
+Artist.destroy_all
 Item.destroy_all
-Booking.destroy_all
-FavoriteArtist.destroy_all
-FavoriteItem.destroy_all
+# Booking.destroy_all
+# FavoriteArtist.destroy_all
+# FavoriteItem.destroy_all
 
 artist_biography = 
   "In the early 1950s, Rotella began to rip posters away from the walls of 
@@ -61,7 +61,7 @@ puts "Creating users..."
 puts "Creating Artists..."
 
 4.times {
-  ArtistProfile.create!(
+  Artist.create!(
     biography: artist_biography
   )
 }
