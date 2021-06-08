@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
         @item.user = current_user
         if @item.save
             # for now redirect to home
-            redirect_to root_path
+            redirect_to item_path(@item)
             # redirect_to new_booking_path(@item)
         else
             render :new
