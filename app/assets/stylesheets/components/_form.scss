@@ -5,6 +5,16 @@
   padding: 48px;
 }
 
+.form-container a {
+  font-size: 14px;
+  color: rgba(126,183,127,0.7);
+}
+
+.form-container a:hover {
+  text-decoration: none;
+  color: $green;
+}
+
 .form-button {
   max-width: 178px;
   height: 100%;
