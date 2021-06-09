@@ -53,6 +53,7 @@ a {
   transition: background-size 0.25s ease-in;
   &:hover {
     background-size: 100% 88%;
+    text-decoration: none !important;
   }
 }
 
