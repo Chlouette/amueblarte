@@ -7,7 +7,8 @@
       <h3>Nothing in this category. Sorry!</h3>
     <% else %>
       <% @items.each do |item| %>
-        <div class="item-card card">
+      
+        <div class="item-card card" data-href= <%= new_item_booking_path(item) %> >
           <p><%= item.name %> </p>
         </div>
         <%# 
@@ -17,5 +18,5 @@
       <% end %>
     <% end %>
   </div>
-  <%= link_to 'Next', new_item_booking_path(@item), class: 'btn' %>
+  <%= link_to 'Next', "#" , class: 'btn', id: 'nextBtn' %>
 </div>
