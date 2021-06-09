@@ -10,10 +10,13 @@
       <p>Last NAME</p>
       <p><%= @user.email %> </p>
       <p>USER ADDRESS</p>
+      <% if @user.artist %>
+        <p><%= @user.artist.bio  %> </p>
+      <% end %>
     </div>
   </div>
   <h2 class="my-5">My Activity</h2>
-  <table class="w-100 user-activity">
+  <table class="w-100 user-activity text-center">
     <tr>
         <th>Booking Date</th>
         <th>Type</th>
