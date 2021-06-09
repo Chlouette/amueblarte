@@ -1,19 +1,19 @@
-<% 
-  categories = [
+<% categories = [
     "Sofa", "Chair", "Bench",
   "Bed", "Drawers", "Table",
   "Desk", "Stool", "Cupboard",
   "Side Table", "Lamp", "Coat Stand",
   "Shelves", "Wine Rack", "Coffee Table"
-]
-    %>
+  ] %>
 
-<h1>This is the form for adding a new piece of furniture</h1>
+<div class="form-container">
+  <h1>THANKS FOR CHOOSING TO RECYCLE</h1>
 
-<%= simple_form_for(@item) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :category, as: :select, collection: categories, prompt: 'Select Category', label: false %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for(@item) do |f| %>
+    <%= f.input :name, label: "Please enter the name for your listing", placeholder: "eg. Art Deco Armchair" %>
+    <%= f.input :description, label: "In a few words, describe your item(s)", placeholder: "eg. colors, age, condition..." %>
+    <%= f.input :category, as: :select, collection: categories, prompt: 'Select Category', label: "Choose a category that best matches your item(s)" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Confirm Listing", class: "form-button" %>
+  <% end %>
+</div>
