@@ -37,12 +37,12 @@ item_description =
   hand-craftsmanship and sculptural form in their work."
 
 status = [
-  "To be collected",
-  "Collected",
-  "In Progress",
-  "For Sale",
-  "Sold",
-  "Delivered"
+  "to be collected",
+  "collected",
+  "in progress",
+  "for sale",
+  "sold",
+  "delivered"
 ]
 
 puts "Creating Users..."

@@ -1,0 +1,10 @@
+<%= form_tag items_create_path, method: :get do %>
+  <%= select_tag "item", options_for_select([ "Select Category",
+  "Sofa", "Chair", "Bench",
+  "Bed", "Drawers", "Table",
+  "Desk", "Stool", "Cupboard",
+  "Side Table", "Lamp", "Coat Stand",
+  "Shelves", "Wine Rack", "Coffee Table"
+])%>
+  <%= submit_tag "Search", class: "btn" %>
+<% end %>
