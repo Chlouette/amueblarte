@@ -7,29 +7,46 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a href="../artists/index" class="underline--magical highlight-pink" class="nav-link">ARTISTS</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="underline--magical highlight-yellow" class="nav-link">OUR TEAM</a>
+      </li>
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
+        <%# FAVOURITES BUTTON %>
+        <a href="#"><i class="far fa-heart favorites-icon underline--magical highlight-blue"></i></a>
+
+        <%# SHOPPING CART BUTTON %>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <a href=""><i class="lni lni-shopping-basket shopping-icon underline--magical highlight-orange"></i></a>
         </li>
+        
+        <%# AVATAR & DROPDOWN %>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "ACTION", "#", class: "dropdown-item" %>
+            <%= link_to "ANOTHER ACTION", "#", class: "dropdown-item" %>
+            <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <a href="#" class="underline--magical highlight-green" class="nav-link">LOGIN</a>
         </li>
       <% end %>
     </ul>
   </div>
 </div>
+
+
+
+        <%# <li class="nav-item active">
+          <%= link_to "Home", "#", class: "nav-link" %>
+        <%# </li> %>
+        <%# <li class="nav-item"> %>
+          <%# <%= link_to "Messages", "#", class: "nav-link" %> %>
+        <%# </li> %>

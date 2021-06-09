@@ -1,0 +1,27 @@
+.dropdown-item {
+  font-size: 18px !important;
+  margin-left: 0px !important;
+  &:hover {
+    background-color: $green;
+    opacity: 0.8;
+  }
+}
+
+// .dropdown-item-orange {
+//   font-size: 18px !important;
+//   margin-left: 0px !important;
+//   &:hover {
+//     background-color: $orange;
+//     opacity: 0.8;
+//   }
+// }
+
+// .dropdown-item-green {
+//   font-size: 18px !important;
+//   margin-left: 0px !important;
+//   &:hover {
+//     background-color: $green;
+//     opacity: 0.8;
+//   }
+// }
+
