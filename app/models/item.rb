@@ -7,4 +7,5 @@ class Item < ApplicationRecord
   
 
   validates :name, :description, :category, presence: true
+
 end

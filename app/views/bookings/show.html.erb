@@ -9,18 +9,4 @@
     <li>will be collected on <%= @booking.start_date %></li>
     <li>at this address: <%= @booking.user.address %></li>
   </ul>
-<% elsif @booking.creation? %>
-  <p>Here's your creation recap:</p>
-  <ul>
-    <li><%= @booking.id %></li>
-    <li><%= @booking.item.name %></li>
-    <li>see you at the warehouse from <%= @booking.start_date.strftime("%d/%m/%Y") %> to <%= @booking.start_date.strftime("%d/%m/%Y") %></li>
-  </ul>
-<% elsif @booking.decoration? %>
-  <p>Here's your order recap:</p>
-  <ul>
-    <li><%= @booking.id %></li>
-    <li><%= @booking.item.name %></li>
-    <li>It will be delivered within 7 days</li>
-  </ul>
 <% end %>

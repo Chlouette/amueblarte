@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   end
   resources :items, only: [:index, :show, :new, :create, :update, :edit] do
     resources :favorite_items, only: [:create]
-    resources :bookings, only: [:show, :new, :create]
+    resources :bookings, only: [:new, :create]
   end
 
+  resources :bookings, only: [:show]
   get "/items_create", to: "items#index_creation"
   get "/items_decorate", to: "items#index_decoration"
 
