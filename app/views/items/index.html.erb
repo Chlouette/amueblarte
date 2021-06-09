@@ -1,10 +1,30 @@
 <h1>All the furniture</h1>
+
+
 <% @items.each do |item| %>
-<div class="card">
-  <h2>
-    <%= link_to "#{item.name}", item_path(item) %>
-  </h2>
-  <%= item.description %>
-  <p>£20</p>
-</div>
+  <div class="card">
+    <h2>
+      <%= link_to "#{item.name}", item_path(item) %>
+    </h2>
+    <%= item.description %>
+    <p>£20</p>
+  </div>
 <% end %>
+
+<section class="thumbnail-grid">
+  <ul>
+    <% @items.each do |item| %>
+      <li>
+        <a href="#">
+        <figure>
+          <img src="https://unsplash.com/photos/fZuleEfeA1Q" alt="Upcycled ">
+          <figcaption>
+            <%# <p><%= item.description %>
+            <p>A lovely Table <span>£20</span></p>
+          </figcaption>
+        </figure>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</section>

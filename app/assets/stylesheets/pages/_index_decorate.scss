@@ -1,0 +1,10 @@
+.thumbnail-grid ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+ol, ul {
+  list-style: none;
+}
