@@ -1,0 +1,12 @@
+<h1>Bookings#show</h1>
+<p>Find me in app/views/bookings/show.html.erb</p>
+
+<% if @booking.donation? %>
+  <p>Here's your collection recap:</p>
+  <ul>
+    <li><%= @booking.id %></li>
+    <li><%= @booking.item.name %></li>
+    <li>will be collected on <%= @booking.start_date %></li>
+    <li>at this address: <%= @booking.user.address %></li>
+  </ul>
+<% end %>

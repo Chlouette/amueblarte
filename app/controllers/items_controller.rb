@@ -1,6 +1,12 @@
 class ItemsController < ApplicationController
-    def index
-        @items = Item.all
+    def index_creation
+        @items = Item.where(status: "collected")
+        session[:booking_type] = "creation"
+    end
+
+    def index_decoration
+        @items = Item.where(status: "for_sale")
+        session[:booking_type] = "decoration"
     end
 
     def show
@@ -8,16 +14,15 @@ class ItemsController < ApplicationController
     end
 
     def new 
-        @item = Item.new()
+        @item = Item.new
+        session[:booking_type] = "donation"
     end
 
     def create
         @item = Item.new(item_params)
         @item.user = current_user
         if @item.save
-            # for now redirect to home
-            redirect_to item_path(@item)
-            # redirect_to new_booking_path(@item)
+            redirect_to new_item_booking_path(@item)
         else
             render :new
         end

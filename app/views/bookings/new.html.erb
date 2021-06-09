@@ -1,0 +1,12 @@
+<h1>Bookings#new</h1>
+<p>Find me in app/views/bookings/new.html.erb</p>
+
+<h1>This is the form to donate / create / decorate a new piece of furniture</h1>
+
+<% if session[:booking_type] == "donation" %>
+  <%= simple_form_for([@item, @booking]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.submit %>
+  <% end %>
+<%# OTHER IF CONDITIONS %>
+<% end %>
