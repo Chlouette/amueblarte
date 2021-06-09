@@ -1,6 +1,26 @@
 <h1>This is where the tab bar will appear</h1>
 
-<h1>This is the form to donate / create / decorate a new piece of furniture</h1>
+<h1>Collection time!</h1>
+<h2>Amazing, you're saving this beauty from the waste:</h2>
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+
+  <div class="card-category">
+    <ul>
+      <li>Name: <%= @item.name %></li>
+      <li>Description: <%= @item.description %></li>
+    </ul>
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    Lunch
+  </div>
+</div>
+
+<h2>Book your collection date:</h2>
 
 <% if session[:booking_type] == "donation" %>
   <%= simple_form_for([@item, @booking]) do |f| %>
