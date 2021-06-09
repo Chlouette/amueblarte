@@ -1,29 +1,32 @@
 <h1>This is where the tab bar will appear</h1>
 
-<h1>Collection time!</h1>
-<h2>Amazing, you're saving this beauty from the waste:</h2>
-
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  </div>
-
-  <div class="card-category">
-    <ul>
-      <li>Name: <%= @item.name %></li>
-      <li>Description: <%= @item.description %></li>
-    </ul>
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-  </div>
-</div>
-
-<h2>Book your collection date:</h2>
-
+<%# DONATION USER STORY %>
 <% if session[:booking_type] == "donation" %>
-  <%= simple_form_for([@item, @booking]) do |f| %>
-    <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.submit %>
-  <% end %>
+  <div class="container">
+    <div class="m-5 text-center">
+      <h1>Collection time!</h1>
+    </div>
+    <h2 class="mb-5">Amazing, you're saving this beauty from the waste:</h2>
+    <div class="cards">
+      <div class="card-category">
+        <ul>
+          <li>Name: <%= @item.name %></li>
+          <li>Description: <%= @item.description %></li>
+        </ul>
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+      </div>
+    </div>
+
+    <h2 class="my-5">Book your collection date:</h2>
+      <div>
+          <%= simple_form_for([@item, @booking]) do |f| %>
+            <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: 'Select date' %>
+            <%= f.submit "Next", class: "form-button" %>
+          <% end %>
+      </div>
+  </div>
 <%# OTHER IF CONDITIONS %>
 <% end %>
