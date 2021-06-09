@@ -14,16 +14,25 @@
           <li>Description: <%= @item.description %></li>
         </ul>
       </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <% image1 = "https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60" %>
+      <% if @item.photos.attached? %>
+        <% image1 = cl_image_path @item.photos.first.key %>
+      <% end %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image1 %>)">
       </div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+
+      <% image2 = "https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60" %>
+      <% if @item.photos.attached? %>
+        <% image2 = cl_image_path @item.photos.second.key %>
+      <% end %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image2 %>)">
       </div>
     </div>
 
     <h2 class="my-5">Book your collection date:</h2>
       <div>
           <%= simple_form_for([@item, @booking]) do |f| %>
-            <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: 'Select date' %>
+            <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker"}, placeholder: 'Select date' %>
             <%= f.submit "Next", class: "form-button" %>
           <% end %>
       </div>
