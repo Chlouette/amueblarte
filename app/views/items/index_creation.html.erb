@@ -1,0 +1,12 @@
+
+<h2><%= current_user.first_name ? current_user.first_name : current_user.email %>, please select the piece of furniture you'd like to work on: </h2>
+
+<h1>SEARCH TO ADD!!!!</h1>
+
+<div class="item-container">
+    <% @items.each do |item| %>
+        <div class="item-card card">
+            <%= cl_image_tag(@item) %>
+        </div>
+    <% end %>
+</div>
