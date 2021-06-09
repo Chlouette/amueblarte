@@ -25,6 +25,8 @@ gem 'cloudinary', '~> 1.16.0'
 # Simple form
 gem 'simple_form'
 
+gem 'faker'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
