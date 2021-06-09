@@ -1,6 +1,8 @@
 .form-container {
-  margin: 48px;
+  margin: 48px 96px;
   max-width: 40%;
+  border: 3px solid $black;
+  padding: 48px;
 }
 
 .form-button {
