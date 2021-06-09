@@ -1,12 +1,13 @@
 <div class="show-container user-profile-card">
   <div class="m-5">
-      <h1>Thanks, your <span class="text-green">collection</span> is confirmed!</h1>
-      <br>
-      <h1>THANKS, YOUR <span class="text-green">COLLECTION</span> IS CONFIRMED!</h1>
-      <br>
-      <h1>Thanks, your <span class="text-green">COLLECTION</span> is confirmed!</h1>
 
       <% if @booking.donation? %>
+      <%# <h1>Thanks, your <span class="text-green">collection</span> is confirmed!</h1>
+      <br>
+      <h1>THANKS, YOUR <span class="text-green">COLLECTION</span> IS CONFIRMED!</h1>
+      <br> %>
+      <h1>Thanks, your <span class="text-green">COLLECTION</span> is confirmed!</h1>
+      <br>
         <p>Here's your collection recap:</p>
         <ul class="list-items">
           <li><%= @booking.id %></li>
