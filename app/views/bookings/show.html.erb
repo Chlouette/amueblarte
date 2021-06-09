@@ -1,12 +1,17 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="show-container user-profile-card">
+  <div class="m-5">
+    <div class="">
+      <h1>Thanks, your collection is confirmed!</h1>
 
-<% if @booking.donation? %>
-  <p>Here's your collection recap:</p>
-  <ul>
-    <li><%= @booking.id %></li>
-    <li><%= @booking.item.name %></li>
-    <li>will be collected on <%= @booking.start_date %></li>
-    <li>at this address: <%= @booking.user.address %></li>
-  </ul>
-<% end %>
+      <% if @booking.donation? %>
+        <p>Here's your collection recap:</p>
+        <ul>
+          <li><%= @booking.id %></li>
+          <li><%= @booking.item.name %></li>
+          <li>will be collected on <%= @booking.start_date %></li>
+          <li>at this address: <%= @booking.user.address %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
