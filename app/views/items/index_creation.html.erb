@@ -1,13 +1,12 @@
-
-<h2><%= current_user.first_name ? current_user.first_name : current_user.email %>, please select the piece of furniture you'd like to work on: </h2>
-
-<h1>SEARCH TO ADD!!!!</h1>
-
-<div class="item-container">
-
+<div class="container">
+  <h2 class="my-5"><%= current_user.first_name ? current_user.first_name : current_user.email %>, please select the piece of furniture you'd like to work on: </h2>
+  <%= render 'filter' %>
+  <div class="item-container d-flex flex-wrap">
     <% @items.each do |item| %>
-        <div class="item-card card">
-            <%= cl_image_tag(@item) %>
-        </div>
+      <div class="item-card card">
+        <p><%= item.name %> </p>
+      </div>
+      <%= cl_image_tag(@item) %>
     <% end %>
+  </div>
 </div>
