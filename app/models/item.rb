@@ -8,4 +8,12 @@ class Item < ApplicationRecord
 
   validates :name, :description, :category, presence: true
 
+  validates :category, inclusion: { in: [
+    "Sofa", "Chair", "Bench",
+    "Bed", "Drawers", "Table",
+    "Desk", "Stool", "Cupboard",
+    "Side Table", "Lamp", "Coat Stand",
+    "Shelves", "Wine Rack", "Coffee Table"
+  ]}
+
 end
