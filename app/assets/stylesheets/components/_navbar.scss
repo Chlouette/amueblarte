@@ -11,12 +11,6 @@
   width: 40px;
 }
 
-a {
-  font-size: 24px !important;
-  color: black  !important;
-  margin-left: 50px !important;
-}
-
 .nav-link {
   font-family: $headers-font;
   font-weight: 400;
@@ -45,6 +39,9 @@ a {
 }
 
 .underline--magical {
+  font-size: 24px !important;
+  color: black  !important;
+  margin-left: 50px !important;
   // background-image: linear-gradient(120deg, $pink 0%, $pink 100%);
   // background-image: linear-gradient(120deg, $pink 0%, $orange 100%);
   background-repeat: no-repeat;
@@ -59,5 +56,13 @@ a {
 
 .favorites-icon {
   margin-left: 50px !important;
-  margin-top: 10px;
+  margin-top: 8px !important;
+  font-size: 24px !important;
+  color: black !important;
 }
+
+// .favorites-icon:hover {
+//   margin-left: 50px !important;
+//   margin-top: 8px !important;
+//   font-size: 24px !important;
+// }
