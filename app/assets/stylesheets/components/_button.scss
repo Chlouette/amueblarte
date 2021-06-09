@@ -1,6 +1,39 @@
+// FILL BUTTON
+.fill {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding: 13px 40px 13px;
+  outline: 0;
+  border: 3px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 20px;
+}
 
+.fill::after {
+  content: "";
+  background-color: $blue;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
 
+.fill:hover::after {
+  top: 0px;
+  left: 0px;
+}
 
+/* End of Fill Button  */
+
+.btn-center-page {
+  margin: 80px !important;
+}
 
 // LIKE BUTTON
 h1{font-size:14px; font-weight:400; margin:10px 0 0 0; color:#888888;}
