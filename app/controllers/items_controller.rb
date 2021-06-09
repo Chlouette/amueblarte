@@ -1,6 +1,14 @@
 class ItemsController < ApplicationController
     def index_creation
-        @items = Item.where(status: "collected")
+        if params[:item] == "Select Category"
+            @items = Item.where(status: "collected")
+            redirect_to items_create_path
+          elsif params[:item]
+            @items = Item.where(category: params[:item])
+            @filter = params[:item].to_s
+          else
+            @items = Item.where(status: "collected")
+          end
         session[:booking_type] = "creation"
     end
 

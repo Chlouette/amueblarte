@@ -1,12 +1,17 @@
 <div class="container">
   <h2 class="my-5"><%= current_user.first_name ? current_user.first_name : current_user.email %>, please select the piece of furniture you'd like to work on: </h2>
   <%= render 'filter' %>
+  <p><%= @filter %>(s) </p>
   <div class="item-container d-flex flex-wrap">
+  <% if @items.empty? %>
+    <h3>Nothing in this category. Sorry!</h3>
+  <% else %>
     <% @items.each do |item| %>
       <div class="item-card card">
         <p><%= item.name %> </p>
       </div>
       <%= cl_image_tag(@item) %>
     <% end %>
+  <% end %>
   </div>
 </div>
