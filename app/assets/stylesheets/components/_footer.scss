@@ -36,12 +36,12 @@
 .icon-magical {
   background-repeat: no-repeat;
   background-size: 0px 0px;
-  background-radius: 50%;
+  border-radius: 50%;
   background-position: 50% 90%;
   transition: background-size 0.25s ease;
   &:hover {
     background-size: 100px 100px;
-    background-radius: 50%;
+    border-radius: 50%;
   }
 }
 
