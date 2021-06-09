@@ -1,6 +1,6 @@
 <div class="container">
   <div class="m-5 text-center">
-    <h1 >Welcome back <%= @user.first_name ? @user.first_name : @user.email %>! </h1>
+    <h1>Welcome back <%= @user.first_name ? @user.first_name : @user.email %>!</h1>
   </div>
   <h2 class="mb-5">My details</h2>
   <div class="user-profile-card justify-content-between text-center">
@@ -18,16 +18,18 @@
   <h2 class="my-5">My Activity</h2>
   <table class="w-100 user-activity text-center">
     <tr>
-        <th>Booking Date</th>
-        <th>Type</th>
-        <th>Furniture</th>
-        <th>Status</th>
+      <th>Booking Date</th>
+      <th>Type</th>
+      <th>Furniture</th>
+      <th>Status</th>
     </tr>
     <% @bookings.each do |booking| %>
+      <tr>
         <td><%= booking.start_date %> </td>
-        <td><%= booking.booking_type %> </td>
+        <td><%= booking.booking_type.upcase %> </td>
         <td><%= booking.item.name %> </td>
-        <td><%= booking.item.status %> </td>
+        <td><%= booking.item.status.upcase %> </td>
+      </tr>
     <% end %>
   </table>
 </div>
