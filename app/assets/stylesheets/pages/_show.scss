@@ -1,0 +1,19 @@
+.show-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 100px;
+  height: 450px;
+}
+
+.show-container h1 {
+  font-family: $headers-font;
+  font-size: 30px;
+  color: black;
+}
+
+.list-items {
+  list-style-type: none;
+  padding-left: 0px;
+}

@@ -1,1 +1,22 @@
-<h1>this is the artists show page</h1>
+<div class="container">
+  <div class="m-5 text-center">
+    <h1 >This is <%= @artist.user.first_name ? @artist.user.first_name : @artist.user.email %>! </h1>
+  </div>
+  <h2 class="mb-5">My details</h2>
+  <div class="user-profile-card justify-content-between text-center">
+    <%= image_tag "test-profile.jpg", class:"profile-avatar"%>
+    <div class="profile-details">
+      <p><%= @artist.user.first_name ? @artist.user.first_name : '' %> <%= @artist.user.last_name ? @artist.user.last_name : '' %></p>
+      <h2>BIO</h2>
+      <% if @artist %>
+        <p><%= @artist.biography %> </p>
+      <% end %>
+    </div>
+  </div>
+  <h2 class="my-5"><%= @artist.user.first_name %>'s Past Work</h2>
+
+  <div class="text-center">
+    <span class="button-wrapper"> <%= link_to "DISCOVER MORE ITEMS", items_path, class: "fill" %></span>
+    <span class="button-wrapper"> <%= link_to "DISCOVER MORE ARTISTS", artists_path, class: "fill" %></span>
+  </div>
+</div>
