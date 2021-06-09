@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
     end
 
     def index_decoration
-        @items = Item.where(status: "for_sale")
+        @items = Item.where(status: "for sale")
         session[:booking_type] = "decoration"
     end
 
