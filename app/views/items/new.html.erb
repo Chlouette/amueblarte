@@ -1,9 +1,19 @@
+<% 
+  categories = [
+    "Sofa", "Chair", "Bench",
+  "Bed", "Drawers", "Table",
+  "Desk", "Stool", "Cupboard",
+  "Side Table", "Lamp", "Coat Stand",
+  "Shelves", "Wine Rack", "Coffee Table"
+]
+    %>
+
 <h1>This is the form for adding a new piece of furniture</h1>
 
 <%= simple_form_for(@item) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :category %>
+  <%= f.input :category, as: :select, collection: categories, prompt: 'Select Cateogry', label: false %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
