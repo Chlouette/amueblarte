@@ -1,7 +1,10 @@
 <h1>All the furniture</h1>
-
 <% @items.each do |item| %>
-    <%= item.name %>
-    <%= item.description %>
-    <p>£20</p>
+<div class="card">
+  <h2>
+    <%= link_to "#{item.name}", item_path(item) %>
+  </h2>
+  <%= item.description %>
+  <p>£20</p>
+</div>
 <% end %>

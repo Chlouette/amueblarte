@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_153818) do
     t.string "name"
     t.text "description"
     t.string "color"
-    t.string "status"
+    t.string "status", default: "to be collected"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
