@@ -1,8 +1,4 @@
 class ItemsController < ApplicationController
-    def index
-        @items = Item.all
-    end
-
     def index_creation
         @items = Item.where(status: "collected")
         session[:booking_type] = "creation"
