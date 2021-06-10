@@ -40,6 +40,13 @@ status = [
 puts "Creating Users and Artists..."
 
 puts "Creating User1..."
+
+def add_photo_to_user(user, img_url)
+  img = URI.open(img_url)
+  user.photo.attach(io: img, filename: img_url, content_type: 'image/png')
+  user.save
+end
+
 user = User.create!(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
@@ -47,6 +54,7 @@ user = User.create!(
   password: '123456',
   address: Faker::Address.full_address
 )
+add_photo_to_user(user, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' )
 
 puts "Creating User2..."
 user = User.create!(
@@ -56,6 +64,7 @@ user = User.create!(
   password: '123456',
   address: Faker::Address.full_address
 )
+add_photo_to_user(user,'https://images.unsplash.com/photo-1601931935821-5fbe71157695?ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
 puts "Creating User3..."
 user = User.create!(
@@ -65,6 +74,7 @@ user = User.create!(
   password: '123456',
   address: Faker::Address.full_address
 )
+add_photo_to_user(user, 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
 puts "Creating Artist1..."
 
@@ -79,6 +89,7 @@ puts "Creating Artist1..."
     biography: 'Contemporary realist painter who lives and works in Houston, Texas. A native of Barranquitas, Puerto Rico, her colorful paintings pay homage to her homeland. Her distinctive personal style emanates joy and peace and expresses the vibrant spirit and atmosphere of the Caribbean culture.',
     user: user
   )
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1609010697446-11f2155278f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')
 
 puts "Creating Artist2..."
 
@@ -93,6 +104,7 @@ puts "Creating Artist2..."
     biography: 'Born in Brooklyn, this African-American with a rebellious temperament left school when he was a teenager to devote himself to his passion: art. His personal graffitis were quickly noticed for their tribal signs and naïve characters. Criticizing consumerism and the exclusion of ethnic communities, Basquiat has his first exhibition at the age of 21. This remarkable arrival brought him to the forefront of the art scene.',
     user: user
   )
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1534180477871-5d6cc81f3920?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')
 
 puts "Creating Artist3..."
 
@@ -107,6 +119,7 @@ puts "Creating Artist3..."
     biography: 'Beginning his career in advertising, he became world famous in the 1960s thanks to his screen prints of mass products, then eventually became one of the most iconic artists of all time. Duplicating his works in a multitude of flashy colours, he brought art into the category of consumer goods. In order to produce in industrial quantities, he created his Factory in 1964, a giant studio central to New York artistic life. His works are now among the most sought-after within the contemporary art market.',
     user: user
   )
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1506634572416-48cdfe530110?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')
 
 puts "Creating Artist4..."
 
@@ -121,8 +134,9 @@ puts "Creating Artist4..."
     biography: 'At a young age, he acquired important notoriety in Northern Italy thanks to his realistic style, characterized by his great gentleness and harmony of shapes and colors. His achievement was completed in 1508, when Pope Julius II asked him to create monumental frescoes to decorate his apartments in the Vatican.',
     user: user
   )
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')
 
-puts "Creating Artist5..."
+puts "Creating Artist 5..."
 
   user = User.create!(
     first_name: Faker::Name.first_name,
@@ -135,8 +149,9 @@ puts "Creating Artist5..."
     biography: 'The violence of her scenes, depicting courageous, active women, taking their destiny into their own hands, often earned her the label of feminist artist before her time! Unfortunately, her painting is often interpreted in the light of her personal life. Raped at the age of 19 by her drawing teacher and humiliated by the trial that followed, many art historians justify her choice to paint women in the midst of revenge by her trauma. However, her talent cannot be reduced to the simple representation of strong female subjects. Rather, her subtle and powerful mastery of chiaroscuro must be noted.',
     user: user
   )
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1474176857210-7287d38d27c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')
 
-  puts "Creating Artist6..."
+  puts "Creating Artist 6..."
 
     user = User.create!(
       first_name: Faker::Name.first_name,
@@ -149,8 +164,9 @@ puts "Creating Artist5..."
       biography: 'Her painting is deeply poetic and inspired by Mexican folklore. This activity has also been the way enabling her to express her suffering through dreamlike worlds. Indeed, Frida’s life was full of tragic events, which nevertheless destroyed her unfailing joy of life. At the age of 18, a bus accident seriously injured her spine, crippling her for life and forcing her to wear a metal corset for the rest of her life. Finding refuge in art, she developed a passionate relationship with the artist Diego Riveira. They tried to conceive, but Frida had multiple miscarriages. Her global recognition allowed her to pass to posterity, while constituting a model for many women through her independence and strength of character.',
       user: user
     )
+    add_photo_to_user(user, 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')
 
-  puts "Creating Artist7..."
+  puts "Creating Artist 7..."
 
     user = User.create!(
       first_name: Faker::Name.first_name,
@@ -163,8 +179,9 @@ puts "Creating Artist5..."
       biography: 'During the first decade of the 20th century, his style changed as he experimented with different theories, techniques, and ideas.',
       user: user
     )
+    add_photo_to_user(user, 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')
 
-  puts "Creating Artist8..."
+  puts "Creating Artist 8..."
 
     user = User.create!(
       first_name: 'Claude',
@@ -177,6 +194,7 @@ puts "Creating Artist5..."
       biography: 'Born in Paris, the son of a grocer, Monet grew up in Le Havre. Contact with Eugène Boudin in about 1856 introduced Monet to painting from nature. He was in Paris in 1859 and three years later he entered the studio of Charles Gleyre, where he met Pierre-Auguste Renoir, Alfred Sisley and Frédéric Bazille. Edouard Manet was an influence on his figure compositions of the 1860s, while the informal style of his later landscapes originated in works such as "Bathers at La Grenouillère", painted in 1869 when Monet worked with Renoir at Bougival.',
       user: user
     )
+    add_photo_to_user(user, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.claude-monet.com%2F&psig=AOvVaw381GdVGy7lt870iL7E5Ie6&ust=1623422747318000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDj3JSnjfECFQAAAAAdAAAAABAD')
 
   puts "Creating Artist 9..."
 
@@ -191,6 +209,7 @@ puts "Creating Artist5..."
       biography: 'While his fame initially rested on his achievements as a painter, he also became known for his notebooks, in which he made drawings and notes on a variety of subjects, including anatomy, astronomy, botany, cartography, painting, and paleontology.',
       user: user
     )
+    add_photo_to_user(user, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftowardsdatascience.com%2Fyes-your-data-communications-are-mini-masterpieces-e8877af1e333&psig=AOvVaw0xAg9v_EuXfQa5nFL5iDMw&ust=1623422772744000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLjTpaKnjfECFQAAAAAdAAAAABAD')
 
   puts "Creating Artist 10..."
 
@@ -201,10 +220,12 @@ puts "Creating Artist5..."
       password: '123456',
       address: Faker::Address.full_address
     )
+    
     Artist.create!(
       biography: 'Born in Figueres, Catalonia, Dalí received his formal education in fine arts in Madrid. Influenced by Impressionism and the Renaissance masters from a young age, he became increasingly attracted to Cubism and avant-garde movements.',
       user: user
     )
+    add_photo_to_user(user, 'https://ih1.redbubble.net/image.608638179.9013/flat,750x1000,075,f.jpg')
 
 
 puts "Created Users and Artists"
