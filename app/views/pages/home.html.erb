@@ -51,19 +51,20 @@
       </div>
 
       <div class="col-4 home-card-link-wrapper">
-        <div class="home-grid-card mb-4">
-          <div class="text-center">
-            <h2>FEATURED ARTIST</h2>
-            <h2 class="home-artist-name"><%= artist.user.first_name %></h2>
-            <p><%= cl_image_tag artist.user.photo.key, class: "home-profile-avatar" %></p>
-            <% if artist.biography.length > 180 %>
-              <p><%= artist.biography[0..179] %>...</p>
-            <% else %>
-              <p><%= artist.biography %></p>
-            <% end %>
+        <%= link_to artist_path(artist) do  %>
+          <div class="home-grid-card mb-4">
+            <div class="text-center">
+              <h2>FEATURED ARTIST</h2>
+              <h2 class="home-artist-name"><%= artist.user.first_name %></h2>
+              <p><%= cl_image_tag artist.user.photo.key, class: "home-profile-avatar" %></p>
+              <% if artist.biography.length > 180 %>
+                <p><%= artist.biography[0..179] %>...</p>
+              <% else %>
+                <p><%= artist.biography %></p>
+              <% end %>
+            </div>
           </div>
-
-        </div>
+        <% end %>
       </div>
 
       <div class="col-4 home-card-link-wrapper">
