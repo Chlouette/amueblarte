@@ -12,10 +12,14 @@
 }
 
 .nav-link {
-  font-family: $headers-font;
+  font-family: $headers-font !important;
   font-weight: 400;
   font-size: 50px !important;
   color: black  !important;
+}
+
+.nav-item {
+  font-family: 'Barlow Semi Condensed', sans-serif !important;
 }
 
 .highlight-pink {
