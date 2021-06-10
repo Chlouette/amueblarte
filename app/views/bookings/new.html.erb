@@ -1,10 +1,8 @@
-<h1>This is where the tab bar will appear</h1>
-
 <%# DONATION USER STORY %>
-  <% if session[:booking_type] == "donation" %>
-    <%= render 'shared/donation_new' %>
-  <% elsif session[:booking_type] == "creation" %>
-    <%= render 'shared/creation_new' %>
-  <% elsif session[:booking_type] == "decoration" %>
-    <%= render 'shared/decoration_new' %>
+<% if session[:booking_type] == "donation" %>
+  <%= render 'shared/donation_new' %>
+<% elsif session[:booking_type] == "creation" %>
+  <%= render 'shared/creation_new' %>
+<% elsif session[:booking_type] == "decoration" %>
+  <%= render 'shared/decoration_new' %>
 <% end %>

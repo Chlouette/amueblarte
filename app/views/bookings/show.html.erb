@@ -1,25 +1,24 @@
-<div class="page-container">
-  <div class="show-container booking-show-card">
-    <div class="m-5">
-
-      <% if @booking.donation? %>
-        <%# <h1>Thanks, your <span class="text-green">collection</span> is confirmed!</h1>
-        <br> %>
-        <%# <h2>THANKS YOUR <span class="text-green">COLLECTION</span> IS CONFIRMED</h2> %>
-        <h2>THANKS YOUR COLLECTION IS CONFIRMED</h2>
-        <%# <h1>Thanks, your <span class="text-green">COLLECTION</span> is confirmed!</h1> %>
-          <p>Here's your collection recap:</p>
-          <ul class="list-items">
-            <li>Booking ID: <%= @booking.id %></li>
-            <li>Item Name:  <%= @booking.item.name %></li>
-            <li>Your item will be collected on <%= @booking.start_date %></li>
-            <li>At this address: <%= @booking.user.address %></li>
-          </ul>
-      <% end %>
+<% if @booking.donation? %>
+  <div class="page-container">
+    <div class="show-container booking-show-card">
+      <div class="m-5">
+          <%# <h1>Thanks, your <span class="text-green">collection</span> is confirmed!</h1>
+          <br> %>
+          <%# <h2>THANKS YOUR <span class="text-green">COLLECTION</span> IS CONFIRMED</h2> %>
+          <h2>THANKS, YOUR COLLECTION IS CONFIRMED!</h2>
+          <%# <h1>Thanks, your <span class="text-green">COLLECTION</span> is confirmed!</h1> %>
+            <p>Here's your collection recap:</p>
+            <ul class="list-items">
+              <li>Booking ID: <%= @booking.id %></li>
+              <li>Item Name:  <%= @booking.item.name %></li>
+              <li>Your item will be collected on: <%= @booking.start_date.strftime("%d/%m/%Y") %></li>
+              <li>At this address: <%= @booking.user.address %></li>
+            </ul>
+      </div>
+    </div>
+    <div class="btn-center-page">
+      <a href="/items_decorate"><button type="button" class="fill">More Items</button></a>
+      <button type="button" class="fill">More Artists</button>
     </div>
   </div>
-  <div class="btn-center-page">
-    <a href="/items_decorate"><button type="button" class="fill">More Items</button></a>
-    <button type="button" class="fill">More Artists</button>
-  </div>
-</div>
+<% end %>

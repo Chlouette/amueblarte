@@ -30,3 +30,15 @@
     background-size: 100% 100%;
   }
 }
+
+#booking_start_date {
+  width: 400px;
+}
+
+#new_booking > div > div > div > input.form-control.string.required.datepicker.form-control.input {
+  width: 400px;
+}
+
+.booking-form {
+  margin: 20px 50px 20px 50px;
+}
