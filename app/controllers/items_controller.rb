@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
 
     def index_decoration
         @items = Item.where(status: "for sale")
-        raise
         session[:booking_type] = "decoration"
     end
 

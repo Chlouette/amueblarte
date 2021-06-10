@@ -4,7 +4,9 @@
   </div>
   <h2 class="mb-5">My details</h2>
   <div class="user-profile-card justify-content-between text-center">
-    <%= image_tag "test-profile.jpg", class:"profile-avatar"%>
+
+    <%= cl_image_tag(@user.photo.key, :class=> "profile-avatar") %>
+  
     <div class="profile-details">
       <p><span class="">FIRST NAME</span><%= @user.first_name ? @user.first_name : '' %> </p>
       <p>Last NAME</p>
