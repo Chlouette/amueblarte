@@ -1,6 +1,8 @@
-<h1>This is the Item show page</h1>
-
-
+<div>
+    <% @item.photos do |photo| %>
+        <%= cl_image_tag(photo.key) %>
+    <% end %>
+</div>
 <h2>NAME: <%= @item.name %> </h2>
 <p>DESCRIPTION: <%= @item.description %> </p>
 
