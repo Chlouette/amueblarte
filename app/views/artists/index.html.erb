@@ -2,6 +2,7 @@
 <h1>Our Artists</h1>
 <div class="card-container">
   <% @artists.each do |artist| %>
+  <%= cl_image_tag(artist.user.photo.key) %>
     <%= link_to artist_path(artist) do %>
       <div class="card">
         <%= artist.user.first_name %>
