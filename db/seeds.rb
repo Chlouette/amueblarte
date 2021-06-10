@@ -195,6 +195,127 @@ puts "Creating Items..."
       'collected'
     )
   
-  puts "Collected items create"
+  puts "Collected items created"
+
+  puts "Creating for sale items..."
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/DIY-Rattan-Cupboard-Furniture-and-Choice-320x320.jpg',
+    'Drawers', 
+    'Sideboard',
+    'It’s hard to believe this was once a plain white sideboard?! An incredibly stylish addition for any hallway, living room or even bedroom – and at a fraction of the price of buying a similar design from scratch.',
+    'Black, White',
+    'for sale'
+  )
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Annie-Sloan-Countryside-Bird-stencil-320x320.jpg',
+    'Drawers', 
+    'Green Countryside Sideboard',
+    'A sizeable bit of furniture with lovely countryside stencilling. A real addition to any kitchen or hallway',
+    'Black, White',
+    'for sale'
+  )
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Annie-Sloan-Countryside-Bird-stencil-320x320.jpg',
+    'Shelves', 
+    'Wooden box shelves',
+    'Use them to curate thoughtful wall displays or as bookshelves. Just be sure to secure them safely, don’t overload them if the wall fixings aren’t strong enough to take the weight.',
+    'Pastel',
+    'for sale'
+  )
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Annie-Sloan-Countryside-Bird-stencil-320x320.jpg',
+    'Side Table', 
+    'Rustice Boxed Side Table',
+    'he open element of the design is ideal for storing everything you’d need to stow neatly beside the bed, from books to sleep apparatus. The distressed nature of the wooden crates is super stylish.',
+    'Light Brown',
+    'for sale'
+  )
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Annie-Sloan-Upcycled-Mid-Century-Chairs-320x320.jpg',
+    'Chair', 
+    'Jungle print chairs',
+    'Look away now if you LOVE Mid-century furniture  (sorry!). But if older design is not your thing.',
+    'Blue, Green, Brown',
+    'for sale'
+  )
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2018/08/Ideal-Home-upcycled-furniture-320x320.jpg',
+    'Drawers', 
+    'Childrens Chest of Drawers',
+    'Bright colours, perfect for a child\s bedroom. Colourful, artistic, cheerful.',
+    'Pink, Yellow, White',
+    'for sale'
+  )
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/01/Pink-pianted-wardrobe-320x320.jpg',
+    'Cupboard', 
+    'Pink heirloom wardrobe',
+    'This wardrobe transformation is the work of Ideal Home’s Editor Heather Young who has upcycled an old family heirloom for her young daughter’s room.',
+    'Pink',
+    'for sale'
+  )
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2020/11/Upcycled-bedside-table-320x320.jpg',
+    'Side Table', 
+    'Dusky Side Table',
+    'The paint of choice for this upcycling job is Frenchic,  in a beautiful on-trend shade of  Dusky Blush pink.',
+    'Pink',
+    'for sale'
+  )
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Reclaimed-wooden-peg-rail-320x320.jpg',
+    'Coat Stand', 
+    'Homemade Storage Hooks',
+    'Any piece of salvaged wood has the potential to be a stylish set of wall hooks. Allowing the beauty of layers of paint on a plank of old wood there’s no need to sand or treat.',
+    'Light Brown, Multicolored',
+    'for sale'
+  )
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Built-in-wooden-seating-320x320.jpg',
+    'Sofa', 
+    'Bespoke Corner Sofa',
+    'Bespoke furniture is always a great way of utilising awkward spaces, such as alcoves, but building on specification is not a cheap option. Using offcuts of wood from other projects, or sourcing wooden planks second hand, you can create a totally bespoke seating arrangement.',
+    'Light Brown, Slate',
+    'for sale'
+  )
+
+  createItem(
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/03/Pallet-coffee-table-320x320.jpg',
+    'Table', 
+    'Craft Coffee Table',
+    'Mosiac effect coffee tablel made from pallets. Looks great in any living room',
+    'Light Brown, White',
+    'for sale'
+  )
+
+  createItem(
+    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hutch-after-upcycled-furniture-1552943774.jpg?crop=0.791xw:0.884xh;0.0900xw,0.0773xh&resize=980:*',
+    'Shelves', 
+    'Two-Tone Bookcase',
+    'For a fun and feminine look, we picked pink accessories, gray pain, and Hygge & West Nethercote wallpaper. Traditional blue paint and striped paper lends itself to nautical vibes.',
+    'Light Brown, White',
+    'for sale'
+  )
+
+  createItem(
+    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/upcycled-furniture-armchair-after-1553007629.jpg?crop=0.936xw:0.963xh;0.0208xw,0&resize=980:*',
+    'Chair', 
+    'Dalmation Armchair',
+    'We picked Black Dalmatian Dots by Bliss Design Studio on Spoonflower for this piece, a spot-on print whether you style it with graphic, colorful extras or girly, glam accessories.',
+    'Black, White',
+    'for sale'
+  )
+
+  puts "For Sale items created"
   
   

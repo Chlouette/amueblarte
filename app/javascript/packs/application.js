@@ -35,11 +35,11 @@ import { randomiseBorderColor } from "../components/randomColor";
 
 
 document.addEventListener('turbolinks:load', () => {
-
   if (document.getElementsByClassName("item-card")) {
     bindButtonToClick()
   }
   if (document.getElementsByClassName("selected")) {
     randomiseBorderColor()
   }
+
 });
