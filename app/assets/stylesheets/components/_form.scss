@@ -32,7 +32,11 @@
 }
 
 #booking_start_date {
-  width: 320px;
+  width: 400px;
+}
+
+#new_booking > div > div > div > input.form-control.string.required.datepicker.form-control.input {
+  width: 400px;
 }
 
 .booking-form {
