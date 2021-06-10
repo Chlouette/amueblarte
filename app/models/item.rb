@@ -16,4 +16,20 @@ class Item < ApplicationRecord
     "Shelves", "Wine Rack", "Coffee Table"
   ]}
 
+  COLORS = [
+    "black",
+    "blue",
+    "brown",
+    "gold",
+    "green",
+    "grey",
+    "neutral",
+    "orange",
+    "pink",
+    "purple",
+    "red",
+    "white",
+    "yellow"
+  ]
+
 end

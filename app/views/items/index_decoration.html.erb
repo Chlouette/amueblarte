@@ -8,9 +8,18 @@
 
   <div class="frame">
     <div class="range">
-      <input type="range" min="0" max="40">
+      <p>0</p>
+        <input type="range" min="0" max="500">
+      <p>500</p>
     </div>
   </div>
+
+  <%= simple_form_for(@item) do |i| %>
+    <%= c.input :colors, collection: Item::COLORS, 
+                        as: :check_boxes,
+                        input_html: { class: "tag-selector" },
+                        item_wrapper_class: 'tag-item' %>
+  <% end %>
 
   <div class="card-container" >
     <% @items.each do |item| %>
