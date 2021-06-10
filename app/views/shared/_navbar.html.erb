@@ -1,4 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <%= link_to root_path, class: "home-link ml-3", data: { turbolinks: false } do %>
+    <h1>AMOOBL</h1>
+    <% end %>
   <%= link_to "#", class: "navbar-brand" do %>
     <%# <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
@@ -41,7 +44,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <a href="#" class="underline--magical highlight-green" class="nav-link">LOGIN</a>
+          <a href="/users/sign_in" class="underline--magical highlight-green" class="nav-link">LOGIN</a>
         </li>
       <% end %>
     </ul>
