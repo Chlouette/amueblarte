@@ -39,13 +39,67 @@ status = [
 
 puts "Creating Users and Artists..."
 
-puts "Creating User1..."
 
 def add_photo_to_user(user, img_url)
   img = URI.open(img_url)
   user.photo.attach(io: img, filename: img_url, content_type: 'image/png')
   user.save
 end
+
+puts "Creating James..."
+
+user = User.create!(
+  first_name: 'James',
+  last_name: 'Jameson',
+  email: 'james@gmail.com',
+  password: '123456',
+  address: Faker::Address.full_address
+)
+add_photo_to_user(user, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' )
+
+puts "Created James"
+
+puts "Creating Chloe..."
+
+user = User.create!(
+  first_name: 'Chloe',
+  last_name: 'Chloes',
+  email: 'chloe@test.com',
+  password: '123456',
+  address: Faker::Address.full_address
+)
+add_photo_to_user(user, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' )
+
+puts "Created Chloe"
+
+puts "Creating Emily..."
+
+user = User.create!(
+  first_name: 'Emily',
+  last_name: 'O\'Emily',
+  email: 'emily@test.com',
+  password: '123456',
+  address: Faker::Address.full_address
+)
+add_photo_to_user(user, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' )
+
+puts "Created Emily"
+
+puts "Creating Veni..."
+
+user = User.create!(
+  first_name: 'Veni',
+  last_name: 'Venson',
+  email: 'veni@test.com',
+  password: '123456',
+  address: Faker::Address.full_address
+)
+add_photo_to_user(user, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' )
+
+puts "Created Veni"
+
+puts "Creating User1..."
+
 
 user = User.create!(
   first_name: Faker::Name.first_name,
