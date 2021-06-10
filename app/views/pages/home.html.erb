@@ -1,5 +1,82 @@
-<h1>AMUEBL-ARTE</h1>
-<h2>DONATE CREATE DECORATE</h2>
-<%= link_to 'DONATE', new_item_path  %>
-<%= link_to 'CREATE', items_create_path %>
-<%= link_to 'DECORATE', items_decorate_path  %>
+
+<div class="home-container">
+  <div class="text-center">
+    <h1>AMOOBL</h1>
+    <p>donate create decorate</p>
+  </div>
+
+
+  <div class="home-links-container">
+    <%= link_to new_item_path, class: "home-card-link" do %>
+      <div class="home-card abandoned-chair">
+        DONATE
+      </div>
+    <% end %>
+
+    <%= link_to items_create_path, class: "home-card-link" do %>
+      <div class="home-card art-chair">
+        CREATE
+      </div>
+    <% end %>
+
+    <%= link_to items_decorate_path, class: "home-card-link" do %>
+      <div class="home-card decorate-chair">
+        DECORATE
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-center mt-3">
+    <h1>RECENTS</h1>
+    <p>for your amooblment</p>
+  </div>
+
+  <div>
+    <div class="row justify-content-center">
+      <div class="col-4 home-card-link-wrapper">
+        <%= link_to @links[2], target: "_blank" do  %>
+          <div class="home-grid-card mb-4">
+            <p><%= @articles[4][0..99]%>...</p>
+            <%= image_tag @images[2], alt: "alttext" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="col-4 home-card-link-wrapper">
+        <div class="home-grid-card mb-4">
+          test
+        </div>
+      </div>
+
+      <div class="col-4 home-card-link-wrapper">
+        <div class="home-grid-card mb-4">
+          test
+        </div>
+      </div>
+
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4 home-card-link-wrapper">
+        <div class="home-grid-card">
+          test
+        </div>
+      </div>
+      <div class="col-4 home-card-link-wrapper">
+        <%= link_to @links[3], target: "_blank" do  %>
+          <div class="home-grid-card">
+            <p><%= @articles[5][0..89]%>...</p>
+            <%= image_tag @images[3], alt: "alttext" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-4 home-card-link-wrapper">
+        <%= link_to @links[4], target: "_blank" do  %>
+          <div class="home-grid-card">
+            <p><%= @articles[6][0..89]%>...</p>
+            <%= image_tag @images[4], alt: "alttext" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
