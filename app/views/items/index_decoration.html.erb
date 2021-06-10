@@ -14,12 +14,12 @@
     </div>
   </div>
 
-  <%= simple_form_for(@item) do |i| %>
-    <%= c.input :colors, collection: Item::COLORS, 
+  <%# <%= simple_form_for(@item) do |i| %>
+    <%# <%= c.input :colors, collection: Item::COLORS, 
                         as: :check_boxes,
                         input_html: { class: "tag-selector" },
                         item_wrapper_class: 'tag-item' %>
-  <% end %>
+  <%# <% end %>
 
   <div class="card-container" >
     <% @items.each do |item| %>
