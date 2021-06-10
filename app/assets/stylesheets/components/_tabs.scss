@@ -22,8 +22,8 @@
 #tab-active {
     font-weight: bold;
     color: white;
-    padding: 0 20px;
-    transition: 0.3s;
+    padding: 0 5px;
+    transition: 0.3s ease-out;
 }
 
 #tab-active {
@@ -31,5 +31,5 @@
 }
 
 #tab-active:hover {
-    padding: 0 5px;
+    padding: 0 20px;
 }
