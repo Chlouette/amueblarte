@@ -3,14 +3,15 @@
   border: 1px solid black;
   border-radius: 8px;
 }
+
 // FILL BUTTON
 .fill {
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 300  !important;
   letter-spacing: 1px;
   padding: 13px 40px 13px;
   outline: 0;
-  border: 3px solid black;
+  border: 2px solid black !important;
   cursor: pointer;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
@@ -38,6 +39,7 @@
 
 .btn-center-page {
   margin: 80px !important;
+  text-align: center;
 }
 
 // LIKE BUTTON
