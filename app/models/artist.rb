@@ -3,5 +3,5 @@ class Artist < ApplicationRecord
   has_many :favorite_artists
 
   validates :biography, presence: true
-  validates :biography, length: { maximum: 100 }
+  # validates :biography, length: { maximum: 100 }
 end
