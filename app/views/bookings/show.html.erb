@@ -1,22 +1,21 @@
-<div class="page-container text-center">
-  <div class="show-container user-profile-card">
+<div class="page-container">
+  <div class="show-container booking-show-card">
     <div class="m-5">
 
-        <% if @booking.donation? %>
+      <% if @booking.donation? %>
         <%# <h1>Thanks, your <span class="text-green">collection</span> is confirmed!</h1>
-        <br>
-        <h1>THANKS, YOUR <span class="text-green">COLLECTION</span> IS CONFIRMED!</h1>
         <br> %>
-        <h1>Thanks, your <span class="text-green">COLLECTION</span> is confirmed!</h1>
-        <br>
+        <%# <h2>THANKS YOUR <span class="text-green">COLLECTION</span> IS CONFIRMED</h2> %>
+        <h2>THANKS YOUR COLLECTION IS CONFIRMED</h2>
+        <%# <h1>Thanks, your <span class="text-green">COLLECTION</span> is confirmed!</h1> %>
           <p>Here's your collection recap:</p>
           <ul class="list-items">
-            <li><%= @booking.id %></li>
-            <li><%= @booking.item.name %></li>
-            <li>will be collected on <%= @booking.start_date.strftime("%d/%m/%Y") %></li>
-            <li>at this address: <%= @booking.user.address %></li>
+            <li>Booking ID: <%= @booking.id %></li>
+            <li>Item Name:  <%= @booking.item.name %></li>
+            <li>Your item will be collected on <%= @booking.start_date.strftime("%d/%m/%Y") %></li>
+            <li>At this address: <%= @booking.user.address %></li>
           </ul>
-        <% end %>
+      <% end %>
     </div>
   </div>
   <div class="btn-center-page">
