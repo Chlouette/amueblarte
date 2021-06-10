@@ -6,12 +6,13 @@
 
 // FILL BUTTON
 .fill {
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 16px !important;
+  font-weight: 400  !important;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   letter-spacing: 1px;
-  padding: 13px 40px 13px;
+  padding: 13px 18px 13px !important;
   outline: 0;
-  border: 3px solid black;
+  border: 2px solid black !important;
   cursor: pointer;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
@@ -39,6 +40,7 @@
 
 .btn-center-page {
   margin: 80px !important;
+  text-align: center;
 }
 
 // LIKE BUTTON

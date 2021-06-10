@@ -37,13 +37,15 @@ initFlatpickr();
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { bindButtonToClick } from "../components/selectItem";
-
+import { randomiseBorderColor } from "../components/randomColor";
 
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
   if (document.getElementsByClassName("item-card")) {
     bindButtonToClick()
   }
+  if (document.getElementsByClassName("selected")) {
+    randomiseBorderColor()
+  }
+
 });

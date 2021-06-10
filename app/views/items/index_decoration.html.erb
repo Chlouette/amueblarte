@@ -1,0 +1,19 @@
+<div class="index-container">
+  <h1>ALL THE FURNITURE</h1>
+
+  <div class="card-container" >
+    <% @items.each do |item| %>
+      <%= link_to item_path(item) do %>
+        <% item.photos.each do |photo| %>
+          <div class="items-decorate-card">
+            <img src="<%= cl_image_path(photo.key) %>" alt="Upcycled ">
+            <div class="items-decorate-index-card">
+              <p><%= item.name %> <span>£20</span></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

@@ -27,5 +27,8 @@ class PagesController < ApplicationController
     end
     @images.uniq!
     @links.reject! { |l| l == "" }
+
+    # disables tabs bar on homepage
+    @disable_tab = true
   end
 end

@@ -21,6 +21,35 @@
     flex-grow: 1;
 }
 
+.item-card {
+  min-height: 300px;
+  min-width: 300px;
+  object-fit: contain;
+  margin: 30px;
+  border: 4px solid black;
+}
+
 .selected {
-  border: 2px solid $pink;
+  border: 4px solid $pink;
+}
+
+.items-decorate-card p {
+  font-family: $headers-font;
+  color: black !important;
+}
+
+.items-decorate-card p:hover {
+  font-family: $headers-font;
+  color: black !important;
+}
+
+.items-decorate-card > img {
+  height: 300px !important;
+  object-fit: cover !important;
+} 
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
 }
