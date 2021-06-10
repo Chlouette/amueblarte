@@ -1,6 +1,17 @@
 <div class="index-container">
   <h1>ALL THE FURNITURE</h1>
 
+  <%= form_tag items_path, method: :get do %>
+    <%= select_tag "Category", options_for_select(['Select Category', 'Bed', 'Bench', 'Chair', 'Coat Stand', "Coffee Table", 'Cupboard', 'Desk', "Drawers", "Lamp", "Side Table", "Shelves", "Stool", "Sofa", "Table", "Lamp", "Wine Rack"])%>
+    <%= submit_tag "Search", class: "btn btn-flat mx-3" %>
+  <% end %>
+
+  <div class="frame">
+    <div class="range">
+      <input type="range" min="0" max="40">
+    </div>
+  </div>
+
   <div class="card-container" >
     <% @items.each do |item| %>
       <div class="items-decorate-card">
