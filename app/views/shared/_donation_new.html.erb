@@ -6,10 +6,11 @@
 </div>
   
   <div class="container page-container">
-    <h2 class="mb-5">Amazing, you're saving this beauty from the waste:</h2>
     <div class="cards">
       <div class="card-category">
         <ul>
+          <li><h4>Amazing, you're saving this beauty from the waste:</h4></li>
+          <br>
           <li>Name: <%= @item.name %></li>
           <li>Description: <%= @item.description %></li>
         </ul>
@@ -28,13 +29,17 @@
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image2 %>)">
       </div>
     </div>
-
-    <h2 class="my-5">Book your collection date:</h2>
-      <div>
-          <%= simple_form_for([@item, @booking]) do |f| %>
-            <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker"}, placeholder: 'Select date' %>
-            <%= f.submit "Next" %>
-            <%# <button type="button" class="fill">More Items</button> %>
+<br>
+    <div class="booking-form">
+          <%= simple_form_for([@item, @booking], html: { class: "form-inline" }) do |f| %>
+            <div class="d-flex w-100 justify-content-between">
+              <h4>Book your collection date:</h4>
+              <div class="d-flex">
+                <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker"}, placeholder: 'Select date' %>
+                <%= f.submit "Next", class: "form-button ml-5" %>
+                <%# <button type="button" class="fill">More Items</button> %>
+              </div>
+            </div>
           <% end %>
       </div>
   </div>
