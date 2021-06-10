@@ -1,1 +1,58 @@
-// Specific CSS for your home-page
+.abandoned-chair {
+  background: radial-gradient(transparent, rgba(0,0,0,0.8)), url("abandoned-chair.jpeg");
+}
+
+.art-chair {
+  background: radial-gradient(transparent, rgba(0,0,0,0.8)), url("art-chair.jpeg");
+}
+
+.decorate-chair {
+  background: radial-gradient(transparent, rgba(0,0,0,0.8)), url("decorate-chair.jpeg");
+}
+
+.home-container {
+  margin: 16px 80px;
+}
+
+.home-links-container {
+  height: 100%;
+  display: flex;
+  flex-basis: auto;
+  box-shadow: 0 0 10px $black;
+  border: none;
+}
+
+.home-card-link {
+  height: 520px;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  transition: 0.6s;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.home-card {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  color: $white;
+  text-shadow: 1px 1px 3px $black;
+  filter: grayscale(100%);
+  transition: 0.8s;
+}
+
+.home-card:hover {
+  filter: grayscale(0%);
+}
+
+.expand {
+  flex-grow: 3;
+}

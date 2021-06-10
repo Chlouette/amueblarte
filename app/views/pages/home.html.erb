@@ -1,6 +1,27 @@
-<h1>AMUEBL-ARTE</h1>
-<h2>DONATE CREATE DECORATE</h2>
-<%= link_to 'DONATE', new_item_path  %>
-<h2>CREATE</h2>
-<%# <%= link_to 'CREATE',   %>
-<%= link_to 'DECORATE', items_path  %>
+<div class="home-container">
+  <div class="text-center">
+    <h1>AMOOBL</h1>
+    <p>donate create decorate</p>
+  </div>
+
+
+  <div class="home-links-container">
+    <%= link_to new_item_path, class: "home-card-link" do %>
+      <div class="home-card abandoned-chair">
+        DONATE
+      </div>
+    <% end %>
+
+    <%= link_to items_create_path, class: "home-card-link" do %>
+      <div class="home-card art-chair">
+        CREATE
+      </div>
+    <% end %>
+
+    <%= link_to items_decorate_path, class: "home-card-link" do %>
+      <div class="home-card decorate-chair">
+        DECORATE
+      </div>
+    <% end %>
+  </div>
+</div>
