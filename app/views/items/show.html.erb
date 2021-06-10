@@ -1,6 +1,8 @@
 <div>
     <% @item.photos do |photo| %>
         <%= cl_image_tag(photo.key) %>
+        <%= cl_image_path(photo.key) %>
+        <img src="" alt="">
     <% end %>
 </div>
 <h2>NAME: <%= @item.name %> </h2>
