@@ -15,20 +15,18 @@
           <li>Description: <%= @item.description %></li>
         </ul>
       </div>
-      <% image1 = "https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60" %>
-      <% if @item.photos.attached? %>
-        <% image1 = cl_image_path @item.photos.first.key %>
-      <% end %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image1 %>)">
-      </div>
 
-      <% image2 = "https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60" %>
       <% if @item.photos.attached? %>
-        <% image2 = cl_image_path @item.photos.second.key %>
+        <% @item.photos.each do |photo| %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo.key %>')">
+          </div>
+        <% end %>
+      <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')">
+        </div>
       <% end %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image2 %>)">
+      
       </div>
-    </div>
 <br>
     <div class="booking-form">
           <%= simple_form_for([@item, @booking], html: { class: "form-inline" }) do |f| %>
