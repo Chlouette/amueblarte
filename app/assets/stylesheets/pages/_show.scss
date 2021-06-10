@@ -19,6 +19,14 @@
   padding-left: 0px;
 }
 
+
+.titles-container {
+  margin-left: 16px;
+}
+
+.filter-box {
+  display: inline-flex;
+
 .booking-show-card {
   overflow: hidden;
   height: 300px;
@@ -31,4 +39,5 @@
 
 .show-description {
   max-width: 400px;
+
 }
