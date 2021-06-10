@@ -1,10 +1,10 @@
 <div class="mt-5 container justify-content-between">
   <h1> <%= @item.name %> </h1>
   <div class="mt-5 d-flex">
-    <div>
+    <div class="flex-grow-1">
       <%= cl_image_tag(@item.photos.first.key) %>
     </div>
-    <div>
+    <div class="show-description">
       <p>DESCRIPTION: <%= @item.description %> </p>
     </div>
   </div>
