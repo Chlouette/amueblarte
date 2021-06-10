@@ -1,13 +1,13 @@
 <div class="container">
-  <div class="m-5 text-center">
+  <div class="mt-5 mb-4 text-center">
     <h1><%= @artist.user.first_name ? @artist.user.first_name : @artist.user.email %>  </h1>
   </div>
-  <h2 class="mb-5">My details</h2>
+  <h2 class="mb-3">Artist details</h2>
   <div class="user-profile-card justify-content-between text-center">
     <%= cl_image_tag(@artist.user.photo.key, :class => "profile-avatar ml-5") %>
     <div class="profile-details">
-      <p><%= @artist.user.first_name ? @artist.user.first_name : '' %> <%= @artist.user.last_name ? @artist.user.last_name : '' %></p>
-      <h2>BIO</h2>
+      <h4><%= @artist.user.first_name ? @artist.user.first_name : '' %> <%= @artist.user.last_name ? @artist.user.last_name : '' %></h4>
+      <h2 class="mt-3 mb-0">BIO</h2>
       <% if @artist %>
         <p><%= @artist.biography %> </p>
       <% end %>
