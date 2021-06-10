@@ -5,13 +5,12 @@
   <h2 class="mb-5">My details</h2>
   <div class="user-profile-card justify-content-between text-center">
 
-    <%= cl_image_tag(@user.photo.key, :class=> "profile-avatar") %>
+    <%= cl_image_tag(@user.photo.key, :class => "profile-avatar") %>
   
     <div class="profile-details">
-      <p><span class="">FIRST NAME</span><%= @user.first_name ? @user.first_name : '' %> </p>
-      <p>Last NAME</p>
-      <p><%= @user.email %> </p>
-      <p>USER ADDRESS</p>
+      <p class="my-4"><%= @user.first_name ? @user.first_name : '' %> <%= @user.last_name ? @user.last_name : '' %> </p>
+      <p class="my-4"><%= @user.email %> </p>
+      <p class="my-4"><%= @user.address %></p>
       <% if @user.artist %>
         <p><%= @user.artist.biography %> </p>
       <% end %>
