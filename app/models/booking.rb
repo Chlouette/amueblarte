@@ -21,8 +21,9 @@ class Booking < ApplicationRecord
 
   def update_item_status
     if booking_type == "creation"
-      item.update(status: "in_progress")
-      ## OTHER IF STATEMENTS
+      item.update(status: "in progress")
+    elsif booking_type == "decoration"
+      item.update(status: "sold")
     end
   end
 end
