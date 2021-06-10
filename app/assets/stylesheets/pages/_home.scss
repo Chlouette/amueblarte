@@ -23,7 +23,7 @@
 }
 
 .home-card-link {
-  height: 520px;
+  height: 460px;
   display: flex;
   flex-grow: 1;
   flex-shrink: 1;
@@ -55,4 +55,15 @@
 
 .expand {
   flex-grow: 3;
+}
+
+.home-grid-card {
+  min-width: 100%;
+  background-color: rgba(180,180,180,0.1);
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(180,180,180,0.6);
+}
+
+.home-grid-card img {
+  max-width: 100%;
 }
