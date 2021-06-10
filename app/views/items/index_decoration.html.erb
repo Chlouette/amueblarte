@@ -1,8 +1,8 @@
-<div class="index-container">
+<div class="index-container container">
   <div class="titles-container">
-    <h1>ALL THE FURNITURE</h1>
+    <h1 class="my-5">ALL THE FURNITURE</h1>
 
-    <div class="filter-box">
+    <div class="filter-box mb-5 align-items-center">
       <%= form_tag items_path, method: :get do %>
         <%= select_tag "Category", options_for_select(['Select Category', 'Bed', 'Bench', 'Chair', 'Coat Stand', "Coffee Table", 'Cupboard', 'Desk', "Drawers", "Lamp", "Side Table", "Shelves", "Stool", "Sofa", "Table", "Lamp", "Wine Rack"])%>
         <%= submit_tag "Search", class: "btn btn-flat mx-3" %>
