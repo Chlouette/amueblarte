@@ -1,6 +1,29 @@
 <div class="index-container">
-  <h1>ALL THE FURNITURE</h1>
+  <div class="titles-container">
+    <h1>ALL THE FURNITURE</h1>
 
+    <div class="filter-box">
+      <%= form_tag items_path, method: :get do %>
+        <%= select_tag "Category", options_for_select(['Select Category', 'Bed', 'Bench', 'Chair', 'Coat Stand', "Coffee Table", 'Cupboard', 'Desk', "Drawers", "Lamp", "Side Table", "Shelves", "Stool", "Sofa", "Table", "Lamp", "Wine Rack"])%>
+        <%= submit_tag "Search", class: "btn btn-flat mx-3" %>
+      <% end %>
+
+      <div class="frame">
+        <div class="range">
+          <p>0</p>
+            <input type="range" min="0" max="500">
+          <p>500</p>
+        </div>
+      </div>
+
+      <%# <%= simple_form_for(@item) do |i| %>
+        <%# <%= c.input :colors, collection: Item::COLORS, 
+                            as: :check_boxes,
+                            input_html: { class: "tag-selector" },
+                            item_wrapper_class: 'tag-item' %>
+      <%# <% end %>
+    </div>
+  </div>
   <div class="card-container" >
     <% @items.each do |item| %>
       <%= link_to item_path(item) do %>
