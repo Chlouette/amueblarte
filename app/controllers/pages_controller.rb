@@ -8,6 +8,8 @@ class PagesController < ApplicationController
     @articles = []
     @images = []
     @links = []
+    @items = Item.where(status: "for sale")
+    @artists = Artist.all
 
     url = 'https://www.livingetc.com/news'
 
