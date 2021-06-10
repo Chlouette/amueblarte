@@ -446,7 +446,7 @@ puts "Creating Items..."
   )
 
   createItem(
-    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Annie-Sloan-Countryside-Bird-stencil-320x320.jpg',
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2017/09/crate-ideas-chi-Dan-Duchars_CrateStorage-389x500.jpg',
     'Shelves', 
     'Wooden box shelves',
     'Use them to curate thoughtful wall displays or as bookshelves. Just be sure to secure them safely, don’t overload them if the wall fixings aren’t strong enough to take the weight.',
@@ -455,9 +455,9 @@ puts "Creating Items..."
   )
 
   createItem(
-    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Annie-Sloan-Countryside-Bird-stencil-320x320.jpg',
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2019/07/Ideal-Home-CHI-upcycled-crates-517x620.jpg',
     'Side Table', 
-    'Rustice Boxed Side Table',
+    'Rustic Boxed Side Table',
     'he open element of the design is ideal for storing everything you’d need to stow neatly beside the bed, from books to sleep apparatus. The distressed nature of the wooden crates is super stylish.',
     'Light Brown',
     'for sale'
