@@ -32,7 +32,6 @@ $(".home-card-link").hover(function() {
 import "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
 
-initFlatpickr();
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -47,5 +46,6 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementsByClassName("selected")) {
     randomiseBorderColor()
   }
-
+  
+  initFlatpickr();
 });
