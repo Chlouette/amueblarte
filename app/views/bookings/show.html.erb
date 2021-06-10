@@ -13,7 +13,7 @@
           <ul class="list-items">
             <li><%= @booking.id %></li>
             <li><%= @booking.item.name %></li>
-            <li>will be collected on <%= @booking.start_date %></li>
+            <li>will be collected on <%= @booking.start_date.strftime("%d/%m/%Y") %></li>
             <li>at this address: <%= @booking.user.address %></li>
           </ul>
         <% end %>

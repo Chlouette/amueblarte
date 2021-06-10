@@ -1,7 +1,11 @@
-  <div class="container">
-    <div class="m-5 text-center">
-      <h1>Collection time!</h1>
-    </div>
+  <div class="container page-container">
+  <div class="m-5 text-center">
+    <h1>Collection time!</h1>
+    <p>When is the best time for us to come and collect your item?</p>
+  </div>
+</div>
+  
+  <div class="container page-container">
     <h2 class="mb-5">Amazing, you're saving this beauty from the waste:</h2>
     <div class="cards">
       <div class="card-category">
@@ -29,8 +33,8 @@
       <div>
           <%= simple_form_for([@item, @booking]) do |f| %>
             <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker"}, placeholder: 'Select date' %>
-            <%= f.submit "Next", class: "form-button" %>
+            <%= f.submit "Next" %>
+            <%# <button type="button" class="fill">More Items</button> %>
           <% end %>
       </div>
   </div>
-  
