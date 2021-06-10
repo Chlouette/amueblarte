@@ -26,5 +26,6 @@ class PagesController < ApplicationController
       @links << element.attribute('href').value
     end
     @images.uniq!
+    @links.reject! { |l| l == "" }
   end
 end

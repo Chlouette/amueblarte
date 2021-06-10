@@ -62,6 +62,20 @@
   background-color: rgba(180,180,180,0.1);
   padding: 16px;
   box-shadow: 0 0 10px rgba(180,180,180,0.6);
+  transition: 1s;
+  &:hover {
+    background-color: rgba(180,180,180,0.3);
+  }
+}
+
+.home-card-link-wrapper a {
+  color: $black;
+  text-decoration: none;
+  transition: 1s;
+  &:hover {
+    text-decoration: none;
+    font-weight: bold;
+  }
 }
 
 .home-grid-card img {
