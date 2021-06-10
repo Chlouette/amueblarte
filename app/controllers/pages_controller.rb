@@ -31,4 +31,7 @@ class PagesController < ApplicationController
     # disables tabs bar on homepage
     @disable_tab = true
   end
+
+  def index
+  end
 end
