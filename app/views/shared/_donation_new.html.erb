@@ -35,7 +35,7 @@
             <div class="d-flex w-100 justify-content-between">
               <h4>Book your collection date:</h4>
               <div class="d-flex">
-                <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker"}, placeholder: 'Select date' %>
+                <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker", "data-multiple": false}, placeholder: 'Select date' %>
                 <%= f.submit "Next", class: "form-button ml-5" %>
                 <%# <button type="button" class="fill">More Items</button> %>
               </div>
