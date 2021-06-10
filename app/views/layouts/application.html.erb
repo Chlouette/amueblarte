@@ -18,7 +18,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
+    <%= render 'shared/tab_bar' unless @disable_tab  %>
     <div class="pages-container">
       <%= yield %>
     </div>
