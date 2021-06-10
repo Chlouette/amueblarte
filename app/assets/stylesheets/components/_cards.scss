@@ -21,6 +21,15 @@
     flex-grow: 1;
 }
 
+
+.item-card {
+  min-height: 300px;
+  min-width: 300px;
+  object-fit: contain;
+  margin: 30px;
+  border: 4px solid black;
+}
+
 .selected {
-  border: 2px solid $pink;
+  border: 4px solid $pink;
 }

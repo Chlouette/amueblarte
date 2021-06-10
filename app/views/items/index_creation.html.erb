@@ -1,16 +1,18 @@
-<div class="container">
+<div class="container text-center">
   <h2 class="my-5"><%= current_user.first_name ? current_user.first_name : current_user.email %>, please select the piece of furniture you'd like to work on: </h2>
-  <%= render 'filter' %>
+  <div>
+    <%= render 'filter' %>
+  </div>
   <p><%= @filter %> </p>
-  <div class="item-container d-flex flex-wrap">
+  <div class="align-item-center item-container d-flex flex-wrap justify-content-around">
     <% if @items.empty? %>
       <h3>Nothing in this category. Sorry!</h3>
     <% else %>
       <% @items.each do |item| %>
-      
-        <div class="item-card card" data-href= <%= new_item_booking_path(item) %> >
-          <p><%= item.name %> </p>
-        </div>
+        <% item.photos.each do |photo| %>
+          <div class="item-card card" data-href= <%= new_item_booking_path(item) %> style="background-image: url(<%= cl_image_path photo.key, width:300, height:300, crop: :fill %>)" >
+          </div>
+        <% end %>
         <%# 
         TO DO!!!!!
          %>
