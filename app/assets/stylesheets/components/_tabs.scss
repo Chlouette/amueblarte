@@ -18,3 +18,18 @@
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
+
+#tab-active {
+    font-weight: bold;
+    color: white;
+    padding: 0 20px;
+    transition: 0.3s;
+}
+
+#tab-active {
+    text-decoration: none;
+}
+
+#tab-active:hover {
+    padding: 0 5px;
+}

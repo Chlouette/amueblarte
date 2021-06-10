@@ -1,11 +1,15 @@
 <div class="tabs d-flex text-center mx-auto mt-5">
   <div class="donate">
-  <%= link_to 'DONATE', new_item_path, class: "underline--magical highlight-green"  %>
+    <%= link_to 'DONATE', new_item_path, class: "underline--magical highlight-green"  %>
   </div>
   <div class="create">
-  <%= link_to 'CREATE', items_create_path, class: "underline--magical highlight-orange"  %>
+    <%= link_to 'CREATE', items_create_path, class: "underline--magical highlight-orange"  %>
   </div>
   <div class="decorate">
-  <%= link_to 'DECORATE', items_decorate_path, class: "underline--magical highlight-pink"  %>
+    <% if session[:booking_type] == "decoration"%>
+      <%= link_to 'DECORATE', items_decorate_path, class: "highlight-pink", id:"tab-active" %>
+    <% else %>
+      <%= link_to 'DECORATE', items_decorate_path, class: "underline--magical highlight-pink"  %>
+    <% end %>
   </div>
 </div>
