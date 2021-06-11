@@ -2,6 +2,7 @@
 <div class="home-container">
 
   <br>
+  <br>
 
   <div class="home-links-container">
     <%= link_to new_item_path, class: "home-card-link" do %>
@@ -24,12 +25,14 @@
   </div>
 
   <br>
+  <br>
 
   <div class="text-center mt-3">
 
-    <% items = @items.sample(2) %>
-    <% item_1 = items.first %>
-    <% item_2 = items.second %>
+    <% items = @items.sample(3) %>
+    <% item_1 = items[0] %>
+    <% item_2 = items[1] %>
+    <% item_3 = items[2] %>
     <% artist = @artists.sample %>
 
     <h1>RECENTS</h1>
@@ -37,73 +40,73 @@
   </div>
 
   <br>
+  <br>
 
-  <div>
-    <div class="row justify-content-center">
-      <div class="col-4 home-card-link-wrapper">
-        <%= link_to @links[2], target: "_blank" do  %>
-          <div class="home-grid-card mb-4">
-            <h2>NEWS</h2>
-            <p><%= @articles[4][0..89]%>...</p>
-            <%= image_tag @images[2], alt: "alttext", class: "grid-card-image" %>
-          </div>
-        <% end %>
-      </div>
-
-      <div class="col-4 home-card-link-wrapper">
+  <div class="row justify-content-center">
+    <div class="col-4 home-card-link-wrapper">
+      <%= link_to @links[2], target: "_blank" do  %>
         <div class="home-grid-card mb-4">
-          <div class="text-center">
-            <br>
-            <h2>FEATURED ARTIST</h2>
-            <br>
-            <h2 class="home-artist-name"><%= artist.user.first_name %></h2>
-            <p><%= cl_image_tag artist.user.photo.key, class: "home-profile-avatar" %></p>
-          </div>
-        <% end %>
-      </div>
-
-      <div class="col-4 home-card-link-wrapper">
-        <%= link_to item_path(item_1) do  %>
-          <div class="home-grid-card mb-4">
-            <h2>FOR SALE</h2>
-            <p><strong><%= item_1.name %></strong> - <%= item_1.description[0..49] %>...</p>
-            <%= cl_image_tag item_1.photos.first.key, class: "grid-card-image" %>
-          </div>
-        <% end %>
-      </div>
-
+          <h2>NEWS</h2>
+          <p><%= @articles[4][0..89]%>...</p>
+          <%= image_tag @images[2], alt: "alttext", class: "grid-card-image" %>
+        </div>
+      <% end %>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-4 home-card-link-wrapper">
-        <%= link_to item_path(item_2) do  %>
-          <div class="home-grid-card mb-4">
-            <h2>FOR SALE</h2>
-            <p><strong><%= item_2.name %></strong> - <%= item_2.description[0..49] %>...</p>
-            <%= cl_image_tag item_2.photos.first.key, class: "grid-card-image" %>
-          </div>
-        <% end %>
+
+    <div class="col-4 home-card-link-wrapper">
+      <div class="home-grid-card blue-underline mb-4">
+        <div class="text-center">
+          <br>
+          <h2>FEATURED ARTIST</h2>
+          <br>
+          <h2 class="home-artist-name"><%= artist.user.first_name %></h2>
+          <br>
+          <p><%= cl_image_tag artist.user.photo.key, class: "home-profile-avatar" %></p>
+        </div>
       </div>
-      <div class="col-4 home-card-link-wrapper">
-        <%= link_to @links[3], target: "_blank" do  %>
-          <div class="home-grid-card">
-            <h2>NEWS</h2>
-            <p><%= @articles[5][0..89]%>...</p>
-            <%= image_tag @images[3], alt: "alttext", class: "grid-card-image" %>
-          </div>
-        <% end %>
-      </div>
-      <div class="col-4 home-card-link-wrapper">
-        <%= link_to @links[4], target: "_blank" do  %>
-          <div class="home-grid-card">
-            <h2>NEWS</h2>
-            <p><%= @articles[6][0..89]%>...</p>
-            <%= image_tag @images[4], alt: "alttext", class: "grid-card-image" %>
-          </div>
-        <% end %>
-      </div>
+    </div>
+
+    <div class="col-4 home-card-link-wrapper">
+      <%= link_to item_path(item_1) do  %>
+        <div class="home-items-decorate-card">
+          <h2>FOR SALE</h2>
+          <%= cl_image_tag item_1.photos.first.key %>
+        </div>
+      <% end %>
     </div>
   </div>
 
-  <br>
+  <div class="row justify-content-center">
+    <div class="col-4 home-card-link-wrapper">
+      <%= link_to item_path(item_2) do  %>
+        <div class="home-items-decorate-card">
+          <h2>FOR SALE</h2>
+          <%= cl_image_tag item_2.photos.first.key %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-4 home-card-link-wrapper">
+      <%= link_to item_path(item_3) do  %>
+        <div class="home-items-decorate-card">
+          <h2>FOR SALE</h2>
+          <%= cl_image_tag item_3.photos.first.key %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-4 home-card-link-wrapper">
+      <%= link_to @links[4], target: "_blank" do  %>
+        <div class="home-grid-card">
+          <h2>NEWS</h2>
+          <p><%= @articles[6][0..89]%>...</p>
+          <%= image_tag @images[4], alt: "alttext", class: "grid-card-image" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<br>
+<br>
 
 </div>
