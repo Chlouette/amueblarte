@@ -30,6 +30,9 @@
         <td><%= booking.booking_type.upcase %> </td>
         <td><%= booking.item.name %> </td>
         <td><%= booking.item.status.upcase %> </td>
+        <% if booking.booking_type == 'creation' %>
+        <td><%= link_to 'Update', edit_item_path(booking.item)  %></td>
+        <% end %>
       </tr>
     <% end %>
   </table>
