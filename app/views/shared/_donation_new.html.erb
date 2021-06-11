@@ -4,17 +4,14 @@
     <p>Choose the best date for us to come and collect your item!</p>
   </div>
 </div>
-
 <div class="container page-container d-flex">
   <div class="card-booking">
-    <%# <div class="flex-grow-1"> %>
-      <h4>You're saving this beauty from the waste:</h4>
-      <br>
-      <ul>
-        <li>Name: <%= @item.name %></li>
-        <li>Description: <%= @item.description %></li>
-      </ul>
-    <%# </div> %>
+    <h4>You're saving this beauty from the waste:</h4>
+    <br>
+    <ul>
+      <li>Name: <span class="green-text"><%= @item.name %></span></li>
+      <li>Description: <%= @item.description %></li>
+    </ul>
     <div class="d-flex justify-content-center">
       <% if @item.photos.attached? %>
         <% @item.photos.each do |photo| %>
@@ -26,9 +23,7 @@
         </div>
       <% end %>
     </div>
-    <%# </div> %>
   </div>
-
   <br>
   <div class="booking-form">
         <%= simple_form_for([@item, @booking]) do |f| %>
@@ -37,7 +32,6 @@
             <div>
               <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker", "data-multiple": false}, placeholder: 'Select date' %>
               <div class="d-flex justify-content-end"><%= f.submit "Next", class: "form-button" %></div>
-              <%# <button type="button" class="fill">More Items</button> %>
             </div>
           </div>
         <% end %>
