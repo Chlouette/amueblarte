@@ -6,24 +6,17 @@
   <div>
     <%= render 'filter' %>
   </div>
-  <p><%= @filter %> </p>
   <div class="align-item-center item-container d-flex flex-wrap justify-content-around">
     <% if @items.empty? %>
-      <h3>Nothing in this category. Sorry!</h3>
+      <h3 class="my-5">Nothing in this category. Sorry!</h3>
     <% else %>
       <% @items.each do |item| %>
         <% item.photos.each do |photo| %>
           <div class="item-card card" data-href= <%= new_item_booking_path(item) %> style="background-image: url(<%= cl_image_path photo.key, width:300, height:300, crop: :fill %>)" >
           </div>
         <% end %>
-        <%# 
-        TO DO!!!!!
-         %>
-        <%# <%= cl_image_tag(@item) %>
       <% end %>
     <% end %>
   </div>
-  <%# <%= link_to 'Next', "#" , class: 'btn', id: 'nextBtn' %>
   <%= link_to 'Next', "#" , class: "pink-underlined-button", id: "nextBtn" %>
-  <%# <a href="/artists"><button type="button" class="fill">More Artists</button></a> %>
 </div>
