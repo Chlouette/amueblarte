@@ -4,7 +4,7 @@
   </div>
   <h2 class="mb-3">My details</h2>
   <div class="user-profile-card justify-content-between text-center">
-  <% if @user.photo = nil %>
+  <% if @user.photo.attached? %>
       <%= cl_image_tag(@user.photo.key, :class => "profile-avatar ml-5")  %>
     <% else %>
       <%= image_tag 'https://cdn1.iconfinder.com/data/icons/ordinary-people/512/bookworm-512.png', class: "profile-avatar ml-5" %>
