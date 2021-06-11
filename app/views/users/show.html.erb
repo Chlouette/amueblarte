@@ -1,24 +1,23 @@
 <div class="container">
-  <div class="m-5 text-center">
+  <div class="m-5 text-center pt-3">
     <h1>Welcome back <%= @user.first_name ? @user.first_name : @user.email %>!</h1>
   </div>
-  <h2 class="mb-5">My details</h2>
+  <h2 class="mb-3">My details</h2>
   <div class="user-profile-card justify-content-between text-center">
 
-    <%= cl_image_tag(@user.photo.key, :class=> "profile-avatar") %>
+    <%= cl_image_tag(@user.photo.key, :class => "profile-avatar ml-5") %>
   
     <div class="profile-details">
-      <p><span class="">FIRST NAME</span><%= @user.first_name ? @user.first_name : '' %> </p>
-      <p>Last NAME</p>
-      <p><%= @user.email %> </p>
-      <p>USER ADDRESS</p>
+      <p class="my-4"><%= @user.first_name ? @user.first_name : '' %> <%= @user.last_name ? @user.last_name : '' %> </p>
+      <p class="my-4"><%= @user.email %> </p>
+      <p class="my-4"><%= @user.address %></p>
       <% if @user.artist %>
         <p><%= @user.artist.biography %> </p>
       <% end %>
     </div>
   </div>
   <h2 class="my-5">My Activity</h2>
-  <table class="w-100 user-activity text-center">
+  <table class="w-100 user-activity text-center my-5">
     <tr>
       <th>Booking Date</th>
       <th>Type</th>
