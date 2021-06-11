@@ -1,8 +1,16 @@
 .black-text {
-    color: black;
+  color: black;
 }
 
 a:hover {
-    text-decoration-color: black;
-    text-decoration-thickness: 4px;
+  text-decoration-color: black;
+  text-decoration-thickness: 4px;
+}
+
+.orange-text {
+  color: $orange;
+}
+
+.green-text {
+  color: $green;
 }
