@@ -54,16 +54,18 @@
     </div>
 
     <div class="col-4 home-card-link-wrapper">
-      <div class="home-grid-card blue-underline mb-4">
-        <div class="text-center">
-          <br>
-          <h2>FEATURED ARTIST</h2>
-          <br>
-          <h2 class="home-artist-name"><%= artist.user.first_name %></h2>
-          <br>
-          <p><%= cl_image_tag artist.user.photo.key, class: "home-profile-avatar" %></p>
+      <%= link_to artist_path(artist) do %>
+        <div class="home-grid-card blue-underline mb-4">
+          <div class="text-center">
+            <br>
+            <h2>FEATURED ARTIST</h2>
+            <br>
+            <h2 class="home-artist-name"><%= artist.user.first_name %></h2>
+            <br>
+            <p><%= cl_image_tag artist.user.photo.key, class: "home-profile-avatar" %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
 
     <div class="col-4 home-card-link-wrapper">
