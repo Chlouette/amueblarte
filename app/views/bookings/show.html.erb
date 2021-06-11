@@ -1,3 +1,4 @@
+<%# BOOKING DONATION %>
 <% if @booking.donation? %>
   <div class="page-container">
     <div class="show-container booking-show-card">
@@ -14,6 +15,50 @@
               <li>Your item will be collected on: <%= @booking.start_date.strftime("%d/%m/%Y") %></li>
               <li>At this address: <%= @booking.user.address %></li>
             </ul>
+      </div>
+    </div>
+    <div class="btn-center-page">
+      <a href="/items_decorate"><button type="button" class="fill">More Items</button></a>
+      <button type="button" class="fill">More Artists</button>
+    </div>
+  </div>
+<% end %>
+
+<%# BOOKING CREATION %>
+<% if @booking.creation? %>
+  <div class="page-container">
+    <div class="show-container booking-show-card">
+      <div class="m-5">
+          <%# <h1>Thanks, your <span class="text-green">collection</span> is confirmed!</h1>
+          <br> %>
+          <%# <h2>THANKS YOUR <span class="text-green">COLLECTION</span> IS CONFIRMED</h2> %>
+          <h2>IN THE BOOKS, SEE YOU SOON!</h2>
+          <%# <h1>Thanks, your <span class="text-green">COLLECTION</span> is confirmed!</h1> %>
+            <p>Recap of your booking:</p>
+            <ul class="list-items">
+              <li>Booking ID: <%= @booking.id %></li>
+              <li>Item Name:  <%= @booking.item.name %></li>
+              <li>See you at the warehouse from: <%= @booking.start_date.strftime("%d/%m/%Y") %></li>
+              <li>At this address: Warehouse Address</li>
+            </ul>
+      </div>
+    </div>
+    <div class="btn-center-page">
+      <a href="/items_decorate"><button type="button" class="fill">More Items</button></a>
+      <button type="button" class="fill">More Artists</button>
+    </div>
+  </div>
+<% end %>
+
+<%# BOOKING DECORATION %>
+<% if @booking.decoration? %>
+  <div class="page-container">
+    <div class="show-container booking-show-card">
+      <div class="m-5">
+          <%# <h1>Thanks, your <span class="text-green">collection</span> is confirmed!</h1>
+          <br> %>
+          <%# <h2>THANKS YOUR <span class="text-green">COLLECTION</span> IS CONFIRMED</h2> %>
+          <h2>REVIEW YOUR ORDER!</h2>
       </div>
     </div>
     <div class="btn-center-page">
