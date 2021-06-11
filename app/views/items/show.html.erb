@@ -10,16 +10,4 @@
   </div>
   <%= link_to 'Update', edit_item_path  %>
   <%= link_to 'Buy', item_path(@item) %>
-
-  <div class="booking-form">
-    <%= simple_form_for(@item, html: { class: "form-inline" }) do |f| %>
-      <div class="d-flex w-100 justify-content-between">
-        <h4 style="margin-top: 0.7rem">Please enter your name for the booking:</h4>
-        <div class="d-flex">
-          <%= f.input :name, placeholder: "eg. James Moran"  %>
-          <%= f.submit "Confirm", class: "form-button ml-5" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
 </div>
