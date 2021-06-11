@@ -223,11 +223,11 @@ puts "Creating Artist 5..."
   puts "Creating Artist 7..."
 
     user = User.create!(
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      email: Faker::Internet.email,
+      first_name: 'January',
+      last_name: 'Fisher',
+      email: 'januaryfisher@gmail.com',
       password: '123456',
-      address: Faker::Address.full_address
+      address: '100 Picasso Strasse, London, E2 4DY'
     )
     Artist.create!(
       biography: 'During the first decade of the 20th century, his style changed as he experimented with different theories, techniques, and ideas.',
