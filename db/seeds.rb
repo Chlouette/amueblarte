@@ -248,7 +248,7 @@ puts "Creating Artist 5..."
       biography: 'Born in Paris, the son of a grocer, Monet grew up in Le Havre. Contact with Eugène Boudin in about 1856 introduced Monet to painting from nature.',
       user: user
     )
-    add_photo_to_user(user, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.claude-monet.com%2F&psig=AOvVaw381GdVGy7lt870iL7E5Ie6&ust=1623422747318000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDj3JSnjfECFQAAAAAdAAAAABAD')
+    add_photo_to_user(user, 'https://www.claude-monet.com/images/claude-monet-photo.jpg')
 
   puts "Creating Artist 9..."
 
@@ -263,7 +263,7 @@ puts "Creating Artist 5..."
       biography: 'While his fame initially rested on his achievements as a painter, he also became known for his notebooks, in which he made drawings and notes on a variety of subjects, including anatomy, astronomy, botany and paleontology.',
       user: user
     )
-    add_photo_to_user(user, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ftowardsdatascience.com%2Fyes-your-data-communications-are-mini-masterpieces-e8877af1e333&psig=AOvVaw0xAg9v_EuXfQa5nFL5iDMw&ust=1623422772744000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLjTpaKnjfECFQAAAAAdAAAAABAD')
+    add_photo_to_user(user, 'https://i.natgeofe.com/n/37c3c776-b8cb-4be1-988a-cf593c776b88/01-leonardo-da-vinci-book-talk.jpg?w=795&h=953.75')
 
   puts "Creating Artist 10..."
 
