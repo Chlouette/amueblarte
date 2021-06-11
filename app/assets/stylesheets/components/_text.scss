@@ -1,5 +1,5 @@
 .black-text {
-    color: black;
+  color: black;
 }
 
 td > .black-text :hover {
@@ -15,6 +15,15 @@ td > .black-text :hover {
 }
 
 a:hover {
-    text-decoration-color: black;
-    text-decoration-thickness: 4px;
+  text-decoration-color: black;
+  text-decoration-thickness: 4px;
+}
+
+.orange-text {
+  color: $orange;
+}
+
+.green-text {
+  color: $green;
+
 }

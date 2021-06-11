@@ -4,8 +4,11 @@
   </div>
   <h2 class="mb-3">My details</h2>
   <div class="user-profile-card justify-content-between text-center">
-
-    <%= cl_image_tag(@user.photo.key, :class => "profile-avatar ml-5") %>
+  <% if @user.photo = nil %>
+      <%= cl_image_tag(@user.photo.key, :class => "profile-avatar ml-5")  %>
+    <% else %>
+      <%= image_tag 'https://cdn1.iconfinder.com/data/icons/ordinary-people/512/bookworm-512.png', class: "profile-avatar ml-5" %>
+    <% end %>
   
     <div class="profile-details">
       <p class="my-4"><%= @user.first_name ? @user.first_name : '' %> <%= @user.last_name ? @user.last_name : '' %> </p>
