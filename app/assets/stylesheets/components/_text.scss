@@ -2,6 +2,18 @@
   color: black;
 }
 
+td > .black-text :hover {
+    color: black;
+}
+
+.pink-text {
+    color: $pink;
+}
+
+.orange-text {
+    color: $orange;
+}
+
 a:hover {
   text-decoration-color: black;
   text-decoration-thickness: 4px;
@@ -13,4 +25,5 @@ a:hover {
 
 .green-text {
   color: $green;
+
 }
