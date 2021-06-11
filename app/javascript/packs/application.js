@@ -35,13 +35,15 @@ import { initFlatpickr } from "../plugins/flatpickr";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { bindButtonToClick } from "../components/selectItem";
+import { selectItem } from "../components/selectItem";
 import { randomiseBorderColor } from "../components/randomColor";
 
 
 document.addEventListener('turbolinks:load', () => {
-  if (document.getElementsByClassName("item-card")) {
-    bindButtonToClick()
+
+  if (document.getElementsByClassName("item-card") !== null) {
+    
+    selectItem()
   }
   if (document.getElementsByClassName("selected")) {
     randomiseBorderColor()
