@@ -2,19 +2,19 @@
   <div class="titles-container">
     <h1 class="my-5">ALL THE FURNITURE</h1>
 
-    <div class="filter-box mb-5 align-items-center">
+    <%# <div class="filter-box">
       <%= form_tag items_path, method: :get do %>
-        <%= select_tag "Category", options_for_select(['Select Category', 'Bed', 'Bench', 'Chair', 'Coat Stand', "Coffee Table", 'Cupboard', 'Desk', "Drawers", "Lamp", "Side Table", "Shelves", "Stool", "Sofa", "Table", "Lamp", "Wine Rack"])%>
-        <%= submit_tag "Search", class: "btn btn-flat mx-3" %>
-      <% end %>
+        <%# <%= select_tag "Category", options_for_select(['Select Category', 'Bed', 'Bench', 'Chair', 'Coat Stand', "Coffee Table", 'Cupboard', 'Desk', "Drawers", "Lamp", "Side Table", "Shelves", "Stool", "Sofa", "Table", "Lamp", "Wine Rack"])%>
+        <%# <%= submit_tag "Search", class: "btn btn-flat mx-3" %>
+      <%# <% end %>
 
-      <div class="frame">
+      <%# <div class="frame">
         <div class="range">
           <p>0</p>
             <input type="range" min="0" max="500">
           <p>500</p>
         </div>
-      </div>
+      </div> %> 
 
       <%# <%= simple_form_for(@item) do |i| %>
         <%# <%= c.input :colors, collection: Item::COLORS, 

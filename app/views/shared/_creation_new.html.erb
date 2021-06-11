@@ -8,7 +8,7 @@
   <div class="cards">
     <div class="card-category">
       <ul>
-        <li><h4>Nice one, you've decided to decorate this beauty!:</h4></li>
+        <li><h4>Nice one, you've decided to decorate this beauty:</h4></li>
         <br>
         <li>Name: <%= @item.name %></li>
         <li>Description: <%= @item.description %></li>
@@ -28,7 +28,7 @@
   <div class="booking-form">
     <%= simple_form_for([@item, @booking], html: { class: "form-inline" }) do |f| %>
       <div class="d-flex w-100 justify-content-between">
-        <h4>Book your spot at the warehouse:</h4>
+        <h4 style="margin-top: 0.7rem">Book your spot at the warehouse:</h4>
         <div class="d-flex">
           <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker", "data-multiple": true}, placeholder: 'Select date' %>
           <%= f.submit "Confirm", class: "form-button ml-5" %>

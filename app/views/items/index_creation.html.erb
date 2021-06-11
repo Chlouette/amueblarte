@@ -1,5 +1,8 @@
 <div class="container text-center">
-  <h2 class="my-5"><%= current_user.first_name ? current_user.first_name : current_user.email %>, please select the piece of furniture you'd like to work on: </h2>
+  <div class="my-5">
+    <h1>We love your art!</h1>
+    <p><%= current_user.first_name ? current_user.first_name : current_user.email %>, please select the piece of furniture you'd like to work on: </p>
+  </div>
   <div>
     <%= render 'filter' %>
   </div>
@@ -20,5 +23,7 @@
       <% end %>
     <% end %>
   </div>
-  <%= link_to 'Next', "#" , class: 'btn', id: 'nextBtn' %>
+  <%# <%= link_to 'Next', "#" , class: 'btn', id: 'nextBtn' %>
+  <%= link_to 'Next', "#" , class: "pink-underlined-button" %>
+  <%# <a href="/artists"><button type="button" class="fill">More Artists</button></a> %>
 </div>
