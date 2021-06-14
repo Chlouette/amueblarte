@@ -21,9 +21,14 @@
       <% if user_signed_in? %>
         <%# SHOPPING CART BUTTON %>
         <%# <a href="#"><i class="far fa-heart favorites-icon underline--magical highlight-blue"></i></a> %>
+        <% if current_user.baskets.where(user: current_user, paid: false).first  %>
+        <% current_basket = current_user.baskets.where(user: current_user, paid: false).first %>
         <li class="nav-item">
-          <a href="#" class="underline--magical highlight-blue" class="nav-link">BASKET</a>
+        <%= link_to 'BASKET', basket_path(current_basket), class: 'nav-item underline--magical highlight-blue' %>
+          <%# <a href="/baskets/" class="underline--magical highlight-blue" class="nav-link">BASKET</a> %>
         </li>
+        <% end %>
+
 
         <%# FAVOURITES BUTTON %>
         <%# <li class="nav-item">
