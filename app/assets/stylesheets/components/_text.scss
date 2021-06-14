@@ -14,16 +14,16 @@ td > .black-text :hover {
     color: $orange;
 }
 
+.blue-text {
+    color: $blue;
+}
+
+.green-text {
+  color: $green;
+}
+
 a:hover {
   text-decoration-color: black;
   text-decoration-thickness: 4px;
 }
 
-.orange-text {
-  color: $orange;
-}
-
-.green-text {
-  color: $green;
-
-}

@@ -2,13 +2,48 @@
   background: radial-gradient(transparent, rgba(0,0,0,0.8)), image-url("abandoned-chair.jpeg");
 }
 
+#donate-card{
+  font-family: montserrat;
+  font-size: 40px;
+  transition: .5s;
+  color: white;
+}
+
+#create-card {
+  transition: .5s;
+  font-family: montserrat;
+  font-size: 40px;
+  color: white;
+}
+
+#decorate-card {
+  font-family: montserrat;
+  font-size: 40px;
+  transition: .5s;
+  color: white;
+}
+
+.home-card:hover {
+  #donate-card {
+    color: $orange;
+  }
+  #create-card {
+    color: $blue;
+  } 
+  #decorate-card {
+    color: $pink;
+  }
+}
+
 .art-chair {
   background: radial-gradient(transparent, rgba(0,0,0,0.8)), image-url("art-chair.jpeg");
 }
 
+
 .decorate-chair {
   background: radial-gradient(transparent, rgba(0,0,0,0.8)), image-url("decorate-chair.jpeg");
 }
+
 
 .home-container {
   margin: 16px 80px;
@@ -43,10 +78,10 @@
   justify-content: center;
   align-items: center;
   font-size: 36px;
-  color: $white;
   text-shadow: 1px 1px 3px $black;
   filter: grayscale(100%);
   transition: 0.8s;
+  font: white;
 }
 
 .home-card:hover {
@@ -106,4 +141,9 @@
 
 .blue-underline:hover {
   text-decoration: underline $blue;
+}
+
+.tag-line > span {
+  font-size: 36px;
+  font-weight: 900;
 }
