@@ -27,6 +27,8 @@ gem 'simple_form'
 
 gem 'faker'
 
+gem 'letter_opener', group: :development
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
