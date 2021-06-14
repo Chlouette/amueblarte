@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     else
       @items = Item.where(status: "collected")
     end
-    session[:booking_type] = "creation"
+      session[:booking_type] = "creation"
   end
 
   def index_decoration
@@ -57,11 +57,13 @@ class ItemsController < ApplicationController
 
   private
 
+
   def find_by_id
     @item = Item.find(params[:id])
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :category, photos: [])
+    params.require(:item).permit(:name, :description, :category, :status, photos: [])
   end
+
 end

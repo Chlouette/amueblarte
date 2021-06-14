@@ -1,26 +1,11 @@
-<div class="mt-5 container justify-content-between">
-  <h1> <%= @item.name %> </h1>
-  <div class="mt-5 d-flex">
-    <div class="flex-grow-1">
-      <%= cl_image_tag(@item.photos.first.key) %>
-    </div>
-    <div class="show-description">
-      <p>DESCRIPTION: <%= @item.description %> </p>
-    </div>
-  </div>
-  <%# <%= link_to 'Update', edit_item_path  %>
-  <%# <%= link_to 'Buy', item_path(@item) %> 
-
-  <br>
-  <div class="booking-form">
-    <%= simple_form_for([@item, @booking], html: { class: "form-inline" }) do |f| %>
-      <div class="d-flex w-100 justify-content-between">
-        <h4 style="margin-top: 0.7rem">Confirm your delivery date:</h4>
-        <div class="d-flex">
-          <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker", "data-multiple": false}, placeholder: 'Select date' %>
-          <%= f.submit "Confirm", class: "form-button ml-5" %>
-        </div>
+<div class="booking-form">
+  <%= simple_form_for([@item, @booking], html: { class: "form-inline" }) do |f| %>
+    <div class="d-flex w-100 justify-content-between">
+      <h4 style="margin-top: 0.7rem">Confirm your delivery date:</h4>
+      <div class="d-flex">
+        <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker", "data-multiple": false}, placeholder: 'Select date' %>
+        <%= f.submit "Confirm", class: "form-button ml-5" %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

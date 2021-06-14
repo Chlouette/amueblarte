@@ -1,7 +1,12 @@
 <div class="index-container container">
   <div class="titles-container">
     <h1 class="text-center">All the Furniture</h1>
-    <p class="text-center">Browse through our upcycled pieces of Furniture</p>
+
+    <p class="text-center">Browse through our upcycled pieces of Furniture</>
+    <div>
+      <%= render 'filter' %>
+    </div>
+
 
     <%# <div class="filter-box">
       <%= form_tag items_path, method: :get do %>
@@ -35,7 +40,7 @@
           <%= cl_image_tag item.photos.first.key, alt: "Upcycled" %>
             <div class="index-decorate-card-text">
               <div class="card-text-name-price">
-                <%= item.name %> - £20
+                <%= item.name %> - <%= humanized_money_with_symbol(item.price_cents) %>
               </div>
               <% if current_user %>
                 <%= link_to toggle_favorite_item_path(item), remote: true, method: :post do %>

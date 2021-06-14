@@ -26,6 +26,11 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'simple_form'
 
 gem 'faker'
+gem 'stripe'
+gem 'money-rails'
+
+gem 'letter_opener', group: :development
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'acts_as_favoritor'
 
