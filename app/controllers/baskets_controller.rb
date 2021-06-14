@@ -1,16 +1,19 @@
 class BasketsController < ApplicationController
   def show 
     @basket = Basket.where(user: current_user, paid: false).first
+  end
 
+  def confirm
+    @basket = Basket.find(params[:id])
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
-      line_items: [{
-      #   name: item.name,
-      #   # images: [item.photo_url],
-      #   amount: item.price_cents,
-        currency: 'gbp',
-      #   quantity: 1
-      }],
+      # line_items: [{
+      # #   name: item.name,
+      # #   # images: [item.photo_url],
+      # #   amount: item.price_cents,
+      #   currency: 'gbp',
+      # #   quantity: 1
+      # }],
       success_url: basket_url(@basket),
       cancel_url: basket_url(@basket)
     )
