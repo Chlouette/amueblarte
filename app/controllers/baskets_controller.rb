@@ -1,26 +1,25 @@
 class BasketsController < ApplicationController
-    def create
-        items = Item.find(params[:item_id])
-        basket  = Basket.create!(item: item, user: current_user)
-      
-        # session = Stripe::Checkout::Session.create(
-        #   payment_method_types: ['card'],
-        #   line_items: [{
-        #     name: item.sku,
-        #     images: [item.photo_url],
-        #     amount: item.price_cents,
-        #     currency: 'eur',
-        #     quantity: 1
-        #   }],
-        #   success_url: basket_url(basket),
-        #   cancel_url: basket_url(basket)
-        # )
-      
-        basket.update(checkout_session_id: session.id)
-        redirect_to new_basket_payment_path(basket)
-      end
+  def show 
+    @basket = Basket.where(user: current_user, paid: false).first
+  end
 
-      def show 
-        
-      end
+  def confirm
+    @basket = Basket.find(params[:id])
+    line_items = @basket.basket_items.map do |basket_item|
+      { name: basket_item.item.name,
+      amount: basket_item.item.price_cents,
+      currency: 'gbp',
+      quantity: 1
+    }
+    end
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: line_items,
+      success_url: basket_url(@basket),
+      cancel_url: basket_url(@basket)
+    )
+  
+    @basket.update(checkout_session_id: session.id)
+    redirect_to new_basket_payment_path(@basket)
+  end
 end

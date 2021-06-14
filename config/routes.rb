@@ -13,10 +13,13 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:show]
 
-  resources :baskets, only: [:show, :create]
+  resources :baskets, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 
   get "/items_create", to: "items#index_creation"
   get "/items_decorate", to: "items#index_decoration"
+  get "/basket/:id/confirm", to: "baskets#confirm", as: :confirm
   get "/our_team", to: "pages#index"
 
   resources :favorites, only: [:index]

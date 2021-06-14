@@ -1,1 +1,36 @@
 <h1>Your Basket</h1>
+
+<div class="container">
+  <div class="row py-4">
+    <%# <div class="col-md-3"><%= image_tag @basket.item.photo_url, width: '100%' </div> %>
+    <div class="col">
+      <h1>Order #<%= @basket.id %></h1>
+      <p><strong>ISSUED ON</strong> <%= @basket.created_at.to_date %></p>
+
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+        <% total_basket = 0 %>
+        <% @basket.basket_items.each do |basket_item| %>
+          <tr>
+            <td><%= basket_item.item.name %></td>
+            <td><%= basket_item.item.description %></td>
+            <td><%= humanized_money_with_symbol basket_item.item.price %></td>
+          </tr>
+          <% total_basket += basket_item.item.price %>
+        <% end %>
+        <tr>
+          <td></td>
+          <td>Total Amount</td>
+          <td><%= humanized_money_with_symbol total_basket %></td>
+        </tr>
+      </table>
+
+      <p>Estimated delivery in <strong>7 business days</strong></p>
+    </div>
+  </div>
+    <%= link_to "Confirm", confirm_path %>
+</div>
