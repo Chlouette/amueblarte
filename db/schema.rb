@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_14_104051) do
+ActiveRecord::Schema.define(version: 2021_06_14_134751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,18 +45,19 @@ ActiveRecord::Schema.define(version: 2021_06_14_104051) do
   end
 
   create_table "basket_items", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "basket_id", null: false
+    t.index ["basket_id"], name: "index_basket_items_on_basket_id"
     t.index ["item_id"], name: "index_basket_items_on_item_id"
-    t.index ["user_id"], name: "index_basket_items_on_user_id"
   end
 
   create_table "baskets", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "paid", default: false
     t.index ["user_id"], name: "index_baskets_on_user_id"
   end
 
@@ -127,8 +128,8 @@ ActiveRecord::Schema.define(version: 2021_06_14_104051) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "artists", "users"
+  add_foreign_key "basket_items", "baskets"
   add_foreign_key "basket_items", "items"
-  add_foreign_key "basket_items", "users"
   add_foreign_key "baskets", "users"
   add_foreign_key "bookings", "items"
   add_foreign_key "bookings", "users"
