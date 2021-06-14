@@ -1,6 +1,7 @@
 var itemId = '<%= @favorite_item.id%>'
+var artistId = '<%= @favorite_artist.id%>'
 
-function toggleLikeButton(itemId, favoritedCocktail) {
+function toggleItemLikeButton(itemId, favoritedItem) {
   let likeButton = document.querySelector(`.card-text-like[data-id='${itemId}']`)
   likeButton.classList.toggle('pink-heart');
   if (likeButton.classList.contains('pink-heart')) {
@@ -11,4 +12,19 @@ function toggleLikeButton(itemId, favoritedCocktail) {
     document.querySelector(`.favorite[data-id='${itemId}']`).remove()
   }
 }
-toggleLikeButton(itemId, '<%= j render "favorite_items/favorite_item", favorite_item: @favorite_item %>');
+
+toggleItemLikeButton(itemId, '<%= j render "favorite_items/favorite_item", favorite_item: @favorite_item %>');
+
+function toggleArtistLikeButton(artistId, favoritedArtist) {
+  let likeButton = document.querySelector(`.favorites-avatar-like[data-id='${artistId}']`)
+  likeButton.classList.toggle('pink-heart');
+  if (likeButton.classList.contains('pink-heart')) {
+    const favoriteList = document.querySelector('.favorites');
+    favoriteList.insertAdjacentHTML('beforeend', favoritedArtist)
+  }
+  else {
+    document.querySelector(`.favorite[data-id='${artistId}']`).remove()
+  }
+}
+
+toggleArtistLikeButton(artistId, '<%= j render "favorite_artists/favorite_artist", favorite_artist: @favorite_artist %>');
