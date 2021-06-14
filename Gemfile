@@ -29,6 +29,9 @@ gem 'faker'
 gem 'stripe'
 gem 'money-rails'
 
+gem 'letter_opener', group: :development
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
