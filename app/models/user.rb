@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :favorite_artists
   has_many :artists, through: :favorite_artists
+  has_many :baskets
 
   has_many :items, dependent: :destroy
   has_many :bookings
