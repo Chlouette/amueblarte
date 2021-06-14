@@ -1,4 +1,4 @@
-class UserMailer < ApplicationMailer
+class BookingMailer < ApplicationMailer
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -6,10 +6,11 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.welcome.subject
   #
   def create_confirmation
-    @user = params[:user]
+    @booking = params[:booking]
 
     mail(
-      to: @user.email, 
+      to: @booking.user.email, 
+      from: @booking.item.user.first_name,
       subject: "Thank you for purchasing some of my art."
     )
   end

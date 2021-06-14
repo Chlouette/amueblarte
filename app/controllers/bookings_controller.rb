@@ -16,16 +16,8 @@ class BookingsController < ApplicationController
     @booking.booking_type = session[:booking_type]
     @booking.user = current_user
     if @booking.save
+  
       redirect_to booking_path(@booking)
-    else
-      render :new
-    end
-    
-    # Send welcome email
-    if @booking.decoration?
-      mail = UserMailer.with(user: @user).create_confirmation
-      mail.deliver_now
-      redirect_to items_path(@item)
     else
       render :new
     end

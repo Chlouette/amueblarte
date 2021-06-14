@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :item
-  after_create :update_item_status, :send_confirmation_email
+  after_create :update_item_status, :send_email
 
   # enum booking_type: [ :donation, :creation, :decoration ]
 
@@ -27,7 +27,9 @@ class Booking < ApplicationRecord
     end
   end
 
-  def send_confirmation_email
-    UserMailer.with(user: self).welcome.deliver_now
+  def send_email
+    if decoration?
+      BookingMailer.with(booking: self).create_confirmation.deliver_later
+    end
   end
 end
