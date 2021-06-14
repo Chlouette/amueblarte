@@ -27,7 +27,7 @@
   </div>
   <div class="card-container" >
     <% @items.each do |item| %>
-      <%= link_to new_item_booking_path(item) do %>
+      <%= link_to item_path(item) do %>
         <% item.photos.each do |photo| %>
           <div class="items-decorate-card">
             <img src="<%= cl_image_path(photo.key) %>" alt="Upcycled ">
