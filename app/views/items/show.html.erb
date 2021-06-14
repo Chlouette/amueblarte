@@ -9,4 +9,9 @@
     </div>
   </div>
   <%= link_to 'Buy', item_path(@item) %>
+  <%= link_to 'Add to Basket', item_basket_items_path(@item), method: :post %>
+  <%= form_tag  do %>
+  <%# <%= hidden_field_tag 'item_id', @item.id %>
+  <%# <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
 </div>

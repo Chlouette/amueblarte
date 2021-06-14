@@ -1,6 +1,7 @@
 <div class="index-container container">
   <div class="titles-container">
-    <h1 class="my-5">ALL THE FURNITURE</h1>
+    <h1 class="text-center">All the Furniture</h1>
+    <p class="text-center">Browse through our upcycled pieces of Furniture</>
     <div>
       <%= render 'filter' %>
     </div>
@@ -29,12 +30,12 @@
   </div>
   <div class="card-container" >
     <% @items.each do |item| %>
-      <%= link_to new_item_booking_path(item) do %>
+      <%= link_to item_path(item) do %>
         <% item.photos.each do |photo| %>
           <div class="items-decorate-card">
             <img src="<%= cl_image_path(photo.key) %>" alt="Upcycled ">
             <div class="items-decorate-index-card">
-              <p><%= item.name %> <span>£20</span></p>
+              <p><%= item.name %> <span><%= humanized_money_with_symbol(item.price_cents) %></span></p>
             </div>
           </div>
         <% end %>

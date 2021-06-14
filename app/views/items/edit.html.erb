@@ -1,11 +1,28 @@
+<% 
+ status = [
+  "in progress",
+  "for sale",
+]
+
+item_category = [
+  "Sofa", "Chair", "Bench",
+  "Bed", "Drawers", "Table",
+  "Desk", "Stool", "Cupboard",
+  "Side Table", "Lamp", "Coat Stand",
+  "Shelves", "Wine Rack", "Coffee Table"
+]
+   %> 
+
 <div class="container mt-5 ">
   <h1 class="my-5 text-center">Edit furniture</h1>
   <h4 class="my-5">Maybe add a new picture to show off your creation?</h4>
   <%= simple_form_for(@item) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :category %>
+    <%= f.input :status, as: :select, collection: status, prompt: 'Set Status' %>
+    <%= f.input :category, as: :select, collection: item_category  %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit %>
   <% end %>
+  <%= link_to 'Go Back', user_path(current_user) %>
 </div>

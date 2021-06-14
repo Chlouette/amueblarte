@@ -1,0 +1,20 @@
+<style>
+  h2 {
+    font-family: sans-serif;
+  }
+
+  p {
+    font-family: sans-serif;
+  }
+</style>
+
+<p>Hello <%= @booking.user.first_name %>,</p>
+
+<p>Nice to meet you.</p>
+
+<p>Thank you kindly for purchasing some of my recent art.
+I hope that you love it and it fits in your home beautifully.</p>
+
+<p>You can find more of my work at the following:</p>
+
+<%= link_to "Get back to the website", root_url %>
