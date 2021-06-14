@@ -21,6 +21,6 @@ class BasketsController < ApplicationController
       end
 
       def show 
-        
+        @basket = Basket.where(user: current_user, paid: false).first
       end
 end
