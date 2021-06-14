@@ -26,7 +26,7 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'simple_form'
 
 gem 'faker'
-
+gem 'stripe'
 gem 'money-rails'
 
 # Use Active Storage variant
