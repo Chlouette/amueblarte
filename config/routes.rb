@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:show]
 
+  resources :baskets, only: [:show, :create]
+
   get "/items_create", to: "items#index_creation"
   get "/items_decorate", to: "items#index_decoration"
   get "/our_team", to: "pages#index"
