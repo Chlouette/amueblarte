@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show, :new, :create, :update, :edit] do
     resources :favorite_items, only: [:create]
     resources :bookings, only: [:new, :create]
+    resources :basket_items, only: [:show, :create]
   end
 
   resources :bookings, only: [:show]
