@@ -1,0 +1,8 @@
+var artistId = '<%= @artist.id%>'
+
+function toggleLikeButton(artistId, innerHTML) {
+  let likeButton = document.querySelector(`.avatar-like[data-id='${artistId}']`)
+  likeButton.classList.toggle('pink-heart');
+}
+
+toggleLikeButton(artistId);

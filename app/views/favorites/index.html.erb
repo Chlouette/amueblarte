@@ -1,1 +1,74 @@
-<h1>this is the favorites index page</h1>
+<div class="index-container container">
+  <div class="titles-container">
+    <h1 class="text-center">Your Favourites</h1>
+    <p class="text-center">You like these more than all the others, that's cool we can keep a secret ;)</p>
+  </div>
+</div>
+
+<div class="index-decorate-container">
+  <h2 class="mb-3">Items</h2>
+  <% if @favorite_items.length == 0 %>
+    <div class="row flex-column justify-content-left">
+      <p class="ml-3">There's nothing here, that means you just like everything equally!!!</p>
+      <a href="/items_decorate"><button type="button" class="fill">Explore Items</button></a>
+      <br><br><br><br><br><br><br><br><br><br>
+    <% else %>
+      <div class="row flex-wrap justify-content-left">
+        <% @favorite_items.each do |item| %>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="index-decorate-card">
+            <%= link_to new_item_booking_path(item) do %>
+              <%= cl_image_tag item.photos.first.key, alt: "Upcycled" %>
+                <div class="index-decorate-card-text">
+                  <div class="card-text-name-price">
+                    <%= item.name %> - £20
+                  </div>
+                  <% if current_user %>
+                    <%= link_to toggle_favorite_item_path(item), remote: true, method: :post do %>
+                      <div class="card-text-like <%= 'pink-heart' if current_user.favorited?(item) %>" data-id="<%= item.id %>">
+                        <i class="fas fa-heart fa-2x"></i>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+
+  <br><br><br><br><br>
+
+  <h2 class="mb-3">Artists</h2>
+  <% if @favorite_artists.length == 0 %>
+    <div class="row flex-column justify-content-left">
+      <p class="ml-3">There's noone here, that means you just like everyone equally!!!</p>
+      <a href="/artists"><button type="button" class="fill">Explore Artists</button></a>
+  <% else %>
+      <div class="row flex-wrap justify-content-left">
+        <% @favorite_artists.each do |artist| %>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="avatar-wrapper">
+              <%= link_to artist_path(artist) do %>
+              <div class="text-center">
+                <%= cl_image_tag(artist.user.photo.key, :class => "profile-avatar") %>
+              </div>
+                <% if current_user %>
+                  <%= link_to toggle_favorite_artist_path(artist), remote: true, method: :post do %>
+                    <div class="favorites-avatar-like <%= 'pink-heart' if current_user.favorited?(artist) %>" data-id="<%= artist.id %>">
+                      <i class="fas fa-heart fa-2x"></i>
+                    </div>
+                  <% end %>
+                <% end %>
+              <div class="mt-3 mb-5 black-text black-underline text-center">
+                <%= artist.user.first_name %>
+                <%= artist.user.last_name %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+var itemId = '<%= @favorite_item.id%>'
+
+function toggleLikeButton(itemId, favoritedCocktail) {
+  let likeButton = document.querySelector(`.card-text-like[data-id='${itemId}']`)
+  likeButton.classList.toggle('pink-heart');
+  if (likeButton.classList.contains('pink-heart')) {
+    const favoriteList = document.querySelector('.favorites');
+    favoriteList.insertAdjacentHTML('beforeend', favoritedItem)
+  }
+  else {
+    document.querySelector(`.favorite[data-id='${itemId}']`).remove()
+  }
+}
+toggleLikeButton(itemId, '<%= j render "favorite_items/favorite_item", favorite_item: @favorite_item %>');
