@@ -5,9 +5,12 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
-  def welcome
+  def create_confirmation
     @user = params[:user]
 
-    mail(to: @user.email, subject: "Thank you for purchasing some of my art.")
+    mail(
+      to: @user.email, 
+      subject: "Thank you for purchasing some of my art."
+    )
   end
 end

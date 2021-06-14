@@ -20,6 +20,15 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+    
+    # Send welcome email
+    if @booking.decoration?
+      mail = UserMailer.with(user: @user).create_confirmation
+      mail.deliver_now
+      redirect_to items_path(@item)
+    else
+      render :new
+    end
   end
 
   private
