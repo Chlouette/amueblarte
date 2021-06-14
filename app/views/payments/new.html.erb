@@ -3,6 +3,15 @@
     <%# <div class="col-md-3"><%= image_tag @basket.item.photo_url, width: '100%' %>
     <div class="col">
       <h1>Checkout summary</h1>
+              <% total_basket = 0 %>
+        <% @basket.basket_items.each do |basket_item| %>
+          <tr>
+            <td><%= basket_item.item.name %></td>
+            <td><%= basket_item.item.description %></td>
+            <td><%= humanized_money_with_symbol basket_item.item.price %></td>
+          </tr>
+          <% total_basket += basket_item.item.price %>
+        <% end %>
       <p>Purchase for <strong><%= humanized_money_with_symbol total_basket %></strong></p>
       <button id="pay" class="btn btn-primary">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>

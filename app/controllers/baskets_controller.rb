@@ -5,15 +5,16 @@ class BasketsController < ApplicationController
 
   def confirm
     @basket = Basket.find(params[:id])
+    line_items = @basket.basket_items.map do |basket_item|
+      { name: basket_item.item.name,
+      amount: basket_item.item.price_cents,
+      currency: 'gbp',
+      quantity: 1
+    }
+    end
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
-      # line_items: [{
-      # #   name: item.name,
-      # #   # images: [item.photo_url],
-      # #   amount: item.price_cents,
-      #   currency: 'gbp',
-      # #   quantity: 1
-      # }],
+      line_items: line_items,
       success_url: basket_url(@basket),
       cancel_url: basket_url(@basket)
     )
