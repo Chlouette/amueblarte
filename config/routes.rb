@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get "/items_create", to: "items#index_creation"
   get "/items_decorate", to: "items#index_decoration"
-  get "/our_team", to: "pages#index"
+  get "/team", to: "pages#team"
 
   resources :favorites, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

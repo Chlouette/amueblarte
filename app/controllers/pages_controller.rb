@@ -35,6 +35,6 @@ class PagesController < ApplicationController
     @disable_tab = true
   end
 
-  def index
+  def team
   end
 end
