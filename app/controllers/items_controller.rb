@@ -3,15 +3,15 @@ class ItemsController < ApplicationController
         if params[:item] == "Select Category"
             @items = Item.where(status: "collected")
             redirect_to items_create_path
-          elsif params[:item]
+        elsif params[:item]
             @items = Item.where(category: params[:item])
             @filter = params[:item].to_s
-          else
+        else
             @items = Item.where(status: "collected")
-          end
+        end
         session[:booking_type] = "creation"
     end
-
+    
     def index_decoration
         @items = Item.where(status: "for sale")
         session[:booking_type] = "decoration"

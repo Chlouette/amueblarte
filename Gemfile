@@ -27,6 +27,8 @@ gem 'simple_form'
 
 gem 'faker'
 
+gem 'money-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

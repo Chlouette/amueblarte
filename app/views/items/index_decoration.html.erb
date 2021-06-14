@@ -32,7 +32,7 @@
           <div class="items-decorate-card">
             <img src="<%= cl_image_path(photo.key) %>" alt="Upcycled ">
             <div class="items-decorate-index-card">
-              <p><%= item.name %> <span>£20</span></p>
+              <p><%= item.name %> <span><%= humanized_money_with_symbol(item.price_cents) %></span></p>
             </div>
           </div>
         <% end %>
