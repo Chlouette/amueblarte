@@ -1,47 +1,47 @@
-
 <div class="home-container">
-
   <br>
   <br>
-
   <div class="home-links-container">
     <%= link_to new_item_path, class: "home-card-link" do %>
-      <div class="home-card abandoned-chair">
+      <div class="home-card abandoned-chair" >
+      <h2 id="donate-card">
         DONATE
+      </h2>
       </div>
     <% end %>
-
     <%= link_to items_create_path, class: "home-card-link" do %>
       <div class="home-card art-chair">
+      <h2 id="create-card">
         CREATE
+      </h2>
       </div>
     <% end %>
-
     <%= link_to items_decorate_path, class: "home-card-link" do %>
       <div class="home-card decorate-chair">
+      <h2 id="decorate-card">
         DECORATE
+      </h2>
       </div>
     <% end %>
   </div>
-
   <br>
   <br>
-
-  <div class="text-center mt-3">
-
+  <h2 class="my-5 text-center tag-line">
+    <span class="orange-text">UNWANTED FURNITURE </span>
+    <span class="blue-text"> ARTISTICALLY RESTORED </span>
+    <span class="pink-text"> FOR A UNIQUE HOME</span>
+  </h2>
+  <div class="text-center">
     <% items = @items.sample(3) %>
     <% item_1 = items[0] %>
     <% item_2 = items[1] %>
     <% item_3 = items[2] %>
     <% artist = @artists.sample %>
-
-    <h1>RECENTS</h1>
-    <p>for your amooblment</p>
+    <%# <h1>RECENTS</h1>
+    <p>for your amooblment</p> %>
   </div>
-
   <br>
   <br>
-
   <div class="row justify-content-center">
     <div class="col-4 home-card-link-wrapper">
       <%= link_to @links[2], target: "_blank" do  %>
@@ -52,12 +52,10 @@
         </div>
       <% end %>
     </div>
-
     <div class="col-4 home-card-link-wrapper">
       <%= link_to artist_path(artist) do %>
         <div class="home-grid-card blue-underline mb-4">
           <div class="text-center">
-            <br>
             <h2>FEATURED ARTIST</h2>
             <br>
             <h2 class="home-artist-name">January Fisher</h2>
@@ -67,7 +65,6 @@
         </div>
       <% end %>
     </div>
-
     <div class="col-4 home-card-link-wrapper">
       <%= link_to item_path(item_1) do  %>
         <div class="home-items-decorate-card">
@@ -77,7 +74,6 @@
       <% end %>
     </div>
   </div>
-
   <div class="row justify-content-center">
     <div class="col-4 home-card-link-wrapper">
       <%= link_to item_path(item_2) do  %>
@@ -87,7 +83,6 @@
         </div>
       <% end %>
     </div>
-
     <div class="col-4 home-card-link-wrapper">
       <%= link_to item_path(item_3) do  %>
         <div class="home-items-decorate-card">
@@ -96,7 +91,6 @@
         </div>
       <% end %>
     </div>
-
     <div class="col-4 home-card-link-wrapper">
       <%= link_to @links[4], target: "_blank" do  %>
         <div class="home-grid-card">
@@ -107,8 +101,6 @@
       <% end %>
     </div>
   </div>
-
-<br>
-<br>
-
+  <br>
+  <br>
 </div>
