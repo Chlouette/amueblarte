@@ -27,6 +27,7 @@ gem 'simple_form'
 
 gem 'faker'
 
+gem 'letter_opener', group: :development
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -41,10 +42,9 @@ gem 'font-awesome-sass'
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
-  
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'letter_opener'
 end
 
 group :development do
