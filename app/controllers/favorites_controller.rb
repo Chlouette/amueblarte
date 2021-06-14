@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorite_items = FavoriteItem.where(user_id: current_user)
-    @favorite_artists = FavoriteArtist.where(user_id: current_user)
+    @favorite_items = current_user.favorited_by_type('Item')
+    @favorite_artists = current_user.favorited_by_type('Artist')
   end
 end

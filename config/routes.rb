@@ -4,10 +4,16 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :artists, only: [:index, :show] do
     resources :favorite_artists, only: [:create]
+    member do
+      post 'toggle_favorite', to: "artists#toggle_favorite"
+    end
   end
   resources :items, only: [:index, :show, :new, :create, :update, :edit] do
     resources :favorite_items, only: [:create]
     resources :bookings, only: [:new, :create]
+    member do
+      post 'toggle_favorite', to: "items#toggle_favorite"
+    end
     resources :basket_items, only: [:show, :create]
   end
 

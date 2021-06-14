@@ -32,6 +32,8 @@ gem 'money-rails'
 gem 'letter_opener', group: :development
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'acts_as_favoritor'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
