@@ -66,7 +66,7 @@
       <% end %>
     </div>
     <div class="col-4 home-card-link-wrapper">
-      <%= link_to item_path(item_1) do  %>
+      <%= link_to item_path(item_1), data: { turbolinks: false } do  %>
         <div class="home-items-decorate-card">
           <h2>FOR SALE</h2>
           <%= cl_image_tag item_1.photos.first.key %>
@@ -76,7 +76,7 @@
   </div>
   <div class="row justify-content-center">
     <div class="col-4 home-card-link-wrapper">
-      <%= link_to item_path(item_2) do  %>
+      <%= link_to item_path(item_2), data: { turbolinks: false } do  %>
         <div class="home-items-decorate-card">
           <h2>FOR SALE</h2>
           <img src="https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Annie-Sloan-Countryside-Bird-stencil-320x320.jpg">
@@ -84,7 +84,7 @@
       <% end %>
     </div>
     <div class="col-4 home-card-link-wrapper">
-      <%= link_to item_path(item_3) do  %>
+      <%= link_to item_path(item_3), data: { turbolinks: false } do  %>
         <div class="home-items-decorate-card">
           <h2>FOR SALE</h2>
           <%= cl_image_tag item_3.photos.first.key %>
