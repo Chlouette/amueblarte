@@ -22,11 +22,12 @@
       <p style="font-family: 'Waiting for the Sunrise', cursive; font-size:24px;">by <%= @artist.user.first_name %> <%= @artist.user.last_name %></p>
       <p><%= @item.description %></p>
       <h3>£<%= @item.price_cents/100 %></h3>
-      <%# <%= form_tag  do %>
-      <%# <% end %>
     </div>
-      <% if @basket.items.include?(@item) %>
-        <%= link_to 'Already in your Basket', class: "disabled" %>
+      <% if @basket === nil %>
+        <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
+        <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn" style="float: right;">Add to Basket</p>
+      <% elsif @basket.items.include?(@item) %>
+        <p class="basket_btn blue-underline" style="float: right; font-style: italic; font-weight: bold">Already in your Basket</p>
       <% else %>
         <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
         <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn" style="float: right;">Add to Basket</p>
