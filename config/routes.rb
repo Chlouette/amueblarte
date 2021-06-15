@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     resources :basket_items, only: [:show, :create]
   end
 
+  resources :basket_items, only: [:destroy]
+  #the above line doesn't need to be nested because it has its own id already
+  
   resources :bookings, only: [:show]
 
   resources :baskets, only: [:show, :create] do

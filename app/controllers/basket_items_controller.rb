@@ -1,5 +1,6 @@
 class BasketItemsController < ApplicationController
     def create
+        raise
         item = Item.find(params[:item_id])
         # if current
         # current_user_baskets = Basket.where(user_id: current_user)
@@ -10,6 +11,8 @@ class BasketItemsController < ApplicationController
         #     basket = Basket.find(user: current_user, paid: false)
         # end
         # Basket.find(user: current_user, paid: false)
+
+        ## check if user already has a basket
         if current_user.baskets.where(user: current_user, paid: false).first
             basket = Basket.where(user: current_user, paid: false).first
         else
@@ -23,6 +26,13 @@ class BasketItemsController < ApplicationController
         redirect_to basket_path(basket)
         # basket.update(checkout_session_id: session.id)
       end
+    
+    def destroy
+      basket_item = BasketItem.find(params[:id])
+      basket_item.destroy
+      basket = current_user.baskets.last
+      redirect_to basket_path(basket)
+    end
 end
 
 # add new column to basket STATUS default: pending
