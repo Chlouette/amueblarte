@@ -19,7 +19,7 @@
     </div>
     <div class="ml-4 text-left">
       <h1><%= @item.name %></h1>
-      <p>by <%= @artist.user.first_name %> <%= @artist.user.last_name %></p>
+      <p style="font-family: 'Waiting for the Sunrise', cursive; font-size:24px;">by <%= @artist.user.first_name %> <%= @artist.user.last_name %></p>
       <p><%= @item.description %></p>
       <h3>£<%= @item.price_cents/100 %></h3>
       <%# <%= form_tag  do %>
