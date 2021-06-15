@@ -42,11 +42,15 @@ import { randomiseBorderColor } from "../components/randomColor";
 document.addEventListener('turbolinks:load', () => {
 
   if (document.getElementsByClassName("item-card") !== null) {
-    
     selectItem()
   }
   if (document.getElementsByClassName("selected")) {
     randomiseBorderColor()
+  }
+
+  if (document.getElementsByClassName("form-button")) {
+    const formButton = document.getElementsByClassName("form-button");
+    
   }
   
   initFlatpickr();
