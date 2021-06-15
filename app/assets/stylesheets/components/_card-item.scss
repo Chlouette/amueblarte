@@ -40,12 +40,15 @@
 
 .card-booking {
   margin: 20px 50px 20px 50px;
+  padding: 48px 48px 48px 48px;
   overflow: hidden;
-  // height: 300px;
   background: white;
   border: 3px solid black;
-  // flex-grow: 1;
-  padding: 20px 20px;
+}
+
+.card-booking ul {
+  padding: 0;
+  margin-bottom: 40px;
 }
 
 .card-booking li {
@@ -54,9 +57,9 @@
 
 .booking-image {
   height: 250px;
-  width: 200px;
+  width: 350px;
+  max-width: 100%;
   background-size: cover;
-  margin: 0 10px;
 }
 
 // .user-profile-card {
