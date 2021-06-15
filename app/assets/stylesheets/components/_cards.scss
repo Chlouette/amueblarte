@@ -104,3 +104,10 @@
   grid-gap: 0px;
   margin-left: 42px;
 }
+
+.artist-no-underline {
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
