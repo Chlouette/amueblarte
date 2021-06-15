@@ -1,29 +1,26 @@
 <div class="container">
-  <div class="row py-4">
-    <%# <div class="col-md-3"><%= image_tag @basket.item.photo_url, width: '100%' %>
-    <div class="col">
-      <h1>Checkout summary</h1>
-              <% total_basket = 0 %>
-        <% @basket.basket_items.each do |basket_item| %>
-          <tr>
-            <td><%= basket_item.item.name %></td>
-            <td><%= basket_item.item.description %></td>
-            <td><%= humanized_money_with_symbol basket_item.item.price %></td>
-          </tr>
-          <% total_basket += basket_item.item.price %>
-        <% end %>
-      <p>Purchase for <strong><%= humanized_money_with_symbol total_basket %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @basket.checkout_session_id %>'
-          });
-        });
-      </script>
-    </div>
+  <h1 class="my-5">Checkout summary</h1>
+  <div class="d-flex summary-card-container mb-5 justify-content-around">
+    <% total_basket = 0 %>
+    <% @basket.basket_items.each do |basket_item| %>
+      <div class="summary-img">
+        <%= cl_image_tag(basket_item.item.photos.first.key) %>
+      </div>
+      <% total_basket += basket_item.item.price %>
+    <% end %>
+      </div>
+  <p class="text-center">Buy these beauties for <strong><%= humanized_money_with_symbol total_basket %></strong></p>
+  <div class="mx-auto text-center">
+  <button id="pay" class="underlined-button pink-underline">Pay</button>
   </div>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const paymentButton = document.getElementById('pay');
+    paymentButton.addEventListener('click', () => {
+      const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+      stripe.redirectToCheckout({
+        sessionId: '<%= @basket.checkout_session_id %>'
+      });
+    });
+  </script>
 </div>
