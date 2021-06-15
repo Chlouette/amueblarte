@@ -1,6 +1,5 @@
 class BasketItemsController < ApplicationController
     def create
-        raise
         item = Item.find(params[:item_id])
         # if current
         # current_user_baskets = Basket.where(user_id: current_user)

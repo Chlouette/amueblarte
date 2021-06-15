@@ -25,14 +25,13 @@
       <%# <%= form_tag  do %>
       <%# <% end %>
     </div>
-      <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
-      <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn" style="float: right;">Add to Basket</p>
-  </div>
-  <% if @basket.items.include?(@item) %>
-    <%= link_to 'Already in your Basket', class: "disabled" %>
-  <% else %>
-    <%= link_to 'Add to Basket', item_basket_items_path(@item), method: :post %>
-  <% end %>
+      <% if @basket.items.include?(@item) %>
+        <%= link_to 'Already in your Basket', class: "disabled" %>
+      <% else %>
+        <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
+        <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn" style="float: right;">Add to Basket</p>
+      <% end %>
+    </div>
   <div>
     <%# <%= render 'meetartist' %>
     <h1 class="mt-5 text-center">Like this piece?</h1>
