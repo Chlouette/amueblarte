@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   resources :bookings, only: [:show]
 
   resources :baskets, only: [:show, :create] do
+    member do
+      get :success
+    end
     resources :payments, only: :new
   end
 
@@ -27,6 +30,8 @@ Rails.application.routes.draw do
   get "/items_decorate", to: "items#index_decoration"
   get "/basket/:id/confirm", to: "baskets#confirm", as: :confirm
   get "/our_team", to: "pages#index"
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   resources :favorites, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

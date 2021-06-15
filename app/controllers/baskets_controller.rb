@@ -15,11 +15,21 @@ class BasketsController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: line_items,
-      success_url: basket_url(@basket),
+      success_url: success_basket_url(@basket),
       cancel_url: basket_url(@basket)
     )
   
     @basket.update(checkout_session_id: session.id)
     redirect_to new_basket_payment_path(@basket)
+  end
+
+  def success
+    @basket = Basket.find(params[:id])
+    @basket.update(paid: true)
+
+    @basket.basket_item_ids.each do |item_id|
+      item = Item.where(id: item_id)
+      item.update(status: "sold")
+    end
   end
 end
