@@ -17,7 +17,7 @@
         <% @favorite_items.each do |item| %>
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="index-decorate-card">
-            <%= link_to new_item_booking_path(item) do %>
+            <%= link_to item_path(item), data: { turbolinks: false } do %>
               <%= cl_image_tag item.photos.first.key, alt: "Upcycled" %>
                 <div class="index-decorate-card-text">
                   <div class="card-text-name-price">
