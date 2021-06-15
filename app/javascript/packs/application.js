@@ -34,8 +34,8 @@ import { initFlatpickr } from "../plugins/flatpickr";
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 initSweetalert('#sweet-alert-demo', {
-  title: "Added to basket",
-  text: "This is a great alert, isn't it?",
+  title: "Item added to Basket",
+  text: "Your item will stay in the basket for 1 hour",
   icon: "success"
 });
 
