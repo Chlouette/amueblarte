@@ -1,24 +1,26 @@
 <div class="mt-5 container">
-  <h1><%= @item.name %></h1>
-  <p>by <%= @artist.user.first_name %> <%= @artist.user.last_name %></p>
   <div class="mt-4 item-show-wrapper">
     <div class="show-item-image">
       <%= cl_image_tag(@item.photos.first.key) %>
       <div class="index-decorate-card-text">
-        <% if current_user %>
-          <%= link_to toggle_favorite_item_path(@item), remote: true, method: :post do %>
-            <div class="show-like <%= 'pink-heart' if current_user.favorited?(@item) %>" data-id="<%= @item.id %>">
-              <i class="fas fa-heart fa-3x"></i>
-            </div>
+        <div class="index-text">
+          <% if current_user %>
+            <%= link_to toggle_favorite_item_path(@item), remote: true, method: :post do %>
+              <div class="show-like <%= 'pink-heart' if current_user.favorited?(@item) %>" data-id="<%= @item.id %>">
+                <i class="fas fa-heart fa-3x"></i>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
     <div class="ml-4 text-left">
-      <h2>About this - <%= @item.name %></h2>
+      <h1><%= @item.name %></h1>
+      <p>by <%= @artist.user.first_name %> <%= @artist.user.last_name %></p>
       <p><%= @item.description %></p>
+
       <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
-      <p id="sweet-alert-demo" class="underlined-button pink-underline">Add to Basket</p>
+      <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn" style="float: right;">Add to Basket</p>
       <%= form_tag  do %>
       <% end %>
     </div>
