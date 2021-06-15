@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
     # TO DO 
     # @artist = User.where(User.booking.item: @item)
     booking = @item.bookings.first
-    @artist = booking.user
+    # @artist = booking.user
   end
 
   def new

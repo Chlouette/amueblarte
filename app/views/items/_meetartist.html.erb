@@ -1,0 +1,6 @@
+<h2>Meet the Artist</h2>
+<div class="user-profile-card justify-content-between text-center">
+  <%= cl_image_tag(@artist.photo.key, :class => "profile-avatar ml-5") %>
+  <div class="profile-details">
+    <h4><%= @artist.first_name ? @artist.first_name : '' %> <%= @artist.last_name ? @artist.last_name : '' %> </h4>
+     
