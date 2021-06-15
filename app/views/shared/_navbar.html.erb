@@ -43,7 +43,7 @@
           <%= image_tag "https://cdn1.iconfinder.com/data/icons/ordinary-people/512/bookworm-512.png", class: "avatar dropdown-toggle b-w", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "PROFILE", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "BOOKINGS", "", class: "dropdown-item" %>
+            <%# <%= link_to "BOOKINGS", "", class: "dropdown-item" %>
             <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
