@@ -55,7 +55,7 @@
           <%= cl_image_tag item.photos.first.key, alt: "Upcycled" %>
             <div class="index-decorate-card-text">
               <div class="card-text-name-price">
-                <%= item.name %> - <%= humanized_money_with_symbol(item.price_cents) %>
+                <%= item.name %> - <%= humanized_money_with_symbol(item.price_cents/100) %>
               </div>
               <% if current_user %>
                 <%= link_to toggle_favorite_item_path(item), remote: true, method: :post do %>
