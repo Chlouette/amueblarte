@@ -8,10 +8,16 @@
       <p>DESCRIPTION: <%= @item.description %> </p>
     </div>
   </div>
-  <%= link_to 'Buy', item_path(@item) %>
   <%= link_to 'Add to Basket', item_basket_items_path(@item), method: :post %>
   <%= form_tag  do %>
-  <%# <%= hidden_field_tag 'item_id', @item.id %>
-  <%# <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-<% end %>
+  <% end %>
+  <div>
+    <h2>Meet the Artist</h2>
+    <div class="user-profile-card justify-content-between text-center">
+    <%= cl_image_tag(@artist.photo.key, :class => "profile-avatar ml-5") %>
+    <div class="profile-details">
+      <h4><%= @artist.first_name ? @artist.first_name : '' %> <%= @artist.last_name ? @artist.last_name : '' %> </h4> 
+    </div>
+  </div>
+  </div>
 </div>

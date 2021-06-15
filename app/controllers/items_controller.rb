@@ -20,7 +20,12 @@ class ItemsController < ApplicationController
     session[:booking_type] = "decoration"
   end
 
-  def show; end
+  def show
+    # TO DO 
+    # @artist = User.where(User.booking.item: @item)
+    booking = @item.bookings.first
+    @artist = booking.user
+  end
 
   def new
     @item = Item.new
