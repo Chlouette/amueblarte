@@ -49,7 +49,6 @@ import { randomiseBorderColor } from "../components/randomColor";
 document.addEventListener('turbolinks:load', () => {
 
   if (document.getElementsByClassName("item-card") !== null) {
-    
     selectItem()
   }
   if (document.getElementsByClassName("selected")) {

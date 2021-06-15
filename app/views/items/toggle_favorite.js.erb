@@ -1,8 +1,12 @@
 var itemId = '<%= @item.id%>'
 
 function toggleLikeButton(itemId, innerHTML) {
-  let likeButton = document.querySelector(`.card-text-like[data-id='${itemId}']`)
-  likeButton.classList.toggle('pink-heart');
+  if (document.querySelector(`.card-text-like[data-id='${itemId}']`)) {
+    document.querySelector(`.card-text-like[data-id='${itemId}']`).classList.toggle('pink-heart');
+  } else if (document.querySelector(`.show-like[data-id='${itemId}']`)) {
+    document.querySelector(`.show-like[data-id='${itemId}']`).classList.toggle('pink-heart');
+  }
 }
 
 toggleLikeButton(itemId);
+
