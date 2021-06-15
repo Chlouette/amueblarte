@@ -17,7 +17,9 @@ class BasketItemsController < ApplicationController
             basket.save
         end
         basket_item = BasketItem.create!(item: item, basket: basket)
-        
+        # item[:status] = "pending"
+        item.update(status: "pending")
+
         redirect_to basket_path(basket)
         # basket.update(checkout_session_id: session.id)
       end

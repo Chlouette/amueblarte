@@ -33,6 +33,7 @@ status = [
   "collected",
   "in progress",
   "for sale",
+  "pending",
   "sold",
   "delivered"
 ]

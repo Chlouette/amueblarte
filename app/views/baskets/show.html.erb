@@ -5,7 +5,7 @@
     <%# <div class="col-md-3"><%= image_tag @basket.item.photo_url, width: '100%' </div> %>
     <div class="col">
       <h1>Order #<%= @basket.id %></h1>
-      <p><strong>ISSUED ON</strong> <%= @basket.created_at.to_date %></p>
+      <p><strong>ISSUED ON</strong> <%= @basket.created_at.to_date.strftime("%d/%m/%Y") %></p>
 
       <table>
         <tr>
@@ -19,6 +19,7 @@
             <td><%= basket_item.item.name %></td>
             <td><%= basket_item.item.description %></td>
             <td><%= humanized_money_with_symbol basket_item.item.price %></td>
+            <td>Delete</td>
           </tr>
           <% total_basket += basket_item.item.price %>
         <% end %>
