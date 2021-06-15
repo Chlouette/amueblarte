@@ -31,6 +31,13 @@ $(".home-card-link").hover(function() {
 // External imports
 import "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "Added to basket",
+  text: "This is a great alert, isn't it?",
+  icon: "success"
+});
 
 
 // Internal imports, e.g:

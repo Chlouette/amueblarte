@@ -8,7 +8,8 @@
       <p>DESCRIPTION: <%= @item.description %> </p>
     </div>
   </div>
-  <%= link_to 'Add to Basket', item_basket_items_path(@item), method: :post %>
+  <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
+  <p id="sweet-alert-demo">Add to Basket</p>
   <%= form_tag  do %>
   <% end %>
   <div>
