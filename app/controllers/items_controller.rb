@@ -21,10 +21,11 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # TO DO 
+    # TO DO
     # @artist = User.where(User.booking.item: @item)
     booking = @item.bookings.first
     # @artist = booking.user
+    @artist = Artist.first
   end
 
   def new
@@ -62,7 +63,6 @@ class ItemsController < ApplicationController
 
   private
 
-
   def find_by_id
     @item = Item.find(params[:id])
   end
@@ -70,5 +70,4 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :description, :category, :status, photos: [])
   end
-
 end
