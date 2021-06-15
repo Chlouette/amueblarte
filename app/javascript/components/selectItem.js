@@ -12,6 +12,7 @@ const selectItem = () => {
        item.style.borderColor = 'black'
      }) 
     event.target.classList.add('selected')
+    event.target.classList.remove('greyscale')
     randomiseBorderColor(event.target)
   };
   
