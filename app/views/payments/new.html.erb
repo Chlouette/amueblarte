@@ -13,7 +13,7 @@
           <% total_basket += basket_item.item.price %>
         <% end %>
       <p>Purchase for <strong><%= humanized_money_with_symbol total_basket %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <button id="pay" class="underlined-button pink-underline">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
