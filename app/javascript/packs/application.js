@@ -47,11 +47,6 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementsByClassName("selected")) {
     randomiseBorderColor()
   }
-
-  if (document.getElementsByClassName("form-button")) {
-    const formButton = document.getElementsByClassName("form-button");
-    
-  }
   
   initFlatpickr();
 });
