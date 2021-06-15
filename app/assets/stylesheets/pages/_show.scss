@@ -46,10 +46,29 @@
   height: 450px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.index-decorate-card-text {
+  font-family: $headers-font;
+}
+
+.index-decorate-card {
+  max-width: 360px;
+  max-height: 400px;
+}
+
+.index-decorate-card img {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  position: relative;
 }
 
 .show-item-image {
   position: relative;
+  height: 100%;
 }
 
 .show-item-image img {
