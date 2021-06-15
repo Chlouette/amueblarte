@@ -37,8 +37,6 @@
     <% item_2 = items[1] %>
     <% item_3 = items[2] %>
     <% artist = @artists.sample %>
-    <%# <h1>RECENTS</h1>
-    <p>for your amooblment</p> %>
   </div>
   <br>
   <br>
@@ -54,40 +52,54 @@
     </div>
     <div class="col-4 home-card-link-wrapper">
       <%= link_to artist_path(artist) do %>
-        <div class="home-grid-card blue-underline mb-4">
+        <div class="home-grid-card blue-underline-home mb-4">
           <div class="text-center">
             <h2>FEATURED ARTIST</h2>
             <br>
-            <h2 class="home-artist-name">January Fisher</h2>
+            <h2 class="home-artist-name"><%= artist.user.first_name %> <%= artist.user.last_name %></h2>
             <br>
-            <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="home-profile-avatar">
+            <%= cl_image_tag artist.user.photo.key, class: "home-profile-avatar" %>
           </div>
         </div>
       <% end %>
     </div>
     <div class="col-4 home-card-link-wrapper">
-      <%= link_to item_path(item_1) do  %>
-        <div class="home-items-decorate-card">
+      <%= link_to item_path(item_1), data: { turbolinks: false } do  %>
+        <div class="home-items-decorate-card mb-4">
           <h2>FOR SALE</h2>
-          <%= cl_image_tag item_1.photos.first.key %>
+          <div class="index-decorate-card-text">
+            <%= cl_image_tag item_1.photos.first.key %>
+            <div class="home-card-text-name-price">
+              <%= item_1.name %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
-  </div>
   <div class="row justify-content-center">
     <div class="col-4 home-card-link-wrapper">
-      <%= link_to item_path(item_2) do  %>
+      <%= link_to item_path(item_2), data: { turbolinks: false } do  %>
         <div class="home-items-decorate-card">
           <h2>FOR SALE</h2>
-          <img src="https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Annie-Sloan-Countryside-Bird-stencil-320x320.jpg">
+          <div class="index-decorate-card-text">
+            <%= cl_image_tag item_2.photos.first.key %>
+            <div class="home-card-text-second">
+              <%= item_2.name %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
     <div class="col-4 home-card-link-wrapper">
-      <%= link_to item_path(item_3) do  %>
+      <%= link_to item_path(item_3), data: { turbolinks: false } do  %>
         <div class="home-items-decorate-card">
           <h2>FOR SALE</h2>
-          <%= cl_image_tag item_3.photos.first.key %>
+          <div class="index-decorate-card-text">
+            <%= cl_image_tag item_3.photos.first.key %>
+            <div class="home-card-text-second">
+              <%= item_3.name %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>

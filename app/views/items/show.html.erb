@@ -1,14 +1,33 @@
-<div class="mt-5 container justify-content-between">
-  <h1> <%= @item.name %> </h1>
-  <div class="mt-5 d-flex">
-    <div class="flex-grow-1">
-      <%= cl_image_tag(@item.photos.first.key) %>
-    </div>
-    <div class="show-description">
-      <p>DESCRIPTION: <%= @item.description %> </p>
-    </div>
+<div class="mt-5 container">
+  <div class="my-5 text-center">
+    <h1></h1>
+    <p></p>
   </div>
-
+  <br>
+  <div class="mt-5 item-show-wrapper">
+    <div class="show-item-image">
+      <%= cl_image_tag(@item.photos.first.key) %>
+      <div class="index-decorate-card-text">
+          <% if current_user %>
+            <%= link_to toggle_favorite_item_path(@item), remote: true, method: :post do %>
+              <div class="show-like <%= 'pink-heart' if current_user.favorited?(@item) %>" data-id="<%= @item.id %>">
+                <i class="fas fa-heart fa-3x"></i>
+              </div>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+    <div class="ml-4 text-left">
+      <h1><%= @item.name %></h1>
+      <p style="font-family: 'Waiting for the Sunrise', cursive; font-size:24px;">by <%= @artist.user.first_name %> <%= @artist.user.last_name %></p>
+      <p><%= @item.description %></p>
+      <h3>£<%= @item.price_cents/100 %></h3>
+      <%# <%= form_tag  do %>
+      <%# <% end %>
+    </div>
+      <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
+      <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn" style="float: right;">Add to Basket</p>
+  </div>
   <% if @basket.items.include?(@item) %>
     <%= link_to 'Already in your Basket', class: "disabled" %>
   <% else %>
@@ -16,7 +35,20 @@
   <% end %>
   <div>
     <%# <%= render 'meetartist' %>
+    <h1 class="mt-5 text-center">Like this piece?</h1>
+    <p class="text-center">Come see who made it!</p>
+    <div class="mt-5 user-profile-card justify-content-between text-center">
+      <%= cl_image_tag(@artist.user.photo.key, :class => "profile-avatar ml-5") %>
+      <div class="profile-details">
+        <h2><%= @artist.user.first_name ? @artist.user.first_name : '' %> <%= @artist.user.last_name ? @artist.user.last_name : '' %></h2>
+        <h4 class="mt-4 mb-2">BIO</h4>
+        <% if @artist %>
+          <p><%= @artist.biography %></p>
+        <% end %>
+      </div>
     </div>
   </div>
+  <div class="btn-center-page">
+    <a href="/items_decorate"><button type="button" class="fill">Back To More Items</button></a>
   </div>
 </div>

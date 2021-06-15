@@ -16,6 +16,7 @@
 }
 
 .form-button {
+  font-weight: 600;
   max-width: 178px;
   height: 100%;
   background-color: white;
@@ -55,4 +56,17 @@
 
 #item_status {
   text-transform: capitalize;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.form-button {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }

@@ -43,13 +43,21 @@
   text-align: center;
 }
 
-.pink-underlined-button {
+.basket_btn {
+  position: absolute;
+  bottom: 15px;
+  right: 40px;
+}
+
+.underlined-button {
   max-width: 178px;
-  height: 100%;
+  // height: 100%;
   text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  // font-family: 'Montserrat', sans-serif;
   color: black;
   background-color: white;
-  background-image: linear-gradient(120deg, $pink 0%, $pink 100%);
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-size: 100% 10%;
@@ -62,6 +70,26 @@
     text-decoration: none;
     color: black;
   }
+}
+
+.green-underline {
+  background-image: linear-gradient(120deg, $green 0%, $green 100%);
+}
+.pink-underline {
+  background-image: linear-gradient(120deg, $pink 0%, $pink 100%);
+}
+.blue-underline {
+  background-image: linear-gradient(120deg, $blue 0%, $blue 100%);
+}
+.yellow-underline {
+  background-image: linear-gradient(120deg, $yellow 0%, $yellow 100%);
+}
+.orange-underline {
+  background-image: linear-gradient(120deg, $orange 0%, $orange 100%);
+}
+
+#sweet-alert-demo {
+  cursor: pointer;
 }
 
 // LIKE BUTTON

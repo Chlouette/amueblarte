@@ -100,11 +100,15 @@
   }
 }
 
+.home-card-link-wrapper {
+  width: 480px;
+}
+
 .home-card-link-wrapper a {
   color: $black;
   text-decoration: none;
   &:hover {
-    text-decoration: none;
+    text-decoration: underline $green;
   }
 }
 
@@ -135,12 +139,46 @@
   margin-right: auto;
 }
 
-.home-items-decorate-card:hover {
-  text-decoration: underline $pink;
+.blue-underline-home:hover {
+  text-decoration: underline $blue;
 }
 
-.blue-underline:hover {
-  text-decoration: underline $blue;
+.home-card-text-name-price {
+  position: absolute;
+  bottom: 23px;
+  left: 15px;
+  font-size: 20px;
+  padding: 2px 8px;
+  color: $white;
+  text-shadow: 0 0 2px $black;
+  background-color: rgba(0,0,0,0.4);
+  background-image: linear-gradient(120deg, $green 0%, $green 100%);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 100% 10%;
+  transition: background-size 0.25s ease;
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
+
+.home-card-text-second {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  font-size: 20px;
+  padding: 2px 8px;
+  color: $white;
+  text-shadow: 0 0 2px $black;
+  background-color: rgba(0,0,0,0.4);
+  background-image: linear-gradient(120deg, $green 0%, $green 100%);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 100% 10%;
+  transition: background-size 0.25s ease;
+  &:hover {
+    background-size: 100% 100%;
+  }
 }
 
 .tag-line > span {
