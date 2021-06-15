@@ -5,6 +5,8 @@ function toggleLikeButton(artistId, innerHTML) {
     document.querySelector(`.avatar-like[data-id='${artistId}']`).classList.toggle('pink-heart');
   } else if (document.querySelector(`.favorites-avatar-like[data-id='${artistId}']`)) {
     document.querySelector(`.favorites-avatar-like[data-id='${artistId}']`).classList.toggle('pink-heart');
+  } else if (document.querySelector(`.show-avatar-like[data-id='${artistId}']`)) {
+    document.querySelector(`.show-avatar-like[data-id='${artistId}']`).classList.toggle('pink-heart');
   }
 }
 
