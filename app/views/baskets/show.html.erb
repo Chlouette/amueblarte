@@ -22,7 +22,10 @@
             <th scope="row"><%= basket_item.item.name %></th>
             <td><%= basket_item.item.description %></td>
             <td><%= humanized_money_with_symbol basket_item.item.price %></td>
-            <td><span class="black-text"><%= link_to "Delete", basket_item_path(basket_item), method: :delete, class: "black-text" %></span></td>
+            <td><span class="black-text"><%= link_to basket_item_path(basket_item), method: :delete, class: "black-text" do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+              <% end %>
+            </span></td>
           </tr>
           <% total_basket += basket_item.item.price %>
         <% end %>
