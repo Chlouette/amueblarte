@@ -1,9 +1,10 @@
 <div class="mt-5 container">
   <div class="my-5 text-center">
-    <h1>Like this piece?</h1>
-    <p>Come see who made it!</p>
+    <h1></h1>
+    <p></p>
   </div>
-  <div class="mt-4 item-show-wrapper">
+  <br>
+  <div class="mt-5 item-show-wrapper">
     <div class="show-item-image">
       <%= cl_image_tag(@item.photos.first.key) %>
       <div class="index-decorate-card-text">
@@ -20,18 +21,18 @@
       <h1><%= @item.name %></h1>
       <p>by <%= @artist.user.first_name %> <%= @artist.user.last_name %></p>
       <p><%= @item.description %></p>
-      <h2>£<%= @item.price_cents/100 %></h2>
+      <h3>£<%= @item.price_cents/100 %></h3>
       <%# <%= form_tag  do %>
       <%# <% end %>
     </div>
       <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
       <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn" style="float: right;">Add to Basket</p>
   </div>
-
+  <br><br>
   <div>
     <%# <%= render 'meetartist' %>
-    <h1 class="mt-5 text-center">See more from the Artist</h1>
-    <%# <p class="text-center">Come see who made it!</p> %>
+    <h1 class="mt-5 text-center">Like this piece?</h1>
+    <p class="text-center">Come see who made it!</p>
     <div class="mt-5 user-profile-card justify-content-between text-center">
       <%= cl_image_tag(@artist.user.photo.key, :class => "profile-avatar ml-5") %>
       <div class="profile-details">
