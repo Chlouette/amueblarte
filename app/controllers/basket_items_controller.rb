@@ -10,6 +10,8 @@ class BasketItemsController < ApplicationController
         #     basket = Basket.find(user: current_user, paid: false)
         # end
         # Basket.find(user: current_user, paid: false)
+
+        ## check if user already has a basket
         if current_user.baskets.where(user: current_user, paid: false).first
             basket = Basket.where(user: current_user, paid: false).first
         else

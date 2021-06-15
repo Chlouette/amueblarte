@@ -8,8 +8,11 @@
       <p>DESCRIPTION: <%= @item.description %> </p>
     </div>
   </div>
-  <%= link_to 'Add to Basket', item_basket_items_path(@item), method: :post %>
-  <%= form_tag  do %>
+
+  <% if @basket.items.include?(@item) %>
+    <%= link_to 'Already in your Basket', class: "disabled" %>
+  <% else %>
+    <%= link_to 'Add to Basket', item_basket_items_path(@item), method: :post %>
   <% end %>
   <div>
     <%# <%= render 'meetartist' %>
