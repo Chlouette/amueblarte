@@ -16,7 +16,16 @@ class ItemsController < ApplicationController
   end
 
   def index_decoration
-    @items = Item.where(status: "for sale")
+    # @items = Item.where(status: "for sale")
+    if params[:item] == "Select Category"
+      @items = Item.where(status: "for sale")
+      redirect_to items_decorate_path
+    elsif params[:item]
+      @items = Item.where(category: params[:item])
+      @filter = params[:item].to_s
+    else
+      @items = Item.where(status: "for sale")
+    end
     session[:booking_type] = "decoration"
   end
 

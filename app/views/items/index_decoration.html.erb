@@ -1,15 +1,30 @@
 <div class="index-container container">
   <div class="titles-container">
-    <h1 class="text-center">All the Furniture</h1>
-
-    <p class="text-center">Browse through our upcycled pieces of Furniture</>
-    <div>
-      <%= render 'filter' %>
+    <div class="my-5">
+      <h1 class="text-center">All the Furniture</h1>
+      <p class="text-center">Browse through our upcycled pieces of Furniture</>
+    </div>
+    <div class="text-center">
+      <%= form_tag items_decorate_path, method: :get do %>
+        <%= select_tag "item", options_for_select([ "Select Category",
+        "Sofa", "Chair", "Bench",
+        "Bed", "Drawers", "Table",
+        "Desk", "Stool", "Cupboard",
+        "Side Table", "Lamp", "Coat Stand",
+        "Shelves", "Wine Rack", "Coffee Table"
+      ], @filter)%>
+        <%= submit_tag "Search", class: "btn" %>
+      <% end %>
+      <% if @items.empty? %>
+        <h3 class="my-5">Nothing in this category. Sorry!</h3>
+        <br><br><br><br><br>
+        <a href="/items_decorate"><button type="button" class="fill">Back to all Items</button></a>
+      <% end %>
     </div>
 
 
-    <%# <div class="filter-box">
-      <%= form_tag items_path, method: :get do %>
+    <%# <div class="filter-box"> %>
+      <%# <%= form_tag items_path, method: :get do %>
         <%# <%= select_tag "Category", options_for_select(['Select Category', 'Bed', 'Bench', 'Chair', 'Coat Stand', "Coffee Table", 'Cupboard', 'Desk', "Drawers", "Lamp", "Side Table", "Shelves", "Stool", "Sofa", "Table", "Lamp", "Wine Rack"])%>
         <%# <%= submit_tag "Search", class: "btn btn-flat mx-3" %>
       <%# <% end %>
