@@ -17,12 +17,13 @@
     <div class="ml-4 text-left">
       <h2>About this - <%= @item.name %></h2>
       <p><%= @item.description %></p>
-      <%= link_to 'Add to Basket', item_basket_items_path(@item), class: "pink-underlined-button", method: :post %>
+      <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
+      <p id="sweet-alert-demo" class="pink-underlined-button">Add to Basket</p>
       <%= form_tag  do %>
       <% end %>
     </div>
-
   </div>
+
   <div>
     <%# <%= render 'meetartist' %>
     <h1 class="mt-5 text-center">Like this piece?</h1>

@@ -31,6 +31,13 @@ $(".home-card-link").hover(function() {
 // External imports
 import "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "Item added to Basket",
+  text: "Your item will stay in the basket for 1 hour",
+  icon: "success"
+});
 
 
 // Internal imports, e.g:
