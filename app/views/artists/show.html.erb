@@ -8,7 +8,7 @@
         <%= cl_image_tag(@artist.user.photo.key, :class => "profile-avatar ml-5") %>
         <% if current_user %>
           <%= link_to toggle_favorite_artist_path(@artist), remote: true, method: :post do %>
-            <div class="avatar-like <%= 'pink-heart' if current_user.favorited?(@artist) %>" data-id="<%= @artist.id %>">
+            <div class="show-avatar-like <%= 'pink-heart' if current_user.favorited?(@artist) %>" data-id="<%= @artist.id %>">
               <i class="fas fa-heart fa-2x"></i>
             </div>
           <% end %>
