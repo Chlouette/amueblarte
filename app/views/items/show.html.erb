@@ -1,7 +1,7 @@
 <div class="mt-5 container">
   <h1><%= @item.name %></h1>
   <p>by <%= @artist.user.first_name %> <%= @artist.user.last_name %></p>
-  <div class="mt-5 item-show-wrapper">
+  <div class="mt-4 item-show-wrapper">
     <div class="show-item-image">
       <%= cl_image_tag(@item.photos.first.key) %>
       <div class="index-decorate-card-text">
@@ -15,19 +15,29 @@
       </div>
     </div>
     <div class="ml-4 text-left">
-
       <h2>About this - <%= @item.name %></h2>
       <p><%= @item.description %></p>
-
       <%= link_to 'Add to Basket', item_basket_items_path(@item), class: "pink-underlined-button", method: :post %>
       <%= form_tag  do %>
       <% end %>
+    </div>
 
-    </div>
-    </div>
+  </div>
   <div>
     <%# <%= render 'meetartist' %>
+    <h1 class="mt-5 text-center">Like this piece?</h1>
+    <p class="text-center">Come see who made it!</p>
+    <div class="mt-5 user-profile-card justify-content-between text-center">
+      <%= cl_image_tag(@artist.user.photo.key, :class => "profile-avatar ml-5") %>
+      <div class="profile-details">
+        <h2><%= @artist.user.first_name ? @artist.user.first_name : '' %> <%= @artist.user.last_name ? @artist.user.last_name : '' %></h2>
+        <h4 class="mt-4 mb-2">BIO</h4>
+        <% if @artist %>
+          <p><%= @artist.biography %> </p>
+        <% end %>
+      </div>
     </div>
+  </div>
   </div>
   </div>
 </div>
