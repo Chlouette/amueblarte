@@ -4,7 +4,7 @@
   <div class="row py-4">
     <div class="col">
       <h1>Order #<%= @basket.id %></h1>
-      <p><strong>ISSUED ON</strong> <%= @basket.created_at.to_date %></p>
+      <p><strong>ISSUED ON</strong> <%= @basket.created_at.to_date.strftime("%d/%m/%Y") %></p>
       <div>
       <table class="mt-5 table">
       <thead>
