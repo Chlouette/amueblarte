@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   resources :bookings, only: [:show]
 
   resources :baskets, only: [:show, :create] do
+    member do
+      get :success
+    end
     resources :payments, only: :new
   end
 

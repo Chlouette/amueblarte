@@ -9,6 +9,7 @@
             <td><%= basket_item.item.name %></td>
             <td><%= basket_item.item.description %></td>
             <td><%= humanized_money_with_symbol basket_item.item.price %></td>
+            <td>Delete</td>
           </tr>
           <% total_basket += basket_item.item.price %>
         <% end %>
