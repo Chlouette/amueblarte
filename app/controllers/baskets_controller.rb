@@ -26,5 +26,10 @@ class BasketsController < ApplicationController
   def success
     @basket = Basket.find(params[:id])
     @basket.update(paid: true)
+
+    @basket.basket_item_ids.each do |item_id|
+      item = Item.where(id: item_id)
+      item.update(status: "sold")
+    end
   end
 end
