@@ -27,6 +27,7 @@ gem 'simple_form'
 
 gem 'faker'
 gem 'stripe'
+gem 'stripe_event'
 gem 'money-rails'
 
 gem 'letter_opener', group: :development
