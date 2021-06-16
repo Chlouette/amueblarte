@@ -303,6 +303,15 @@ puts "Creating Items..."
 
   puts "Creating Collected items"
   # SOFAS
+  createItem(
+    'https://scontent.fgva1-1.fna.fbcdn.net/v/t1.6435-9/145225902_1378628172472637_1544494554337367884_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=BZj9sCYeDggAX86tECV&_nc_ht=scontent.fgva1-1.fna&oh=7b2a2ddac9be31b73a3adf9e594d7347&oe=60CE1A88',
+    'Sofa', 
+    'Single Seat Sofa',
+    'Red Single seat sofa. In poor condition. Bought about ten years ago, hoping someone can bring it back to life.',
+    'Red',
+    'collected',
+    90
+  )
 
   # CHAIRS
     createItem(
@@ -393,6 +402,16 @@ puts "Creating Items..."
       9999
     )
 
+    createItem(
+      'https://www.loveourreallife.com/wp-content/uploads/2017/07/Master-nightstand-before.jpg',
+      'Drawers', 
+      'Master Nightstand',
+      'Amber Wood Chest of Drawers. Fiar condition. Missing Handles, has been used, few areas needs rubbing down and rewaxing.',
+      'Light Brown',
+      'collected',
+      9999
+    )
+
   # COAT STANDS
     createItem(
       'https://i.ebayimg.com/00/s/MTAyNFg3Njg=/z/CnAAAOSw~QNguLrx/$_86.JPG',
@@ -435,6 +454,20 @@ puts "Creating Items..."
       'collected',
       6789
     )
+
+    # CUPBOARD
+    createItem(
+      'https://www.loveourreallife.com/wp-content/uploads/2017/07/Master-Armoire-before.jpg',
+      'Cupboard', 
+      'Master Bedroom Armoire Cupboard',
+      'Large Wooden framed master Armoire for the bedroom. It is in good condition and want it to be used.',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+
+    # SIDE TABLE
+    # SHELVES
   
   puts "Collected items created"
 
@@ -448,7 +481,7 @@ puts "Creating Items..."
     'It’s hard to believe this was once a plain white sideboard?! An incredibly stylish addition for any hallway, living room or even bedroom – and at a fraction of the price of buying a similar design from scratch.',
     'Black, White',
     'for sale',
-    9999
+    3700
   )
 
   createItem(
@@ -458,7 +491,7 @@ puts "Creating Items..."
     'A sizeable bit of furniture with lovely countryside stencilling. A real addition to any kitchen or hallway',
     'Black, White',
     'for sale',
-    9898
+    3500
   )
 
   createItem(
@@ -470,6 +503,16 @@ puts "Creating Items..."
     'for sale',
     6135
     )
+    
+    createItem(
+      'https://www.loveourreallife.com/wp-content/uploads/2017/07/Master-Night-stand-after.jpg',
+      'Drawers', 
+      'Master Night Stand',
+      'Modern, upcycled Bedroom Night Stand. Recrafted chrome silver details with sleak white/grey finish.',
+      'Muted Grey, white',
+      'for sale',
+      5500
+      )
     
     # Shelves
     createItem(
@@ -535,16 +578,26 @@ puts "Creating Items..."
       )
 
       # Cupboard
-  createItem(
-    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/01/Pink-pianted-wardrobe-320x320.jpg',
-    'Cupboard', 
-    'Pink heirloom wardrobe',
-    'This wardrobe transformation is the work of Ideal Home’s Editor Heather Young who has upcycled an old family heirloom for her young daughter’s room.',
-    'Pink',
-    'for sale',
-    7458
-  )
+      createItem(
+        'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/01/Pink-pianted-wardrobe-320x320.jpg',
+        'Cupboard', 
+        'Pink heirloom wardrobe',
+        'This wardrobe transformation is the work of Ideal Home’s Editor Heather Young who has upcycled an old family heirloom for her young daughter’s room.',
+        'Pink',
+        'for sale',
+        7458
+      )
 
+      createItem(
+        'https://www.loveourreallife.com/wp-content/uploads/2017/07/Master-Armoire-after2.jpg',
+        'Cupboard', 
+        'Master Bedroom Large Armoire',
+        'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
+        'White grey',
+        'for sale',
+        9087
+      )
+      
   # Coat Stand
   createItem(
     'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Reclaimed-wooden-peg-rail-320x320.jpg',
@@ -577,7 +630,7 @@ puts "Creating Items..."
     'for sale',
     4258
   )
-  
+
   puts "For Sale items created"
   
   
