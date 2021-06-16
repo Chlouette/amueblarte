@@ -4,6 +4,8 @@
     <p></p>
   </div>
   <br>
+
+  <%# SLIDER %>
   <div class="mt-5 item-show-wrapper">
     <div class="show-item-image">
       <div class="wrapper">
@@ -28,6 +30,8 @@
           img.style.width = sliderVal + "%";
         }
       </script>
+
+      <%# PHOTOS THAT LINK TO THE ITEM %>
       <%# <%= cl_image_tag(@item.photos.first.key) %> 
       <div class="index-decorate-card-text">
           <% if current_user %>
