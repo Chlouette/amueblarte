@@ -567,6 +567,16 @@ puts "Creating Items..."
       'collected',
       9017
     )
+
+    createItem(
+      'https://blanchemoss.top/wp-content/uploads/2019/02/rustic-reclaimed-wood-bookshelf-makeover-old-laminate-shelving-with-paint-and.jpg',
+      'Shelves', 
+      'Rustic Bookshelf',
+      'Rustic, Reclaimed Wood, Bookshelf Makeover old laminate shelving with paint and …',
+      'White Wood',
+      'collected',
+      9017
+    )
   
     createItem(
       'https://www.georgestreet.co.uk/images/detailed/1/old-charm-bookcase-2665-868-868_tec2-iy.jpg',
