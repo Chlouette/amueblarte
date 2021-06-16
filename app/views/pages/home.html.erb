@@ -1,6 +1,3 @@
-<div class="home-container">
-  <br>
-  <br>
   <div class="home-links-container">
     <%= link_to new_item_path, class: "home-card-link" do %>
       <div class="home-card abandoned-chair" >
@@ -24,13 +21,13 @@
       </div>
     <% end %>
   </div>
-  <br>
-  <br>
-  <h2 class="my-5 text-center tag-line">
+<br>
+  <h2 class="mt-4 text-center tag-line">
     <span class="orange-text">UNWANTED FURNITURE </span>
     <span class="blue-text"> ARTISTICALLY RESTORED </span>
     <span class="pink-text"> FOR A UNIQUE HOME</span>
   </h2>
+<div class="home-container mt-3">
   <div class="text-center">
     <% items = @items.sample(3) %>
     <% item_1 = items[0] %>
