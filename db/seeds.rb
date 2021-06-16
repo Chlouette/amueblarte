@@ -605,6 +605,16 @@ puts "Creating Items..."
         6599
       )
 
+      createItem(
+        'https://images.unsplash.com/photo-1593085260707-5377ba37f868?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=537&q=80',
+        'Shelves', 
+        'Light Wood Shelves',
+        'Fresh and clean style shelves with a bonze decor on the bottom. Used in a modern home.',
+        'Light Brown, bronze',
+        'for sale',
+        3457
+      )
+
   # Side Table
   createItem(
     'https://ksassets.timeincuk.net/wp/uploads/sites/56/2019/07/Ideal-Home-CHI-upcycled-crates-517x620.jpg',
@@ -647,56 +657,66 @@ puts "Creating Items..."
       3568
       )
       
-      createItem(
-        'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/upcycled-furniture-armchair-after-1553007629.jpg?crop=0.936xw:0.963xh;0.0208xw,0&resize=980:*',
-        'Chair', 
-        'Dalmation Armchair',
-        'We picked Black Dalmatian Dots by Bliss Design Studio on Spoonflower for this piece, a spot-on print whether you style it with graphic, colorful extras or girly, glam accessories.',
-        'Black, White',
-        'for sale',
-        4399
-      )
-      
-      createItem(
-        'https://images.unsplash.com/photo-1611464908623-07f19927264e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80',
-        'Chair', 
-        'Green and White Futuristic Chair',
-        'Modern white base chair, renovated with an urban futuristic feel for a light airy space. Fabric replaced and Legs have been reworked.',
-        'Green, White',
-        'for sale',
-        6599
-      )
+    createItem(
+      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/upcycled-furniture-armchair-after-1553007629.jpg?crop=0.936xw:0.963xh;0.0208xw,0&resize=980:*',
+      'Chair', 
+      'Dalmation Armchair',
+      'We picked Black Dalmatian Dots by Bliss Design Studio on Spoonflower for this piece, a spot-on print whether you style it with graphic, colorful extras or girly, glam accessories.',
+      'Black, White',
+      'for sale',
+      4399
+    )
+    
+    createItem(
+      'https://images.unsplash.com/photo-1611464908623-07f19927264e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80',
+      'Chair', 
+      'Green and White Futuristic Chair',
+      'Modern white base chair, renovated with an urban futuristic feel for a light airy space. Fabric replaced and Legs have been reworked.',
+      'Green, White',
+      'for sale',
+      6599
+    )
 
-      # Cupboard
-      createItem(
-        'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/01/Pink-pianted-wardrobe-320x320.jpg',
-        'Cupboard', 
-        'Pink heirloom wardrobe',
-        'This wardrobe transformation is the work of Ideal Home’s Editor Heather Young who has upcycled an old family heirloom for her young daughter’s room.',
-        'Pink',
-        'for sale',
-        7458
-      )
+    # Cupboard
+    createItem(
+      'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/01/Pink-pianted-wardrobe-320x320.jpg',
+      'Cupboard', 
+      'Pink heirloom wardrobe',
+      'This wardrobe transformation is the work of Ideal Home’s Editor Heather Young who has upcycled an old family heirloom for her young daughter’s room.',
+      'Pink',
+      'for sale',
+      7458
+    )
 
-      createItem(
-        'https://www.loveourreallife.com/wp-content/uploads/2017/07/Master-Armoire-after2.jpg',
-        'Cupboard', 
-        'Master Bedroom Large Armoire',
-        'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
-        'White grey',
-        'for sale',
-        9087
-      )
+    createItem(
+      'https://www.loveourreallife.com/wp-content/uploads/2017/07/Master-Armoire-after2.jpg',
+      'Cupboard', 
+      'Master Bedroom Large Armoire',
+      'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
+      'White grey',
+      'for sale',
+      9087
+    )
 
-      createItem(
-        'https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
-        'Cupboard', 
-        'Large Wardrobe',
-        'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
-        'Light Brown',
-        'for sale',
-        9087
-      )
+    createItem(
+      'https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+      'Cupboard', 
+      'Large Wardrobe',
+      'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
+      'Light Brown',
+      'for sale',
+      7600
+    )
+
+    createItem(
+      'https://images.unsplash.com/photo-1599202480744-c2744ffd2b54?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+      'Cupboard', 
+      'White Modern Storage Cupboard',
+      'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
+      'White',
+      'for sale',
+      8900
+    )
       
   # Coat Stand
   createItem(
