@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:toggle_favorite, :index_creation, :show, :new]
+  before_action :authenticate_user!, only: :toggle_favorite
   before_action :find_by_id, only: [:show, :edit, :update, :toggle_favorite]
 
   def index_creation
@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
     # TO DO
     # @artist = User.where(User.booking.item: @item)
     booking = @item.bookings.first
-    @basket = current_user.basket.last
+    @basket = current_user.baskets.last
     # @artist = booking.user
     @artist = Artist.first
   end

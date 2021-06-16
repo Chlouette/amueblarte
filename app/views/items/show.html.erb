@@ -6,7 +6,29 @@
   <br>
   <div class="mt-5 item-show-wrapper">
     <div class="show-item-image">
-      <%= cl_image_tag(@item.photos.first.key) %>
+      <div class="wrapper">
+        <div class="images">
+          <div class="img-1"></div>
+          <div class="img-2"></div>
+        </div>
+        <div class="slider">
+          <div class="drag-line">
+            <span></span>
+          </div>
+          <input type="range" min="0" max="100" value="50">
+        </div>
+      </div>
+      <script>
+        const slider = document.querySelector(".slider input");
+        const img = document.querySelector(".images .img-2");
+        const dragLine = document.querySelector(".slider .drag-line");
+        slider.oninput = ()=>{
+          let sliderVal = slider.value;
+          dragLine.style.left = sliderVal + "%";
+          img.style.width = sliderVal + "%";
+        }
+      </script>
+      <%# <%= cl_image_tag(@item.photos.first.key) %> 
       <div class="index-decorate-card-text">
           <% if current_user %>
             <%= link_to toggle_favorite_item_path(@item), remote: true, method: :post do %>
@@ -52,26 +74,4 @@
     <a href="/items_decorate"><button type="button" class="fill">Back To More Items</button></a>
   </div>
 
-  <div class="wrapper">
-    <div class="images">
-      <div class="img-1"></div>
-      <div class="img-2"></div>
-    </div>
-    <div class="slider">
-      <div class="drag-line">
-        <span></span>
-      </div>
-      <input type="range" min="0" max="100" value="50">
-    </div>
-  </div>
-  <script>
-    const slider = document.querySelector(".slider input");
-    const img = document.querySelector(".images .img-2");
-    const dragLine = document.querySelector(".slider .drag-line");
-    slider.oninput = ()=>{
-      let sliderVal = slider.value;
-      dragLine.style.left = sliderVal + "%";
-      img.style.width = sliderVal + "%";
-    }
-  </script>
 </div>
