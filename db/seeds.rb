@@ -726,7 +726,27 @@ puts "Creating Items..."
     'Any piece of salvaged wood has the potential to be a stylish set of wall hooks. Allowing the beauty of layers of paint on a plank of old wood there’s no need to sand or treat.',
     'Light Brown, Multicolored',
     'for sale',
-    6584
+    2300
+  )
+
+  createItem(
+    'https://cosmos2.my-store.ch/api/img?p=products/2021/6/FF07B494-8CBF-4E28-BE57-56EFBAA8C2EF/9735592_1&st=11&v=1623235254',
+    'Coat Stand', 
+    'Modern Black frame Coat Stand',
+    'Modern design, 2 Shelves, 1 rail, Offers a lot of space to put everything neatly away.',
+    'Black, Light Brown',
+    'for sale',
+    1599
+  )
+
+  createItem(
+    'https://static.digitecgalaxus.ch/Files/2/2/2/0/1/7/2/0/TecTake-Garderobenstaender-401033-1.jpg?impolicy=ProductTileImage&resizeWidth=436&resizeHeight=335&quality=high&cropWidth=436&cropHeight=335',
+    'Coat Stand', 
+    'Brass Coat Stand',
+    'Refurbished coat stand, practical, easy.',
+    'Black, Light Brown',
+    'for sale',
+    600
   )
 
   # Sofa
