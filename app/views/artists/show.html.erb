@@ -1,22 +1,31 @@
 <div class="container">
   <div class="mt-5 mb-4 text-center">
-    <h1><%= @artist.user.first_name ? @artist.user.first_name : @artist.user.email %>  </h1>
+    <h1>Say hello to <%= @artist.user.first_name ? @artist.user.first_name : @artist.user.email %>!</h1>
   </div>
   <h2 class="mb-3">Artist details</h2>
-  <div class="user-profile-card justify-content-between text-center">
-    <%= cl_image_tag(@artist.user.photo.key, :class => "profile-avatar ml-5") %>
-    <div class="profile-details">
-      <h4><%= @artist.user.first_name ? @artist.user.first_name : '' %> <%= @artist.user.last_name ? @artist.user.last_name : '' %></h4>
-      <h2 class="mt-3 mb-0">BIO</h2>
-      <% if @artist %>
-        <p><%= @artist.biography %> </p>
-      <% end %>
+    <div class="mt-5 user-profile-card justify-content-between text-center">
+      <div class="avatar-wrapper">
+        <%= cl_image_tag(@artist.user.photo.key, :class => "profile-avatar ml-5") %>
+        <% if current_user %>
+          <%= link_to toggle_favorite_artist_path(@artist), remote: true, method: :post do %>
+            <div class="show-avatar-like <%= 'pink-heart' if current_user.favorited?(@artist) %>" data-id="<%= @artist.id %>">
+              <i class="fas fa-heart fa-2x"></i>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="profile-details">
+        <h2><%= @artist.user.first_name ? @artist.user.first_name : '' %> <%= @artist.user.last_name ? @artist.user.last_name : '' %></h2>
+        <h4 class="mt-4 mb-2">BIO</h4>
+        <% if @artist %>
+          <p><%= @artist.biography %> </p>
+        <% end %>
+      </div>
     </div>
-  </div>
   <h2 class="my-5"><%= @artist.user.first_name %>'s Past Work</h2>
 
   <div class="text-center py-5">
-    <span class="button-wrapper"> <%= link_to "DISCOVER MORE ITEMS", items_path, class: "fill" %></span>
+    <span class="button-wrapper"> <%= link_to "DISCOVER MORE ITEMS", items_decorate_path, class: "fill" %></span>
     <span class="button-wrapper"> <%= link_to "DISCOVER MORE ARTISTS", artists_path, class: "fill" %></span>
   </div>
 </div>

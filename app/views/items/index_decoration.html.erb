@@ -1,10 +1,30 @@
 <div class="index-container container">
   <div class="titles-container">
-    <h1 class="text-center">All the Furniture</h1>
-    <p class="text-center">Browse through our upcycled pieces of Furniture</>
+    <div class="my-5">
+      <h1 class="text-center">All the Furniture</h1>
+      <p class="text-center">Browse through our upcycled pieces of Furniture</p>
+    </div>
+    <div class="text-center">
+      <%= form_tag items_decorate_path, method: :get do %>
+        <%= select_tag "item", options_for_select([ "Select Category",
+        "Sofa", "Chair", "Bench",
+        "Bed", "Drawers", "Table",
+        "Desk", "Stool", "Cupboard",
+        "Side Table", "Lamp", "Coat Stand",
+        "Shelves", "Wine Rack", "Coffee Table"
+      ], @filter)%>
+        <%= submit_tag "Search", class: "btn" %>
+      <% end %>
+      <% if @items.empty? %>
+        <h3 class="my-5">Nothing in this category. Sorry!</h3>
+        <br><br><br><br><br>
+        <a href="/items_decorate"><button type="button" class="fill">Back to all Items</button></a>
+      <% end %>
+    </div>
 
-    <%# <div class="filter-box">
-      <%= form_tag items_path, method: :get do %>
+
+    <%# <div class="filter-box"> %>
+      <%# <%= form_tag items_path, method: :get do %>
         <%# <%= select_tag "Category", options_for_select(['Select Category', 'Bed', 'Bench', 'Chair', 'Coat Stand', "Coffee Table", 'Cupboard', 'Desk', "Drawers", "Lamp", "Side Table", "Shelves", "Stool", "Sofa", "Table", "Lamp", "Wine Rack"])%>
         <%# <%= submit_tag "Search", class: "btn btn-flat mx-3" %>
       <%# <% end %>
@@ -23,21 +43,31 @@
                             input_html: { class: "tag-selector" },
                             item_wrapper_class: 'tag-item' %>
       <%# <% end %>
-    </div>
-  </div>
-  <div class="card-container" >
-    <% @items.each do |item| %>
-      <%= link_to new_item_booking_path(item) do %>
-        <% item.photos.each do |photo| %>
-          <div class="items-decorate-card">
-            <img src="<%= cl_image_path(photo.key) %>" alt="Upcycled ">
-            <div class="items-decorate-index-card">
-              <p><%= item.name %> <span>£20</span></p>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
   </div>
 </div>
 
+<div class="index-decorate-container">
+  <div class="row flex-wrap justify-content-left">
+    <% @items.each do |item| %>
+      <div class="col-12 col-md-6 col-lg-3 mb-4">
+        <div class="index-decorate-card">
+        <%= link_to item_path(item), data: { turbolinks: false } do %>
+          <%= cl_image_tag item.photos.first.key, alt: "Upcycled" %>
+            <div class="index-decorate-card-text">
+              <div class="card-text-name-price">
+                <%= item.name %> - <%= humanized_money_with_symbol(item.price_cents/100) %>
+              </div>
+              <% if current_user %>
+                <%= link_to toggle_favorite_item_path(item), remote: true, method: :post do %>
+                  <div class="card-text-like <%= 'pink-heart' if current_user.favorited?(item) %>" data-id="<%= item.id %>">
+                    <i class="fas fa-heart fa-2x"></i>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

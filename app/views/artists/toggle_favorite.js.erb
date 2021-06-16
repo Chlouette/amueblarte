@@ -1,0 +1,13 @@
+var artistId = '<%= @artist.id%>'
+
+function toggleLikeButton(artistId, innerHTML) {
+  if (document.querySelector(`.avatar-like[data-id='${artistId}']`)) {
+    document.querySelector(`.avatar-like[data-id='${artistId}']`).classList.toggle('pink-heart');
+  } else if (document.querySelector(`.favorites-avatar-like[data-id='${artistId}']`)) {
+    document.querySelector(`.favorites-avatar-like[data-id='${artistId}']`).classList.toggle('pink-heart');
+  } else if (document.querySelector(`.show-avatar-like[data-id='${artistId}']`)) {
+    document.querySelector(`.show-avatar-like[data-id='${artistId}']`).classList.toggle('pink-heart');
+  }
+}
+
+toggleLikeButton(artistId);

@@ -1,6 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <%= link_to root_path, class: "home-link ml-3", data: { turbolinks: false } do %>
-    <h1>AMOOBL</h1>
+    <%# <h1>AMOOBL</h1> %>
+    <%= image_tag('amoobl.png', class: "logo") %>
     <% end %>
   <%= link_to "#", class: "navbar-brand" do %>
     <%# <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
@@ -16,14 +17,19 @@
         <a href="/artists" class="underline--magical highlight-pink" class="nav-link">ARTISTS</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="underline--magical highlight-yellow" class="nav-link">OUR TEAM</a>
+        <a href="/our_team" class="underline--magical highlight-yellow" class="nav-link">OUR TEAM</a>
       </li>
       <% if user_signed_in? %>
         <%# SHOPPING CART BUTTON %>
         <%# <a href="#"><i class="far fa-heart favorites-icon underline--magical highlight-blue"></i></a> %>
+        <% if current_user.baskets.where(user: current_user, paid: false).first  %>
+        <% current_basket = current_user.baskets.where(user: current_user, paid: false).first %>
         <li class="nav-item">
-          <a href="#" class="underline--magical highlight-blue" class="nav-link">BASKET</a>
+        <%= link_to 'BASKET', basket_path(current_basket), class: 'nav-item underline--magical highlight-blue' %>
+          <%# <a href="/baskets/" class="underline--magical highlight-blue" class="nav-link">BASKET</a> %>
         </li>
+        <% end %>
+
 
         <%# FAVOURITES BUTTON %>
         <%# <li class="nav-item">
@@ -38,7 +44,7 @@
           <%= image_tag "https://cdn1.iconfinder.com/data/icons/ordinary-people/512/bookworm-512.png", class: "avatar dropdown-toggle b-w", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "PROFILE", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "BOOKINGS", "", class: "dropdown-item" %>
+            <%# <%= link_to "BOOKINGS", "", class: "dropdown-item" %>
             <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

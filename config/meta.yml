@@ -1,0 +1,5 @@
+meta_product_name: "Amoobl"
+meta_title: "Amoobl - Unwanted Furniture Artistically Restored For A Unique Home"
+meta_description: "A platform to donate your unwanted furniture and/or buy furniture upcycled by artists"
+meta_image: "amoobl.png" # should exist in `app/assets/images/`
+twitter_account: "@amoobl"   # required for Twitter Cards

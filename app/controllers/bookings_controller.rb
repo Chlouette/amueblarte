@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @booking.booking_type = session[:booking_type]
     @booking.user = current_user
     if @booking.save
+  
       redirect_to booking_path(@booking)
     else
       render :new
