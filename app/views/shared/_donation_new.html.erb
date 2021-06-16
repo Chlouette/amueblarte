@@ -1,39 +1,41 @@
-<div class="container page-container">
-  <div class="m-5 text-center">
-    <h1>We're coming for you!</h1>
-    <p>Choose the best date for us to come and collect your item!</p>
-  </div>
-</div>
-<div class="container page-container d-flex">
-  <div class="card-booking">
-    <h4>You're saving this beauty from the waste:</h4>
-    <br>
-    <ul>
-      <li>Name: <span class="green-text"><%= @item.name %></span></li>
-      <li>Description: <%= @item.description %></li>
-    </ul>
-    <div class="d-flex justify-content-center">
-      <% if @item.photos.attached? %>
-        <% @item.photos.each do |photo| %>
-          <div class="booking-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo.key %>')">
-          </div>
-        <% end %>
-      <% else %>
-        <div class="booking-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')">
-        </div>
-      <% end %>
+<div class="form-table-background">
+  <div class="container page-container">
+    <div class="m-5 text-center">
+      <h1>We're coming for you!</h1>
+      <p>Choose the best date for us to come and collect your item!</p>
     </div>
   </div>
-  <br>
-  <div class="booking-form">
-        <%= simple_form_for([@item, @booking]) do |f| %>
-          <div>
-            <h4 style="margin-top: 0.7rem">Book your collection date:</h4>
-            <div>
-              <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker", "data-multiple": false}, placeholder: 'Select date' %>
-              <div class="d-flex justify-content-end"><%= f.submit "Confirm Booking", class: "form-button" %></div>
+  <div class="container page-container d-flex">
+    <div class="card-booking">
+      <h4>You're saving this beauty from the waste:</h4>
+      <br>
+      <ul>
+        <li>Name: <span class="green-text"><%= @item.name %></span></li>
+        <li>Description: <%= @item.description %></li>
+      </ul>
+      <div class="d-flex justify-content-center">
+        <% if @item.photos.attached? %>
+          <% @item.photos.each do |photo| %>
+            <div class="booking-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo.key %>')">
             </div>
+          <% end %>
+        <% else %>
+          <div class="booking-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')">
           </div>
         <% end %>
+      </div>
     </div>
+    <br>
+    <div class="booking-form">
+          <%= simple_form_for([@item, @booking]) do |f| %>
+            <div>
+              <h4 style="margin-top: 0.7rem">Book your collection date:</h4>
+              <div>
+                <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker", "data-multiple": false}, placeholder: 'Select date' %>
+                <div class="d-flex justify-content-end"><%= f.submit "Confirm Booking", class: "form-button" %></div>
+              </div>
+            </div>
+          <% end %>
+      </div>
+  </div>
 </div>
