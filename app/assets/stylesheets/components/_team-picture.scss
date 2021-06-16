@@ -1,6 +1,9 @@
 .team-picture {
   padding: 5px;
   position: relative;
+  img {
+    width: 300px;
+  }
 }
 
 .team-picture-overlay {
