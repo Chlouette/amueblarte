@@ -22,6 +22,7 @@ const selectItem = () => {
         item.style.borderColor = 'black'
         // remove memory of last clicked card
         lastClickedCard = ''
+        randomiseBorderColor(event.target)
       })
     } else {
       event.target.classList.add('selected')
