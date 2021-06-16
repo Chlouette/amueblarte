@@ -1,0 +1,29 @@
+.team-picture {
+  padding: 5px;
+  position: relative;
+}
+
+.team-picture-overlay {
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.team-names {
+  text-align: center;
+}
+
+.team-picture:hover .team-picture-overlay {
+  display: block;
+  .team-names {
+    color: blue;
+  }
+}
+
+.team-picture:hover .team-names.pink {
+  color: $pink;
+}
+
+
