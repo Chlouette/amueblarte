@@ -486,6 +486,16 @@ puts "Creating Items..."
       9017
     )
 
+    createItem(
+      'https://images.unsplash.com/photo-1601779748927-14a098baa1b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=317&q=80',
+      'Cupboard', 
+      'Rusty Old Cupboard',
+      'Rusty Metal frame Wardrobe.',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+
     # SIDE TABLE
     createItem(
       'https://images.squarespace-cdn.com/content/v1/5b8f7fb6f93fd435ba55bd5c/1538538645757-AVXTTO33Y8GPNCAZUQY4/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/Wooden+Side+Table.jpg?format=750w',
@@ -499,6 +509,36 @@ puts "Creating Items..."
 
     createItem(
       'https://www.corycaantiques.co.uk/upload/images/shopprod/11269/old-pine-side-table---2-drawers_11269_main_size3.jpg',
+      'Side Table', 
+      'Table',
+      'A family item we have had for years but sadly I do not have any use for it anymore',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+
+    createItem(
+      'https://sep.yimg.com/ca/I/directfrommexico_2271_182365626',
+      'Side Table', 
+      'Table',
+      'A family item we have had for years but sadly I do not have any use for it anymore',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+    
+    createItem(
+      'https://da1urhpfd469z.cloudfront.net/uploads/advertphotos/12/0313/4688574-673m.jpg',
+      'Side Table', 
+      'Table',
+      'A family item we have had for years but sadly I do not have any use for it anymore',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+     
+    createItem(
+      'https://assets-vinterior-0.vinterior.co/uploads/listing_image/image/3848813/large_old-side-table_0.jpg',
       'Side Table', 
       'Table',
       'A family item we have had for years but sadly I do not have any use for it anymore',
@@ -605,6 +645,16 @@ puts "Creating Items..."
         6599
       )
 
+      createItem(
+        'https://images.unsplash.com/photo-1593085260707-5377ba37f868?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=537&q=80',
+        'Shelves', 
+        'Light Wood Shelves',
+        'Fresh and clean style shelves with a bonze decor on the bottom. Used in a modern home.',
+        'Light Brown, bronze',
+        'for sale',
+        3457
+      )
+
   # Side Table
   createItem(
     'https://ksassets.timeincuk.net/wp/uploads/sites/56/2019/07/Ideal-Home-CHI-upcycled-crates-517x620.jpg',
@@ -647,46 +697,66 @@ puts "Creating Items..."
       3568
       )
       
-      createItem(
-        'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/upcycled-furniture-armchair-after-1553007629.jpg?crop=0.936xw:0.963xh;0.0208xw,0&resize=980:*',
-        'Chair', 
-        'Dalmation Armchair',
-        'We picked Black Dalmatian Dots by Bliss Design Studio on Spoonflower for this piece, a spot-on print whether you style it with graphic, colorful extras or girly, glam accessories.',
-        'Black, White',
-        'for sale',
-        4399
-      )
-      
-      createItem(
-        'https://images.unsplash.com/photo-1611464908623-07f19927264e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80',
-        'Chair', 
-        'Green and White Futuristic Chair',
-        'Modern white base chair, renovated with an urban futuristic feel for a light airy space. Fabric replaced and Legs have been reworked.',
-        'Green, White',
-        'for sale',
-        6599
-      )
+    createItem(
+      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/upcycled-furniture-armchair-after-1553007629.jpg?crop=0.936xw:0.963xh;0.0208xw,0&resize=980:*',
+      'Chair', 
+      'Dalmation Armchair',
+      'We picked Black Dalmatian Dots by Bliss Design Studio on Spoonflower for this piece, a spot-on print whether you style it with graphic, colorful extras or girly, glam accessories.',
+      'Black, White',
+      'for sale',
+      4399
+    )
+    
+    createItem(
+      'https://images.unsplash.com/photo-1611464908623-07f19927264e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80',
+      'Chair', 
+      'Green and White Futuristic Chair',
+      'Modern white base chair, renovated with an urban futuristic feel for a light airy space. Fabric replaced and Legs have been reworked.',
+      'Green, White',
+      'for sale',
+      6599
+    )
 
-      # Cupboard
-      createItem(
-        'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/01/Pink-pianted-wardrobe-320x320.jpg',
-        'Cupboard', 
-        'Pink heirloom wardrobe',
-        'This wardrobe transformation is the work of Ideal Home’s Editor Heather Young who has upcycled an old family heirloom for her young daughter’s room.',
-        'Pink',
-        'for sale',
-        7458
-      )
+    # Cupboard
+    createItem(
+      'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/01/Pink-pianted-wardrobe-320x320.jpg',
+      'Cupboard', 
+      'Pink heirloom wardrobe',
+      'This wardrobe transformation is the work of Ideal Home’s Editor Heather Young who has upcycled an old family heirloom for her young daughter’s room.',
+      'Pink',
+      'for sale',
+      7458
+    )
 
-      createItem(
-        'https://www.loveourreallife.com/wp-content/uploads/2017/07/Master-Armoire-after2.jpg',
-        'Cupboard', 
-        'Master Bedroom Large Armoire',
-        'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
-        'White grey',
-        'for sale',
-        9087
-      )
+    createItem(
+      'https://www.loveourreallife.com/wp-content/uploads/2017/07/Master-Armoire-after2.jpg',
+      'Cupboard', 
+      'Master Bedroom Large Armoire',
+      'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
+      'White grey',
+      'for sale',
+      9087
+    )
+
+    createItem(
+      'https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+      'Cupboard', 
+      'Large Wardrobe',
+      'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
+      'Light Brown',
+      'for sale',
+      7600
+    )
+
+    createItem(
+      'https://images.unsplash.com/photo-1599202480744-c2744ffd2b54?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+      'Cupboard', 
+      'White Modern Storage Cupboard',
+      'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
+      'White',
+      'for sale',
+      8900
+    )
       
   # Coat Stand
   createItem(
@@ -696,7 +766,27 @@ puts "Creating Items..."
     'Any piece of salvaged wood has the potential to be a stylish set of wall hooks. Allowing the beauty of layers of paint on a plank of old wood there’s no need to sand or treat.',
     'Light Brown, Multicolored',
     'for sale',
-    6584
+    2300
+  )
+
+  createItem(
+    'https://cosmos2.my-store.ch/api/img?p=products/2021/6/FF07B494-8CBF-4E28-BE57-56EFBAA8C2EF/9735592_1&st=11&v=1623235254',
+    'Coat Stand', 
+    'Modern Black frame Coat Stand',
+    'Modern design, 2 Shelves, 1 rail, Offers a lot of space to put everything neatly away.',
+    'Black, Light Brown',
+    'for sale',
+    1599
+  )
+
+  createItem(
+    'https://static.digitecgalaxus.ch/Files/2/2/2/0/1/7/2/0/TecTake-Garderobenstaender-401033-1.jpg?impolicy=ProductTileImage&resizeWidth=436&resizeHeight=335&quality=high&cropWidth=436&cropHeight=335',
+    'Coat Stand', 
+    'Brass Coat Stand',
+    'Refurbished coat stand, practical, easy.',
+    'Black, Light Brown',
+    'for sale',
+    600
   )
 
   # Sofa
@@ -749,6 +839,16 @@ puts "Creating Items..."
     'Amber Brown, Black',
     'for sale',
     7800
+  )
+
+  createItem(
+    'https://images.unsplash.com/photo-1565791380713-1756b9a05343?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
+    'Table', 
+    'Wood panel Dining Table',
+    'Fresh look, pine, 4 stand art decor table.',
+    'Pine Wood',
+    'for sale',
+    5906
   )
 
   # stool
