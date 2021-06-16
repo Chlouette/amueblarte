@@ -54,6 +54,14 @@
   background-repeat: no-repeat;
 }
 
+.form-table-background {
+  background-image: image-url("one-line-table.svg");
+  background-repeat: no-repeat;
+  background-size: 75% 75%;
+  background-position-y: 120%;
+  background-position-x: 120%;
+}
+
 #item_status {
   text-transform: capitalize;
 }
