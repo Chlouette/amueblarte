@@ -781,6 +781,16 @@ puts "Creating Items..."
     7800
   )
 
+  createItem(
+    'https://images.unsplash.com/photo-1565791380713-1756b9a05343?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
+    'Table', 
+    'Wood panel Dining Table',
+    'Fresh look, pine, 4 stand art decor table.',
+    'Pine Wood',
+    'for sale',
+    5906
+  )
+
   # stool
   createItem(
     'https://images.unsplash.com/photo-1536639240649-1f0979e7993d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=450&q=80',
