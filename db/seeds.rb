@@ -302,6 +302,8 @@ puts "Creating Items..."
   end
 
   puts "Creating Collected items"
+  # SOFAS
+
   # CHAIRS
     createItem(
       'https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/l6wAAOSwhWxgudc5/$_86.JPG',
@@ -335,7 +337,7 @@ puts "Creating Items..."
       1234
     )
 
-    # TABLES
+  # TABLES
     createItem(
       'https://i.ebayimg.com/00/s/NTc2WDEwMjQ=/z/TWwAAOSwf0ZguMYu/$_86.JPG',
       'Table', 
@@ -380,8 +382,7 @@ puts "Creating Items..."
       9573
     )
 
-    # DRAWERS
-
+  # DRAWERS
     createItem(
       'https://i.ebayimg.com/00/s/MTAyNFg0NzM=/z/QGAAAOSwUP1gwcAt/$_86.JPG',
       'Drawers', 
@@ -392,8 +393,7 @@ puts "Creating Items..."
       9999
     )
 
-    # COAT STANDS
-
+  # COAT STANDS
     createItem(
       'https://i.ebayimg.com/00/s/MTAyNFg3Njg=/z/CnAAAOSw~QNguLrx/$_86.JPG',
       'Coat Stand', 
@@ -415,8 +415,7 @@ puts "Creating Items..."
       9900
     )
 
-    # STOOLS
-
+  # STOOLS
     createItem(
       'https://i.ebayimg.com/00/s/MTAyNFg3Njg=/z/b2oAAOSw2ZNgvysr/$_86.JPG',
       'Stool', 
@@ -441,6 +440,7 @@ puts "Creating Items..."
 
   puts "Creating for sale items..."
 
+  # Drawers
   createItem(
     'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/DIY-Rattan-Cupboard-Furniture-and-Choice-320x320.jpg',
     'Drawers', 
@@ -462,15 +462,37 @@ puts "Creating Items..."
   )
 
   createItem(
-    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2017/09/crate-ideas-chi-Dan-Duchars_CrateStorage-389x500.jpg',
-    'Shelves', 
-    'Wooden box shelves',
-    'Use them to curate thoughtful wall displays or as bookshelves. Just be sure to secure them safely, don’t overload them if the wall fixings aren’t strong enough to take the weight.',
-    'Pastel',
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2018/08/Ideal-Home-upcycled-furniture-320x320.jpg',
+    'Drawers', 
+    'Childrens Chest of Drawers',
+    'Bright colours, perfect for a child\s bedroom. Colourful, artistic, cheerful.',
+    'Pink, Yellow, White',
     'for sale',
-    9455
-  )
+    6135
+    )
+    
+    # Shelves
+    createItem(
+      'https://ksassets.timeincuk.net/wp/uploads/sites/56/2017/09/crate-ideas-chi-Dan-Duchars_CrateStorage-389x500.jpg',
+      'Shelves', 
+      'Wooden box shelves',
+      'Use them to curate thoughtful wall displays or as bookshelves. Just be sure to secure them safely, don’t overload them if the wall fixings aren’t strong enough to take the weight.',
+      'Pastel',
+      'for sale',
+      9455
+      )
+      
+      createItem(
+        'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hutch-after-upcycled-furniture-1552943774.jpg?crop=0.791xw:0.884xh;0.0900xw,0.0773xh&resize=980:*',
+        'Shelves', 
+        'Two-Tone Bookcase',
+        'For a fun and feminine look, we picked pink accessories, gray pain, and Hygge & West Nethercote wallpaper. Traditional blue paint and striped paper lends itself to nautical vibes.',
+        'Light Brown, White',
+        'for sale',
+        6599
+      )
 
+  # Side Table
   createItem(
     'https://ksassets.timeincuk.net/wp/uploads/sites/56/2019/07/Ideal-Home-CHI-upcycled-crates-517x620.jpg',
     'Side Table', 
@@ -482,25 +504,37 @@ puts "Creating Items..."
   )
 
   createItem(
-    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Annie-Sloan-Upcycled-Mid-Century-Chairs-320x320.jpg',
-    'Chair', 
-    'Jungle print chairs',
-    'Look away now if you LOVE Mid-century furniture  (sorry!). But if older design is not your thing.',
-    'Blue, Green, Brown',
+    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2020/11/Upcycled-bedside-table-320x320.jpg',
+    'Side Table', 
+    'Dusky Side Table',
+    'The paint of choice for this upcycling job is Frenchic,  in a beautiful on-trend shade of  Dusky Blush pink.',
+    'Pink',
     'for sale',
-    6548
-  )
+    2385
+    )
+    
+    # Chairs
+    createItem(
+      'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Annie-Sloan-Upcycled-Mid-Century-Chairs-320x320.jpg',
+      'Chair', 
+      'Jungle print chairs',
+      'Look away now if you LOVE Mid-century furniture  (sorry!). But if older design is not your thing.',
+      'Blue, Green, Brown',
+      'for sale',
+      6548
+      )
+      
+      createItem(
+        'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/upcycled-furniture-armchair-after-1553007629.jpg?crop=0.936xw:0.963xh;0.0208xw,0&resize=980:*',
+        'Chair', 
+        'Dalmation Armchair',
+        'We picked Black Dalmatian Dots by Bliss Design Studio on Spoonflower for this piece, a spot-on print whether you style it with graphic, colorful extras or girly, glam accessories.',
+        'Black, White',
+        'for sale',
+        4399
+      )
 
-  createItem(
-    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2018/08/Ideal-Home-upcycled-furniture-320x320.jpg',
-    'Drawers', 
-    'Childrens Chest of Drawers',
-    'Bright colours, perfect for a child\s bedroom. Colourful, artistic, cheerful.',
-    'Pink, Yellow, White',
-    'for sale',
-    6135
-  )
-
+      # Cupboard
   createItem(
     'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/01/Pink-pianted-wardrobe-320x320.jpg',
     'Cupboard', 
@@ -511,16 +545,7 @@ puts "Creating Items..."
     7458
   )
 
-  createItem(
-    'https://ksassets.timeincuk.net/wp/uploads/sites/56/2020/11/Upcycled-bedside-table-320x320.jpg',
-    'Side Table', 
-    'Dusky Side Table',
-    'The paint of choice for this upcycling job is Frenchic,  in a beautiful on-trend shade of  Dusky Blush pink.',
-    'Pink',
-    'for sale',
-    2385
-  )
-
+  # Coat Stand
   createItem(
     'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Reclaimed-wooden-peg-rail-320x320.jpg',
     'Coat Stand', 
@@ -531,6 +556,7 @@ puts "Creating Items..."
     6584
   )
 
+  # Sofa
   createItem(
     'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/04/Built-in-wooden-seating-320x320.jpg',
     'Sofa', 
@@ -541,6 +567,7 @@ puts "Creating Items..."
     5689
   )
 
+  # Table
   createItem(
     'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/03/Pallet-coffee-table-320x320.jpg',
     'Table', 
@@ -550,27 +577,7 @@ puts "Creating Items..."
     'for sale',
     4258
   )
-
-  createItem(
-    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hutch-after-upcycled-furniture-1552943774.jpg?crop=0.791xw:0.884xh;0.0900xw,0.0773xh&resize=980:*',
-    'Shelves', 
-    'Two-Tone Bookcase',
-    'For a fun and feminine look, we picked pink accessories, gray pain, and Hygge & West Nethercote wallpaper. Traditional blue paint and striped paper lends itself to nautical vibes.',
-    'Light Brown, White',
-    'for sale',
-    6599
-  )
-
-  createItem(
-    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/upcycled-furniture-armchair-after-1553007629.jpg?crop=0.936xw:0.963xh;0.0208xw,0&resize=980:*',
-    'Chair', 
-    'Dalmation Armchair',
-    'We picked Black Dalmatian Dots by Bliss Design Studio on Spoonflower for this piece, a spot-on print whether you style it with graphic, colorful extras or girly, glam accessories.',
-    'Black, White',
-    'for sale',
-    4399
-  )
-
+  
   puts "For Sale items created"
   
   
