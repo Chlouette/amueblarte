@@ -21,11 +21,10 @@ artist_biography =
   ceramicist and theatre designer."
 
 item_category = [
-  "Sofa", "Chair", "Bench",
-  "Bed", "Drawers", "Table",
-  "Desk", "Stool", "Cupboard",
+  "Sofa", "Chair", "Drawers", "Table",
+ "Stool", "Cupboard",
   "Side Table", "Lamp", "Coat Stand",
-  "Shelves", "Wine Rack", "Coffee Table"
+  "Shelves"
 ]
 
 status = [
