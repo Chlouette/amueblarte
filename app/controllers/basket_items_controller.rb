@@ -28,6 +28,8 @@ class BasketItemsController < ApplicationController
     
     def destroy
       basket_item = BasketItem.find(params[:id])
+      item = Item.find(basket_item.item_id)
+      item.update(status: "for sale")
       basket_item.destroy
       basket = current_user.baskets.last
       redirect_to basket_path(basket)

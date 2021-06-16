@@ -19,7 +19,7 @@
         <% total_basket = 0 %>
         <% @basket.basket_items.each do |basket_item| %>
           <tr>
-            <th scope="row"><%= basket_item.item.name %></th>
+            <th scope="row"><%= link_to basket_item.item.name, item_path(basket_item.item_id) %></th>
             <td><%= basket_item.item.description %></td>
             <td><%= humanized_money_with_symbol basket_item.item.price %></td>
             <td><span class="black-text"><%= link_to basket_item_path(basket_item), method: :delete, class: "black-text" do %>
