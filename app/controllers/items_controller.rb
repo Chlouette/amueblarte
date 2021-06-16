@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
       @items = Item.where(status: "collected")
       redirect_to items_create_path
     elsif params[:item]
-      @items = Item.where(category: params[:item])
+      @items = Item.where(category: params[:item], status: "collected")
       @filter = params[:item].to_s
     else
       @items = Item.where(status: "collected")
@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
       @items = Item.where(status: "for sale")
       redirect_to items_decorate_path
     elsif params[:item]
-      @items = Item.where(category: params[:item])
+      @items = Item.where(category: params[:item], status: "for sale")
       @filter = params[:item].to_s
     else
       @items = Item.where(status: "for sale")
