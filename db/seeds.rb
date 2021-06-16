@@ -687,6 +687,16 @@ puts "Creating Items..."
         'for sale',
         9087
       )
+
+      createItem(
+        'https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+        'Cupboard', 
+        'Large Wardrobe',
+        'This wardrobe transformation is an upcycled an old family heirloom, using shades of blue and white to blend seamlessly into a modern Home.',
+        'Light Brown',
+        'for sale',
+        9087
+      )
       
   # Coat Stand
   createItem(
