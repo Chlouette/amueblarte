@@ -567,16 +567,6 @@ puts "Creating Items..."
       'collected',
       9017
     )
-
-    createItem(
-      'http://4.bp.blogspot.com/_6Qje0ALI01o/R6xWauqvlmI/AAAAAAAAAN8/EzydoNuD0hQ/s1600-h/shelvesb.jpg',
-      'Shelves', 
-      'Storage Shelving',
-      'A family item we have had for years but sadly I do not have any use for it anymore',
-      'Oak Wood',
-      'collected',
-      9017
-    )
   
     createItem(
       'https://www.georgestreet.co.uk/images/detailed/1/old-charm-bookcase-2665-868-868_tec2-iy.jpg',
