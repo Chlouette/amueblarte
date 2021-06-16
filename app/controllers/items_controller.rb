@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: :toggle_favorite
+  before_action :authenticate_user!, only: [:toggle_favorite, :index_creation, :show, :new]
   before_action :find_by_id, only: [:show, :edit, :update, :toggle_favorite]
 
   def index_creation

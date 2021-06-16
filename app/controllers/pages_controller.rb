@@ -2,7 +2,7 @@ require 'open-uri'
 require 'nokogiri'
 
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :index]
 
   def home
     session[:booking_type] = ""
