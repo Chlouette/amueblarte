@@ -36,6 +36,7 @@ class ItemsController < ApplicationController
     @basket = current_user.baskets.last
     # @artist = booking.user
     @artist = Artist.first
+    @decorate = params[:decorate]
   end
 
   def new
