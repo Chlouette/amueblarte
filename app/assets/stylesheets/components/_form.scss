@@ -63,6 +63,14 @@
   background-position-x: 90%;
 }
 
+.form-bench-background {
+  background-image: image-url("one-line-bench.svg");
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+  background-position-y: 105%;
+  background-position-x: 120%;
+}
+
 #item_status {
   text-transform: capitalize;
 }
