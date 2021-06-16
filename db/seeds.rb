@@ -313,6 +313,26 @@ puts "Creating Items..."
     90
   )
 
+  createItem(
+    'https://images.saymedia-content.com/.image/c_limit%2Ccs_srgb%2Cq_auto:eco%2Cw_500/MTc0MzU1MzQ0MTM3NTk0MjE2/simple-ways-to-beautify-your-sofa.webp',
+    'Sofa', 
+    'Brown 3 seat Sofa',
+    'Older brown sofa. In poor condition. Bought about ten years ago, hoping someone can bring it back to life.',
+    'Brown',
+    'collected',
+    90
+  )
+
+  createItem(
+    'https://empire-s3-production.bobvila.com/slides/17062/widened/brown-couch-before.jpg?1591219996',
+    'Sofa', 
+    'Old Sofa',
+    'Old family sofa, has not be used in years, looking to donate it to a better place.',
+    'Brown',
+    'collected',
+    90
+  )
+
   # CHAIRS
     createItem(
       'https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/l6wAAOSwhWxgudc5/$_86.JPG',
@@ -467,8 +487,58 @@ puts "Creating Items..."
     )
 
     # SIDE TABLE
+    createItem(
+      'https://images.squarespace-cdn.com/content/v1/5b8f7fb6f93fd435ba55bd5c/1538538645757-AVXTTO33Y8GPNCAZUQY4/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/Wooden+Side+Table.jpg?format=750w',
+      'Side Table', 
+      'Bedside Table',
+      'In good condition, but I have no use for it anymore sadly.',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+
+    createItem(
+      'https://www.corycaantiques.co.uk/upload/images/shopprod/11269/old-pine-side-table---2-drawers_11269_main_size3.jpg',
+      'Side Table', 
+      'Table',
+      'A family item we have had for years but sadly I do not have any use for it anymore',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+
     # SHELVES
+    
+    createItem(
+      'https://www.andythornton.com/uploads/images/presets/product-page-image/store/products/p1apkqkdk0i483nv1kip1mtasa01.JPG',
+      'Shelves', 
+      'Storage Shelving',
+      'A family item we have had for years but sadly I do not have any use for it anymore',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+
+    createItem(
+      'http://4.bp.blogspot.com/_6Qje0ALI01o/R6xWauqvlmI/AAAAAAAAAN8/EzydoNuD0hQ/s1600-h/shelvesb.jpg',
+      'Shelves', 
+      'Storage Shelving',
+      'A family item we have had for years but sadly I do not have any use for it anymore',
+      'Oak Wood',
+      'collected',
+      9017
+    )
   
+    createItem(
+      'https://www.georgestreet.co.uk/images/detailed/1/old-charm-bookcase-2665-868-868_tec2-iy.jpg',
+      'Shelves', 
+      'Storage Shelving',
+      'A family item we have had for years but sadly I do not have any use for it anymore',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+
   puts "Collected items created"
 
   puts "Creating for sale items..."
