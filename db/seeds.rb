@@ -569,11 +569,11 @@ puts "Creating Items..."
     )
 
     createItem(
-      'http://4.bp.blogspot.com/_6Qje0ALI01o/R6xWauqvlmI/AAAAAAAAAN8/EzydoNuD0hQ/s1600-h/shelvesb.jpg',
+      'https://blanchemoss.top/wp-content/uploads/2019/02/rustic-reclaimed-wood-bookshelf-makeover-old-laminate-shelving-with-paint-and.jpg',
       'Shelves', 
-      'Storage Shelving',
-      'A family item we have had for years but sadly I do not have any use for it anymore',
-      'Oak Wood',
+      'Rustic Bookshelf',
+      'Rustic, Reclaimed Wood, Bookshelf Makeover old laminate shelving with paint and …',
+      'White Wood',
       'collected',
       9017
     )
