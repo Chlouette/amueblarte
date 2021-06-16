@@ -555,6 +555,16 @@ puts "Creating Items..."
     'for sale',
     2385
     )
+
+    createItem(
+      'https://images.unsplash.com/photo-1589565176356-a586e73f56f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+      'Side Table', 
+      'Light Wood Mini Side Table',
+      'The Table is a small feature used for styling plants, decor, art. Polished and restored.',
+      'Light Wood',
+      'for sale',
+      1300
+      )
     
     # Chairs
     createItem(
@@ -564,7 +574,7 @@ puts "Creating Items..."
       'Look away now if you LOVE Mid-century furniture  (sorry!). But if older design is not your thing.',
       'Blue, Green, Brown',
       'for sale',
-      6548
+      3568
       )
       
       createItem(
@@ -575,6 +585,16 @@ puts "Creating Items..."
         'Black, White',
         'for sale',
         4399
+      )
+      
+      createItem(
+        'https://images.unsplash.com/photo-1611464908623-07f19927264e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80',
+        'Chair', 
+        'Green and White Futuristic Chair',
+        'Modern white base chair, renovated with an urban futuristic feel for a light airy space. Fabric replaced and Legs have been reworked.',
+        'Green, White',
+        'for sale',
+        6599
       )
 
       # Cupboard
@@ -620,6 +640,26 @@ puts "Creating Items..."
     5689
   )
 
+  createItem(
+    'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
+    'Sofa', 
+    'Bespoke Dark Green Velour Sofa',
+    'Bespoke furniture is always a great way of utilising awkward spaces, such as alcoves, but building on specification is not a cheap option. Using offcuts of wood from other projects, or sourcing wooden planks second hand, you can create a totally bespoke seating arrangement.',
+    'Dark Green',
+    'for sale',
+    12345
+  )
+
+  createItem(
+    'https://images.unsplash.com/photo-1491926626787-62db157af940?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80',
+    'Sofa', 
+    'Light Grey Shell Sofa',
+    'Sea Shell inspired silver/grey Sofa. A feature piece in a modern feel space. Lightening up a space to feel like you are at home.',
+    'Silver, Grey',
+    'for sale',
+    15690
+  )
+
   # Table
   createItem(
     'https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/03/Pallet-coffee-table-320x320.jpg',
@@ -629,6 +669,37 @@ puts "Creating Items..."
     'Light Brown, White',
     'for sale',
     4258
+  )
+
+  createItem(
+    'https://images.unsplash.com/photo-1604061986761-d9d0cc41b0d1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80',
+    'Table', 
+    'Urban Coffee Table',
+    'Low, fresh polish wood top coffee table. Black metal legs as a feature statement piece. Looks great in any living room',
+    'Amber Brown, Black',
+    'for sale',
+    7800
+  )
+
+  # stool
+  createItem(
+    'https://images.unsplash.com/photo-1536639240649-1f0979e7993d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=450&q=80',
+    'Stool', 
+    'Vintage Stool',
+    'Urban recycled Stool, rustic cottage core feel. Bronze Foot for details.',
+    'Off white, Cream',
+    'for sale',
+    2700
+  )
+
+  createItem(
+    'https://images.unsplash.com/photo-1620826641212-04c74161116c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=282&q=80',
+    'Stool', 
+    'Dark Grey Urban Stool',
+    'Tall Dark Stool, Sturdy high quality feel, lovingly restored looking for a new home.',
+    'Dark Grey',
+    'for sale',
+    3100
   )
 
   puts "For Sale items created"
