@@ -517,6 +517,36 @@ puts "Creating Items..."
       9017
     )
 
+    createItem(
+      'https://sep.yimg.com/ca/I/directfrommexico_2271_182365626',
+      'Side Table', 
+      'Table',
+      'A family item we have had for years but sadly I do not have any use for it anymore',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+    
+    createItem(
+      'https://da1urhpfd469z.cloudfront.net/uploads/advertphotos/12/0313/4688574-673m.jpg',
+      'Side Table', 
+      'Table',
+      'A family item we have had for years but sadly I do not have any use for it anymore',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+     
+    createItem(
+      'https://assets-vinterior-0.vinterior.co/uploads/listing_image/image/3848813/large_old-side-table_0.jpg',
+      'Side Table', 
+      'Table',
+      'A family item we have had for years but sadly I do not have any use for it anymore',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+
     # SHELVES
     
     createItem(
