@@ -333,6 +333,16 @@ puts "Creating Items..."
     90
   )
 
+  createItem(
+    'https://da1urhpfd469z.cloudfront.net/uploads/advertphotos/21/0511/44840661-894-640x480.jpg',
+    'Sofa', 
+    'Old blue and grey sofa',
+    'Blue and grey sofa.',
+    'Blue',
+    'collected',
+    90
+  )
+
   # CHAIRS
     createItem(
       'https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/l6wAAOSwhWxgudc5/$_86.JPG',

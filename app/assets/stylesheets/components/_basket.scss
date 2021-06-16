@@ -1,3 +1,10 @@
 .basket-head {
     font-size: 24px;
 }
+
+.basket-name {
+  color: $black;
+  &:hover {
+    color: $black;
+  }
+}
