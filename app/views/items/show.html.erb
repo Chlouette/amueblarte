@@ -24,13 +24,13 @@
       <h3>£<%= @item.price_cents/100 %></h3>
     </div>
       <% if @basket === nil %>
-        <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
-        <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn" style="float: right;">Add to Basket</p>
+        <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none slide-in", method: :post %>
+        <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn slide-in" style="float: right;">Add to Basket</p>
       <% elsif @basket.items.include?(@item) %>
         <p class="basket_btn blue-underline" style="float: right; font-style: italic; font-weight: bold">Already in your Basket</p>
       <% else %>
-        <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none", method: :post %>
-        <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn" style="float: right;">Add to Basket</p>
+        <%= link_to 'Add to Basket', item_basket_items_path(@item), id: "real-button", class: "d-none slide-in", method: :post %>
+        <p id="sweet-alert-demo" class="underlined-button pink-underline basket_btn slide-in" style="float: right;">Add to Basket</p>
       <% end %>
     </div>
   <div>

@@ -5,6 +5,7 @@
       <p>Choose the best date for us to come and collect your item!</p>
     </div>
   </div>
+
   <div class="container page-container d-flex">
     <div class="card-booking">
       <h4>You're saving this beauty from the waste:</h4>
@@ -27,15 +28,15 @@
     </div>
     <br>
     <div class="booking-form">
-          <%= simple_form_for([@item, @booking]) do |f| %>
-            <div>
-              <h4 style="margin-top: 0.7rem">Book your collection date:</h4>
-              <div>
-                <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker", "data-multiple": false}, placeholder: 'Select date' %>
-                <div class="d-flex justify-content-end"><%= f.submit "Confirm Booking", class: "form-button" %></div>
-              </div>
-            </div>
-          <% end %>
-      </div>
+      <%= simple_form_for([@item, @booking]) do |f| %>
+      <div>
+        <h4 style="margin-top: 0.7rem">Book your collection date:</h4>
+          <div>
+          <%= f.input :start_date, as: :string, required: true, label: false, input_html: {class: "datepicker", "data-multiple": false}, placeholder: 'Select date' %>
+          <div class="d-flex justify-content-end"><%= f.submit "Confirm Booking", class: "form-button slide-in" %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
