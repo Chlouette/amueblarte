@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
     # TO DO
     # @artist = User.where(User.booking.item: @item)
     booking = @item.bookings.first
-    @basket = current_user.baskets.last
+    @basket = current_user.basket.last
     # @artist = booking.user
     @artist = Artist.first
   end
