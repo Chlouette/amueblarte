@@ -486,6 +486,16 @@ puts "Creating Items..."
       9017
     )
 
+    createItem(
+      'https://images.unsplash.com/photo-1601779748927-14a098baa1b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=317&q=80',
+      'Cupboard', 
+      'Rusty Old Cupboard',
+      'Rusty Metal frame Wardrobe.',
+      'Oak Wood',
+      'collected',
+      9017
+    )
+
     # SIDE TABLE
     createItem(
       'https://images.squarespace-cdn.com/content/v1/5b8f7fb6f93fd435ba55bd5c/1538538645757-AVXTTO33Y8GPNCAZUQY4/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/Wooden+Side+Table.jpg?format=750w',
