@@ -9,7 +9,14 @@
       <% total_basket += basket_item.item.price %>
     <% end %>
       </div>
-  <p class="text-center">Buy these beauties for <strong><%= humanized_money_with_symbol total_basket %></strong></p>
+  <p class="text-center">
+    Buy <% if @basket.basket_items.count === 1 %>
+      this beauty 
+    <% else %>
+      these beauties 
+    <% end %>
+    for <strong><%= humanized_money_with_symbol total_basket %></strong>
+  </p>
   <div class="mx-auto text-center">
   <button id="pay" class="underlined-button pink-underline">Pay</button>
   </div>
