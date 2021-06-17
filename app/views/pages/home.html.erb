@@ -1,23 +1,26 @@
   <div class="home-links-container">
     <%= link_to new_item_path, class: "home-card-link" do %>
       <div class="home-card abandoned-chair" >
-      <h2 id="donate-card">
-        DONATE
-      </h2>
+        <h2 id="donate-card">
+          DONATE
+          <i class="fas fa-hand-holding-heart"></i>
+        </h2>
       </div>
     <% end %>
     <%= link_to items_create_path, class: "home-card-link" do %>
       <div class="home-card art-chair">
-      <h2 id="create-card">
-        CREATE
-      </h2>
+        <h2 id="create-card">
+          CREATE
+          <i class="fas fa-paint-brush"></i>
+        </h2>
       </div>
     <% end %>
     <%= link_to items_decorate_path, class: "home-card-link" do %>
       <div class="home-card decorate-chair">
-      <h2 id="decorate-card">
-        DECORATE
-      </h2>
+        <h2 id="decorate-card">
+          DECORATE
+          <i class="fas fa-shopping-basket"></i>
+        </h2>
       </div>
     <% end %>
   </div>
