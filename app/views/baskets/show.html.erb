@@ -48,10 +48,10 @@
     <span class="text-left">Estimated delivery in <strong>7 business days</strong></span>
     <div style="float: right;">
       <% if @basket.basket_items.count > 0 %>
-        <%= link_to "Keep shopping", confirm_path, class: "underlined-button" %>
+        <%= link_to "Keep shopping", items_decorate_path, class: "underlined-button" %>
         <%= link_to "Confirm", confirm_path, class: "underlined-button green-underline" %>
       <% else %>
-        <%= link_to "Keep shopping", confirm_path, class: "underlined-button pink-underline" %>
+        <%= link_to "Keep shopping", items_decorate_path, class: "underlined-button pink-underline" %>
       <% end %>
     </div>
   </div>
