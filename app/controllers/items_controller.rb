@@ -3,26 +3,31 @@ class ItemsController < ApplicationController
   before_action :find_by_id, only: [:show, :edit, :update, :toggle_favorite]
 
   def index_creation
-    if params[:item] == "Select Category"
+    if params.dig(:search, :category)&.all?(&:blank?)
       @items = Item.where(status: "collected")
-      redirect_to items_create_path
-    elsif params[:item]
-      @items = Item.where(category: params[:item], status: "collected")
-      @filter = params[:item].to_s
+    elsif params[:search] && params[:search][:category]
+      @items = Item.where(category: params[:search][:category], status: "collected")
     else
       @items = Item.where(status: "collected")
     end
-      session[:booking_type] = "creation"
+    session[:booking_type] = "creation"
   end
 
   def index_decoration
     # @items = Item.where(status: "for sale")
-    if params[:item] == "Select Category"
+    # if params[:item] == "Select Category"
+    #   @items = Item.where(status: "for sale")
+    #   redirect_to items_decorate_path
+    # elsif params[:item]
+    #   @items = Item.where(category: params[:item], status: "for sale")
+    #   @filter = params[:item].to_s
+    # else
+    #   @items = Item.where(status: "for sale")
+    # end
+    if params.dig(:search, :category)&.all?(&:blank?)
       @items = Item.where(status: "for sale")
-      redirect_to items_decorate_path
-    elsif params[:item]
-      @items = Item.where(category: params[:item], status: "for sale")
-      @filter = params[:item].to_s
+    elsif params[:search] && params[:search][:category]
+      @items = Item.where(category: params[:search][:category], status: "for sale")
     else
       @items = Item.where(status: "for sale")
     end

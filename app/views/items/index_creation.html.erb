@@ -4,7 +4,7 @@
     <p><%= current_user.first_name ? current_user.first_name : current_user.email %>, please select the piece of furniture you'd like to work on: </p>
   </div>
   <div>
-    <%= render 'filter' %>
+    <%= render 'filter_create' %>
   </div>
   <div class="align-item-center item-container d-flex flex-wrap justify-content-around">
     <% if @items.empty? %>

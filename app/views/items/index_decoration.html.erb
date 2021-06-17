@@ -1,20 +1,13 @@
-<div class="index-container container">
+<div class="index-container container text-center">
   <div class="titles-container">
     <div class="my-5">
-      <h1 class="text-center">All the Furniture</h1>
-      <p class="text-center">Browse through our upcycled pieces of Furniture</p>
+      <h1 class="text-center">All the furniture</h1>
+      <p class="text-center">Browse through our upcycled pieces of furniture</p>
     </div>
-    <div class="text-center">
-      <%= form_tag items_decorate_path, method: :get do %>
-        <%= select_tag "item", options_for_select([ "Select Category",
-        "Sofa", "Chair",
-        "Drawers", "Table",
-        "Stool", "Cupboard",
-        "Side Table", "Coat Stand",
-        "Shelves"
-      ], @filter)%>
-        <%= submit_tag "Search", class: "btn" %>
-      <% end %>
+    <div>
+      <%= render 'filter_decorate' %>
+    </div>
+    <div class="align-item-center item-container d-flex flex-wrap justify-content-around">
       <% if @items.empty? %>
         <h3 class="my-5">Nothing in this category. Sorry!</h3>
         <br><br><br><br><br>
