@@ -6,11 +6,13 @@
   height: 140px;
   padding: 0px 50px;
   color: $black;
+  z-index: 200;
 }
 
 .footer-links {
   display: flex;
   align-items: center;
+  z-index: 200;
 }
 
 .footer-links a {
