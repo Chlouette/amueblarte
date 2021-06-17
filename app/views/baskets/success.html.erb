@@ -1,16 +1,26 @@
 <div class="page-container mt-5">
   <br>
   <h1 class="text-center">Thank you for supporting local Artists</h1>
-  <div class="show-container booking-show-card mt-5">
+  <div class="show-container-confirm booking-show-card mt-5">
     <div class="m-5">
-      <h2>Order Confirmation</h2>
+      <h2>Order Confirmation #<%= @basket.id %></h2>
       <br>
-      <P>Your order confirmation: #<%= @basket.id %> </P>
-  
-      <p></p>
+      <%# <p><%= @booking.item.name %>
+      <%# <p><%= @booking.item.price %>
+      <%# <%= raise %>
+      <%# <p><%= @basket.basket_items %>
+      <p>Your order is on the way!</p>
+      <% @basket.basket_items.each do |x| %>
+        <p><strong>Item Name:</strong>  <%= x.item.name %></p>
+      <% end %>
+
+      <% @basket.basket_items.each do |x| %>
+        <p><strong>Price:</strong> £<%= x.item.price.to_f.round() %></p>
+      <% end %>
+      <p>Estimated delivery in <strong>7 business days</strong></p>
     </div>
   </div>
-  <br><br>
+  <br><br><br><br>
   <div class="btn-center-page">
     <a href="/items_decorate"><button type="button" class="fill">More Items</button></a>
     <a href="/artists"><button type="button" class="fill">More Artists</button></a>
