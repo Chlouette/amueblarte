@@ -15,12 +15,19 @@ class ItemsController < ApplicationController
 
   def index_decoration
     # @items = Item.where(status: "for sale")
-    if params[:item] == "Select Category"
+    # if params[:item] == "Select Category"
+    #   @items = Item.where(status: "for sale")
+    #   redirect_to items_decorate_path
+    # elsif params[:item]
+    #   @items = Item.where(category: params[:item], status: "for sale")
+    #   @filter = params[:item].to_s
+    # else
+    #   @items = Item.where(status: "for sale")
+    # end
+    if params.dig(:search, :category)&.all?(&:blank?)
       @items = Item.where(status: "for sale")
-      redirect_to items_decorate_path
-    elsif params[:item]
-      @items = Item.where(category: params[:item], status: "for sale")
-      @filter = params[:item].to_s
+    elsif params[:search] && params[:search][:category]
+      @items = Item.where(category: params[:search][:category], status: "for sale")
     else
       @items = Item.where(status: "for sale")
     end
