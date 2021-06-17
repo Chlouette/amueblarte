@@ -32,6 +32,7 @@ $(".home-card-link").hover(function() {
 import "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { initConfetti } from '../plugins/confetti';
 
 initSweetalert('#sweet-alert-demo', {
   title: "Item added to Basket",
@@ -53,6 +54,10 @@ document.addEventListener('turbolinks:load', () => {
   }
   if (document.getElementsByClassName("selected")) {
     randomiseBorderColor()
+  }
+
+  if (document.querySelector("#tsparticles")) {
+    initConfetti();
   }
   
   initFlatpickr();
