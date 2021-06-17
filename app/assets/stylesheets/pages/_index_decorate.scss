@@ -18,7 +18,7 @@
 .card-text-name-price {
   position: absolute;
   bottom: 0;
-  left: 15px;
+  left: 0;
   font-size: 18px;
   padding: 2px 8px;
   color: $white;
@@ -37,7 +37,7 @@
 .card-text-like {
   position: absolute;
   top: 0;
-  left: 303px;
+  right: 0;
   font-size: 18px;
   padding: 8px 8px 4px;
   color: $white;
@@ -51,6 +51,10 @@
   &:hover {
     background-size: 100% 100%;
   }
+}
+
+.image-wrapper-index {
+  position: relative;
 }
 
 .card-text-name-price a {
