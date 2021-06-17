@@ -21,9 +21,11 @@ item_category = [
       <%= f.input :description %>
       <%= f.input :status, as: :select, collection: status, prompt: 'Set Status' %>
       <%= f.input :category, as: :select, collection: item_category  %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true, class: "d-none" }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true, class: "d-none" }, label_html: { class: 'upload-photo'}, label: 'Upload a photo' %>
       <%= f.submit "Update", class: "form-button" %>
+    <%= link_to 'Go Back', user_path(current_user), id: "back-btn" %>
     <% end %>
-    <%= link_to 'Go Back', user_path(current_user), class: "btn" %>
+    
+    
   </div>
 </div>
