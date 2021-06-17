@@ -40,77 +40,80 @@
   </div>
   <br>
   <br>
-  <div class="row justify-content-center">
-    <div class="col-4 home-card-link-wrapper">
-      <%= link_to @links[2], target: "_blank" do  %>
-        <div class="home-grid-card mb-4">
-          <h2>NEWS</h2>
-          <p><%= @articles[4][0..89]%>...</p>
-          <%= image_tag @images[2], alt: "alttext", class: "grid-card-image" %>
-        </div>
-      <% end %>
-    </div>
-    <div class="col-4 home-card-link-wrapper">
-      <%= link_to artist_path(artist) do %>
-        <div class="home-grid-card blue-underline-home mb-4">
-          <div class="text-center">
-            <h2>FEATURED ARTIST</h2>
-            <br>
-            <h2 class="home-artist-name"><%= artist.user.first_name %> <%= artist.user.last_name %></h2>
-            <br>
-            <%= cl_image_tag artist.user.photo.key, class: "home-profile-avatar" %>
+  <div class="home-container">
+    <div class="row justify-content-center">
+      <div class="col-4 home-card-link-wrapper">
+        <%= link_to @links[2], target: "_blank" do  %>
+          <div class="home-grid-card mb-4">
+            <h2>NEWS</h2>
+            <p><%= @articles[4][0..89]%>...</p>
+            <%= image_tag @images[2], alt: "alttext", class: "grid-card-image" %>
           </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="col-4 home-card-link-wrapper">
-      <%= link_to item_path(item_1), data: { turbolinks: false } do  %>
-        <div class="home-items-decorate-card mb-4">
-          <h2>FOR SALE</h2>
-          <div class="index-decorate-card-text">
-            <%= cl_image_tag item_1.photos.first.key %>
-            <div class="home-card-text-name-price">
-              <%= item_1.name %>
+        <% end %>
+      </div>
+      <div class="col-4 home-card-link-wrapper">
+        <%= link_to artist_path(artist) do %>
+          <div class="home-grid-card blue-underline-home mb-4">
+            <div class="text-center">
+              <h2>FEATURED ARTIST</h2>
+              <br>
+              <h2 class="home-artist-name"><%= artist.user.first_name %> <%= artist.user.last_name %></h2>
+              <br>
+              <%= cl_image_tag artist.user.photo.key, class: "home-profile-avatar" %>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-  <div class="row justify-content-center">
-    <div class="col-4 home-card-link-wrapper">
-      <%= link_to item_path(item_2), data: { turbolinks: false } do  %>
-        <div class="home-items-decorate-card">
-          <h2>FOR SALE</h2>
-          <div class="index-decorate-card-text">
-            <%= cl_image_tag item_2.photos.first.key %>
-            <div class="home-card-text-second">
-              <%= item_2.name %>
+        <% end %>
+      </div>
+      <div class="col-4 home-card-link-wrapper">
+        <%= link_to item_path(item_1), data: { turbolinks: false } do  %>
+          <div class="home-items-decorate-card mb-4">
+            <h2>FOR SALE</h2>
+            <div class="index-decorate-card-text">
+              <%= cl_image_tag item_1.photos.first.key %>
+              <div class="home-card-text-name-price">
+                <%= item_1.name %>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-    <div class="col-4 home-card-link-wrapper">
-      <%= link_to item_path(item_3), data: { turbolinks: false } do  %>
-        <div class="home-items-decorate-card">
-          <h2>FOR SALE</h2>
-          <div class="index-decorate-card-text">
-            <%= cl_image_tag item_3.photos.first.key %>
-            <div class="home-card-text-second">
-              <%= item_3.name %>
+    <div class="row justify-content-center">
+      <div class="col-4 home-card-link-wrapper">
+        <%= link_to item_path(item_2), data: { turbolinks: false } do  %>
+          <div class="home-items-decorate-card">
+            <h2>FOR SALE</h2>
+            <div class="index-decorate-card-text">
+              <%= cl_image_tag item_2.photos.first.key %>
+              <div class="home-card-text-second">
+                <%= item_2.name %>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="col-4 home-card-link-wrapper">
-      <%= link_to @links[4], target: "_blank" do  %>
-        <div class="home-grid-card">
-          <h2>NEWS</h2>
-          <p><%= @articles[6][0..89]%>...</p>
-          <%= image_tag @images[4], alt: "alttext", class: "grid-card-image" %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+      <div class="col-4 home-card-link-wrapper">
+        <%= link_to item_path(item_3), data: { turbolinks: false } do  %>
+          <div class="home-items-decorate-card">
+            <h2>FOR SALE</h2>
+            <div class="index-decorate-card-text">
+              <%= cl_image_tag item_3.photos.first.key %>
+              <div class="home-card-text-second">
+                <%= item_3.name %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-4 home-card-link-wrapper">
+        <%= link_to @links[4], target: "_blank" do  %>
+          <div class="home-grid-card">
+            <h2>NEWS</h2>
+            <p><%= @articles[6][0..89]%>...</p>
+            <%= image_tag @images[4], alt: "alttext", class: "grid-card-image" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
   <br>
