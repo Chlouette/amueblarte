@@ -87,3 +87,18 @@
 .slide-in {
   animation: 1s ease-in-out 0s 1 slideInFromLeft;
 }
+
+.upload-photo {
+  margin: 10px 0 0 0;
+  border: 1px solid #d3d3d3;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  border-radius: 2px;
+}
+
+.upload-photo:hover {
+  background-color: #eeeeee;
+  transition: .6s;
+}
