@@ -3,12 +3,12 @@ class ItemsController < ApplicationController
   before_action :find_by_id, only: [:show, :edit, :update, :toggle_favorite]
 
   def index_creation
-    if params[:search][:category]
+    if params[:search] && params[:search][:category]
       @items = Item.where(category: params[:search][:category], status: "collected")
     else
       @items = Item.where(status: "collected")
     end
-      session[:booking_type] = "creation"
+    session[:booking_type] = "creation"
   end
 
   def index_decoration
