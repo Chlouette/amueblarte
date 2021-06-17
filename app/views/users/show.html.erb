@@ -19,6 +19,17 @@
       <% end %>
     </div>
   </div>
+  <h2 class="my-5">My Orders</h2>
+  <div>
+  <% if @orders %>
+    <% @orders.each do |order| %>
+    <%= order.id %>
+    <p>This will be an order</p>
+    <% end %>
+  <% else %>
+    <p>No orders to view</p>
+  <% end %>
+  </div>
   <h2 class="my-5">My Activity</h2>
   <table class="w-100 user-activity text-center my-5">
     <tr>
