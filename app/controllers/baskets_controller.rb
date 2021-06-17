@@ -31,5 +31,7 @@ class BasketsController < ApplicationController
       item = Item.where(id: item_id)
       item.update(status: "sold")
     end
+    
+    # @booking = current_user.bookings.where(booking_type: "decoration").last
   end
 end

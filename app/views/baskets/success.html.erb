@@ -1,15 +1,46 @@
 <div class="page-container mt-5">
   <br>
-  <h1 class="text-center">Order Confirmation</h1>
-  <div class="show-container booking-show-card mt-5">
+  <h1 class="text-center">Thank you for supporting local Artists</h1>
+  <div class="show-container-confirm booking-show-card mt-5">
     <div class="m-5">
-      <h2>THANKS FOR SUPPORTING LOCAL ARTISTS!</h2>
-      <h3>Your order confirmation: #<%= @basket.id %> </h3>
-      <h4>We hope you love your new piece!</h4>
+      <h2>Order Confirmation #<%= @basket.id %></h2>
+      <br>
+      <%# <p><%= @booking.item.name %>
+      <%# <p><%= @booking.item.price %>
+      <%# <%= raise %>
+      <%# <p><%= @basket.basket_items %>
+      <p>Your order is on the way!</p>
+      <% @basket.basket_items.each do |x| %>
+        <p><strong>Item Name:</strong>  <%= x.item.name %></p>
+      <% end %>
+
+      <% @basket.basket_items.each do |x| %>
+        <p><strong>Price:</strong> £<%= x.item.price.to_f.round() %></p>
+      <% end %>
+      <p>Estimated delivery in <strong>7 business days</strong></p>
     </div>
   </div>
+  <br><br><br><br>
   <div class="btn-center-page">
     <a href="/items_decorate"><button type="button" class="fill">More Items</button></a>
     <a href="/artists"><button type="button" class="fill">More Artists</button></a>
   </div>
+
+  <%# CONFETTI %>
+  <!-- tsParticles container -->
+  <div id="tsparticles"></div>
+  <%# <!-- https://github.com/matteobruni/tsparticles -->
+  <div class="github">
+    <a class="btn btn-link" href="https://github.com/matteobruni/tsparticles" title="Find more info on GitHub">
+      <img class="img-fluid" id="gh-mark" src="https://cdn.matteobruni.it/images/particles/GitHub-Mark-120px-plus.png" alt="">
+      <span id="gh-project">Made with tsParticles</span>
+    </a>
+    <div style="text-align: center">
+      <a class="github-button" href="https://github.com/matteobruni/tsparticles" data-icon="octicon-star" data-show-count="true" aria-label="Star matteobruni/tsparticles on GitHub">Star</a>
+      <a class="github-button" href="https://github.com/matteobruni/tsparticles/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matteobruni/tsparticles on GitHub">Fork</a>
+    </div>
+  </div> %>
+  <%# <script async="" defer="" src="https://buttons.github.io/buttons.js"></script> %>
+  <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/tsparticles@1.25.0", "data-turbolinks-track" => true  %>
+  <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/tsparticles-shape-confetti@1.10.0", "data-turbolinks-track" => true  %>
 </div>
