@@ -3,7 +3,9 @@ class ItemsController < ApplicationController
   before_action :find_by_id, only: [:show, :edit, :update, :toggle_favorite]
 
   def index_creation
-    if params[:search] && params[:search][:category]
+    if params.dig(:search, :category)&.all?(&:blank?)
+      @items = Item.where(status: "collected")
+    elsif params[:search] && params[:search][:category]
       @items = Item.where(category: params[:search][:category], status: "collected")
     else
       @items = Item.where(status: "collected")
