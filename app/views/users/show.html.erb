@@ -4,57 +4,76 @@
   </div>
   <h2 class="mb-3">My details</h2>
   <div class="user-profile-card justify-content-between text-center">
-  <% if @user.photo.attached? %>
+    <% if @user.photo.attached? %>
       <%= cl_image_tag(@user.photo.key, :class => "profile-avatar ml-5")  %>
     <% else %>
       <%= image_tag 'https://cdn1.iconfinder.com/data/icons/ordinary-people/512/bookworm-512.png', class: "profile-avatar ml-5" %>
     <% end %>
-  
     <div class="profile-details">
       <p class="my-4"><%= @user.first_name ? @user.first_name : '' %> <%= @user.last_name ? @user.last_name : '' %> </p>
       <p class="my-4"><%= @user.email %> </p>
       <p class="my-4"><%= @user.address %></p>
       <% if @user.artist %>
-        <p><%= @user.artist.biography %> </p>
+        <><%= @user.artist.biography %> </p>
       <% end %>
     </div>
   </div>
-  <h2 class="my-5">My Orders</h2>
+  <h2 class="mt-5">My Orders</h2>
   <div>
-  <% if @orders %>
-    <% @orders.each do |order| %>
-    <%= order.id %>
-    <p>This will be an order</p>
+    <table class="w-100 user-activity text-center mb-5">
+      <tr>
+        <th class="quarter">Order Date</th>
+        <th class="quarter">Order #</th>
+        <th class="quarter">Number of Items</th>
+        <th class="quarter">Total Price</th>
+      </tr>
+      <% @orders.each do |order| %>
+        <tr>
+          <td>
+            <%= order.updated_at.to_date.strftime("%d/%m/%Y") %>
+          </td>
+          <td>
+            <%= order.id %>
+          </td>
+          <% total_price = 0 %>
+          <% number_of_items = 0 %>
+          <% order.basket_items.each do |basket_item| %>
+            <% total_price += basket_item.item.price %>
+            <% number_of_items += 1 %>
+          <% end %>
+          <td><%= number_of_items %> </td>
+          <td>£<%=  total_price %></td>
+        </tr>
+      </table>
     <% end %>
-  <% else %>
-    <p>No orders to view</p>
-  <% end %>
   </div>
-  <h2 class="my-5">My Activity</h2>
-  <table class="w-100 user-activity text-center my-5">
+  <div>
+    <h2 class="mt-5">My Activity</h2>
+  </div>
+  <table class="w-100 user-activity text-center mb-5">
     <tr>
-      <th>Booking Date</th>
-      <th>Type</th>
-      <th>Furniture</th>
-      <th>Status</th>
+      <th class="quarter">Booking Date</th>
+      <th class="quarter">Type</th>
+      <th class="quarter">Furniture</th>
+      <th class="quarter">Status</th>
     </tr>
     <% @bookings.each do |booking| %>
       <tr>
         <td><%= booking.start_date %> </td>
         <td><%= booking.booking_type.capitalize %> </td>
         <td>
-        <%= link_to item_path(booking.item) do %>
-        <span class="black-text">
-          <%= booking.item.name %>
-        </span> 
+          <%= link_to item_path(booking.item) do %>
+            <span class="black-text">
+              <%= booking.item.name %>
+            </span>
           <% end %>
         </td>
         <td><%= booking.item.status.upcase %> </td>
         <% if booking.booking_type == 'creation' %>
-        <td><%= link_to edit_item_path(booking.item) do %>
-        <span class="black-text">Update</span>
-        <% end %>
-        </td>
+          <td><%= link_to edit_item_path(booking.item) do %>
+              <span class="black-text">Update</span>
+            <% end %>
+          </td>
         <% end %>
       </tr>
     <% end %>
