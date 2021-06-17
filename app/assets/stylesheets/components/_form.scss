@@ -88,30 +88,43 @@
   animation: 1s ease-in-out 0s 1 slideInFromLeft;
 }
 
-.tag-item {
+.tag-item-blue, .tag-item-yellow {
   display: inline-block;
 }
 
-.tag-selector {
+.tag-item-blue label {
+  color: $blue;
+  border: 1px solid $blue;
+}
+
+.tag-item-yellow label {
+  color: $yellow;
+  border: 1px solid $yellow;
+}
+
+.tag-selector-blue, .tag-selector-yellow {
   position: absolute;
   transform: scale(0);
 }
 
-.tag-selector + label {
+.tag-selector-blue + label, .tag-selector-yellow + label {
   cursor: pointer;
   display: inline-block;
   // font-size: 0.7rem;
   border-radius: 50rem;
   padding: 0.1rem 0.6rem;
   // background-color: #ECEAFF;
-  color: $blue;
-  border: 1px solid $blue;
   margin-right: 0.8rem;
   margin-bottom: 0.4rem;
 }
 
-.tag-selector:checked + label {
+.tag-selector-blue:checked + label {
   background-color: $blue;
+  color: white;
+}
+
+.tag-selector-yellow:checked + label {
+  background-color: $yellow;
   color: white;
 }
 

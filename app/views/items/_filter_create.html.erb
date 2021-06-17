@@ -1,8 +1,8 @@
 <%= simple_form_for :search, url: items_create_path, method: "GET", html: {id: "create-search"}, remote: true do |f| %>
   <%= f.input :category,
     as: :check_boxes,
-    item_wrapper_class: 'tag-item',
-    input_html: {class: 'tag-selector'},
+    item_wrapper_class: 'tag-item-blue',
+    input_html: {class: 'tag-selector-blue'},
     checked: params[:search] ? params[:search][:category] : [],
     collection: [ "Sofa", "Chair", "Drawers", "Table", "Stool", "Cupboard", "Side Table", "Coat Stand", "Shelves" ]
   %>
