@@ -1,10 +1,9 @@
-<%= form_tag items_create_path, method: :get do %>
-  <%= select_tag "item", options_for_select([ "Select Category",
-  "Sofa", "Chair",
-  "Drawers", "Table",
-  "Stool", "Cupboard",
-  "Side Table", "Coat Stand",
-  "Shelves"
-], @filter)%>
-  <%= submit_tag "Search", class: "btn" %>
+<%= simple_form_for :search, url: items_create_path, method: "GET" do |f| %>
+  <%= f.input :category,
+    as: :check_boxes,
+    item_wrapper_class: 'tag-item',
+    input_html: {class: 'tag-selector'},
+    collection: [ "Sofa", "Chair", "Drawers", "Table", "Stool", "Cupboard", "Side Table", "Coat Stand", "Shelves"
+  ] %>
+<%= f.submit %>
 <% end %>

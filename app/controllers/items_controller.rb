@@ -3,12 +3,8 @@ class ItemsController < ApplicationController
   before_action :find_by_id, only: [:show, :edit, :update, :toggle_favorite]
 
   def index_creation
-    if params[:item] == "Select Category"
-      @items = Item.where(status: "collected")
-      redirect_to items_create_path
-    elsif params[:item]
-      @items = Item.where(category: params[:item], status: "collected")
-      @filter = params[:item].to_s
+    if params[:search][:category]
+      @items = Item.where(category: params[:search][:category], status: "collected")
     else
       @items = Item.where(status: "collected")
     end
