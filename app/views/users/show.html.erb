@@ -14,68 +14,76 @@
       <p class="my-4"><%= @user.email %> </p>
       <p class="my-4"><%= @user.address %></p>
       <% if @user.artist %>
-        <><%= @user.artist.biography %> </p>
+        <p><%= @user.artist.biography %> </p>
       <% end %>
     </div>
   </div>
-  <h2 class="mt-5">My Orders</h2>
   <div>
-    <table class="w-100 user-activity text-center mb-5">
-      <tr>
+    <h2 class="mt-5">My Orders</h2>
+  </div>
+  <div>
+    <table class="w-100 user-activity text-left mb-5 order-table">
+      <thead>
         <th class="quarter">Order Date</th>
         <th class="quarter">Order #</th>
         <th class="quarter">Number of Items</th>
         <th class="quarter">Total Price</th>
-      </tr>
-      <% @orders.each do |order| %>
-        <tr>
-          <td>
-            <%= order.updated_at.to_date.strftime("%d/%m/%Y") %>
-          </td>
-          <td>
-            <%= order.id %>
-          </td>
-          <% total_price = 0 %>
-          <% number_of_items = 0 %>
-          <% order.basket_items.each do |basket_item| %>
-            <% total_price += basket_item.item.price %>
-            <% number_of_items += 1 %>
-          <% end %>
-          <td><%= number_of_items %> </td>
-          <td>£<%=  total_price %></td>
-        </tr>
-      </table>
-    <% end %>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td>
+              <%= order.updated_at.to_date.strftime("%d/%m/%Y") %>
+            </td>
+            <td>
+              <%= order.id %>
+            </td>
+            <% total_price = 0 %>
+            <% number_of_items = 0 %>
+            <% order.basket_items.each do |basket_item| %>
+              <% total_price += basket_item.item.price %>
+              <% number_of_items += 1 %>
+            <% end %>
+            <td><%= number_of_items %> </td>
+            <td>£<%=  total_price %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-  <div>
+  <div class="d-block">
     <h2 class="mt-5">My Activity</h2>
   </div>
-  <table class="w-100 user-activity text-center mb-5">
-    <tr>
-      <th class="quarter">Booking Date</th>
-      <th class="quarter">Type</th>
-      <th class="quarter">Furniture</th>
-      <th class="quarter">Status</th>
-    </tr>
-    <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.start_date %> </td>
-        <td><%= booking.booking_type.capitalize %> </td>
-        <td>
-          <%= link_to item_path(booking.item) do %>
-            <span class="black-text">
-              <%= booking.item.name %>
-            </span>
-          <% end %>
-        </td>
-        <td><%= booking.item.status.upcase %> </td>
-        <% if booking.booking_type == 'creation' %>
-          <td><%= link_to edit_item_path(booking.item) do %>
-              <span class="black-text">Update</span>
+  <div>
+    <table class="w-100 user-activity text-left mb-5 order-table">
+      <thead>
+        <th class="quarter">Booking Date</th>
+        <th class="quarter">Furniture</th>
+        <th class="quarter">Type</th>
+        <th class="quarter">Status</th>
+      </thead>
+      <tbody>
+        <% @bookings.each do |booking| %>
+          <tr>
+            <td><%= booking.start_date %> </td>
+            <td>
+              <%= link_to item_path(booking.item) do %>
+                <span class="black-text">
+                  <%= booking.item.name %>
+                </span>
+              <% end %>
+            </td>
+            <td><%= booking.booking_type.capitalize %> </td>
+            <td><%= booking.item.status.upcase %> </td>
+            <% if booking.booking_type == 'creation' %>
+              <td><%= link_to edit_item_path(booking.item) do %>
+                  <span class="black-text">Update</span>
+                <% end %>
+              </td>
             <% end %>
-          </td>
+          </tr>
         <% end %>
-      </tr>
-    <% end %>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </div>
