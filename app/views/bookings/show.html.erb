@@ -1,7 +1,7 @@
 <%# BOOKING DONATION %>
 <% if @booking.donation? %>
   <div class="page-container">
-    <div class="show-container booking-show-card">
+    <div class="show-container booking-show-card" >
       <div class="m-5">
         <h2>THANKS, YOUR COLLECTION IS CONFIRMED!</h2>
         <p>Here's your collection recap:</p>
@@ -33,7 +33,7 @@
 <%# BOOKING CREATION %>
 <% if @booking.creation? %>
   <div class="page-container">
-    <div class="show-container booking-show-card">
+    <div class="show-container booking-show-card" id="create-booking-show-card">
       <div class="m-5 flex-grow-1">
         <%# <h1>Thanks, your <span class="text-green">collection</span> is confirmed!</h1>
           <br> %>
