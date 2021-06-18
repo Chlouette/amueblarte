@@ -16,35 +16,63 @@ Booking.destroy_all
 Item.destroy_all
 User.destroy_all
 
+def createItem(img_url, category, name, item_description, item_color, item_status, price)
+  item = Item.new(
+    category: category,
+    name: name,
+    description: item_description,
+    color: item_color,
+    status: item_status,
+    user: User.all.sample,
+    price_cents: price
+  )
+  img = URI.open(img_url)
+  item.photos.attach(io: img, filename: "#{name}.png", content_type: 'image/png')
+  item.save
+  item
+end
+
 artist_biography = 
   "Pablo Ruiz Picasso was a Spanish painter, sculptor, printmaker, 
   ceramicist and theatre designer."
 
-item_category = [
-  "Sofa", "Chair", "Drawers", "Table",
- "Stool", "Cupboard",
-  "Side Table", "Lamp", "Coat Stand",
-  "Shelves"
-]
-
-status = [
-  "to be collected",
-  "collected",
-  "in progress",
-  "for sale",
-  "pending",
-  "sold",
-  "delivered"
-]
-
+  item_category = [
+    "Sofa", "Chair", "Drawers", "Table",
+    "Stool", "Cupboard",
+    "Side Table", "Lamp", "Coat Stand",
+    "Shelves"
+  ]
+  
+  status = [
+    "to be collected",
+    "collected",
+    "in progress",
+    "for sale",
+    "pending",
+    "sold",
+    "delivered"
+  ]
+  
 puts "Creating Users and Artists..."
+  
+  def add_photo_to_user(user, img_url)
+    img = URI.open(img_url)
+    user.photo.attach(io: img, filename: img_url, content_type: 'image/png')
+    user.save
+  end
 
+puts "Creating Natasha..."
+  
+  user = User.create!(
+    first_name: 'Natasha',
+    last_name: 'Lion',
+    email: 'nat@sha.com',
+    password: '123456',
+    address: Faker::Address.full_address
+  )
+  add_photo_to_user(user, 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618501225/aeew3amojdtvyvmflbfo.jpg' )
 
-def add_photo_to_user(user, img_url)
-  img = URI.open(img_url)
-  user.photo.attach(io: img, filename: img_url, content_type: 'image/png')
-  user.save
-end
+puts 'finished created Natasha'
 
 puts "Creating James..."
 
@@ -55,20 +83,20 @@ user = User.create!(
   password: '123456',
   address: Faker::Address.full_address
 )
-add_photo_to_user(user, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' )
+add_photo_to_user(user, 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618951328/coj12cu8ljrmsmtp4xrs.jpg' )
 
 puts "Created James"
 
 puts "Creating Chloe..."
 
-user = User.create!(
-  first_name: 'Chloe',
-  last_name: 'Chloes',
-  email: 'chloe@test.com',
-  password: '123456',
-  address: Faker::Address.full_address
-)
-add_photo_to_user(user, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' )
+  user = User.create!(
+    first_name: 'Chloe',
+    last_name: 'Chloes',
+    email: 'chloe@test.com',
+    password: '123456',
+    address: Faker::Address.full_address
+  )
+  add_photo_to_user(user, 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618501225/aeew3amojdtvyvmflbfo.jpg' )
 
 puts "Created Chloe"
 
@@ -81,7 +109,7 @@ user = User.create!(
   password: '123456',
   address: Faker::Address.full_address
 )
-add_photo_to_user(user, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' )
+add_photo_to_user(user, 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618826522/iun86a66ulmux0dvdbnh.jpg' )
 
 puts "Created Emily"
 
@@ -94,7 +122,7 @@ user = User.create!(
   password: '123456',
   address: Faker::Address.full_address
 )
-add_photo_to_user(user, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' )
+add_photo_to_user(user, 'https://avatars.githubusercontent.com/u/81187143?v=4' )
 
 puts "Created Veni"
 
@@ -110,14 +138,14 @@ user = User.create!(
 add_photo_to_user(user, 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' )
 
 puts "Creating User2..."
-user = User.create!(
-  first_name: Faker::Name.first_name,
-  last_name: Faker::Name.last_name,
-  email: Faker::Internet.email,
-  password: '123456',
-  address: Faker::Address.full_address
-)
-add_photo_to_user(user,'https://images.unsplash.com/photo-1601931935821-5fbe71157695?ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+  user = User.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: '123456',
+    address: Faker::Address.full_address
+  )
+  add_photo_to_user(user,'https://images.unsplash.com/photo-1601931935821-5fbe71157695?ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
 puts "Creating User3..."
 user = User.create!(
@@ -129,175 +157,206 @@ user = User.create!(
 )
 add_photo_to_user(user, 'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
-puts "Creating Artist1..."
+puts "Creating 12 artists..."
+puts 'Creating Salvador Dalila...'
 
   user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
+    first_name: 'Salvador',
+    last_name: 'Dalila',
+    email: 'figueres@reloj.es',
     password: '123456',
     address: Faker::Address.full_address
   )
   Artist.create!(
-    biography: 'Contemporary realist painter who lives and works in Houston, Texas. A native of Barranquitas, Puerto Rico, her colorful paintings pay homage to her homeland.',
+    biography: 'I find most of my inspiration in the surrounding Catalan environs of my childhood. Some people find my art a bit dark, but I am just exploring life after death, since I was told I was the reincarnation of my brother.',
     user: user
   )
-  add_photo_to_user(user, 'https://images.unsplash.com/photo-1609010697446-11f2155278f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')
+  add_photo_to_user(user, 'https://www.dalipaintings.com/images/salvador-dali.jpg')
 
-puts "Creating Artist2..."
-
+puts 'Creating Hero Ku...'
+  
   user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
+    first_name: 'Hero',
+    last_name: 'Ku',
+    email: 'hero@ku.com',
     password: '123456',
     address: Faker::Address.full_address
   )
   Artist.create!(
-    biography: 'His personal graffitis were quickly noticed for their tribal signs and naïve characters. Criticizing consumerism and the exclusion of ethnic communities, Basquiat has his first exhibition at the age of 21.',
+    biography: 'I speak several languages, and I make sure this multiculturalism translates in my art. Email me if you want to push any idea you may have, and your devoted master will commit to take it into account.',
     user: user
   )
-  add_photo_to_user(user, 'https://images.unsplash.com/photo-1534180477871-5d6cc81f3920?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1600481176431-47ad2ab2745d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXNpYW4lMjBwZXJzb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
 
-puts "Creating Artist3..."
-
+puts 'Creating Jimmy Moran...'
+  
   user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
+    first_name: 'Jimmy',
+    last_name: 'Moran',
+    email: 'leprechaun34@potofgold.ie',
     password: '123456',
     address: Faker::Address.full_address
   )
   Artist.create!(
-    biography: 'Beginning his career in advertising, he became world famous in the 1960s thanks to his screen prints of mass products, then eventually became one of the most iconic artists of all time. ',
-    user: user
-  )
-  add_photo_to_user(user, 'https://images.unsplash.com/photo-1506634572416-48cdfe530110?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')
+    biography: 'My favourite art technique is beercolour, but I also quite enjoy using my potato stamps. Green is a predominant colour in my work, as a reminder of my verdant Irish county.',
+    user: user)
+  add_photo_to_user(user, 'https://pyxis.nymag.com/v1/imgs/efb/19a/626d41fa2bc0d7dbaf2b0e54d51f4ef5a7-27-the-irishman-1.rsquare.w700.jpg')
 
-puts "Creating Artist4..."
+puts 'Creating Mona Lilisa...'
 
   user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
+    first_name: 'Mona',
+    last_name: 'Lilisa',
+    email: 'eye@seeyou.co.uk',
     password: '123456',
     address: Faker::Address.full_address
   )
   Artist.create!(
-    biography: 'At a young age, he acquired important notoriety in Northern Italy thanks to his realistic style, characterized by his great gentleness and harmony of shapes and colors. ',
+    biography: "I spy with my little eye something beginning with A. Can you guess what I'm thinking of? Wait, no, don't go, I'm trying to play with you here!",
     user: user
   )
-  add_photo_to_user(user, 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')
+  add_photo_to_user(user, 'https://i.pinimg.com/originals/43/78/1b/43781b93afbd1e44fb99e80cf1926494.jpg')
 
-puts "Creating Artist 5..."
+puts 'Creating Lenny Da Vinci...'
 
   user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
+    first_name: 'Lenny',
+    last_name: 'Da Vinci',
+    email: 'davinci@code.it',
     password: '123456',
     address: Faker::Address.full_address
   )
   Artist.create!(
-    biography: 'The violence of her scenes, depicting courageous, active women, taking their destiny into their own hands, often earned her the label of feminist artist before her time!',
+    biography: 'Depending on how I feel, I can either describe myself as a painter, a draughtsman, an engineer, a scientist, a theorist, a sculptor or an architect. Thanks to Amoobl, I am also a furniture-upcyclist from time to time!',
     user: user
   )
-  add_photo_to_user(user, 'https://images.unsplash.com/photo-1474176857210-7287d38d27c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1514353456378-94e73f7204b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80')
 
-  puts "Creating Artist 6..."
+puts 'Creating Ruby Starr...'
 
-    user = User.create!(
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      email: Faker::Internet.email,
-      password: '123456',
-      address: Faker::Address.full_address
-    )
-    Artist.create!(
-      biography: 'Her painting is deeply poetic and inspired by Mexican folklore. This activity has also been the way enabling her to express her suffering through dreamlike worlds.',
-      user: user
-    )
-    add_photo_to_user(user, 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')
+  user = User.create!(
+    first_name: 'Ruby',
+    last_name: 'Starr',
+    email: 'ruby@onrails.com',
+    password: '123456',
+    address: Faker::Address.full_address
+  )
+  Artist.create!(
+    biography: "I became a full-time artist after painting my 3 best friends' instruments at a gig in Liverpool. I was inspired by the many beetles I had seen in my dreams the night before. I was elected artistic revelation of the year by the Programming community.",
+    user: user
+  )
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1593659193548-87ccecd13c94?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmxhY2slMjBtYW4lMjBkcnVtc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
 
-  puts "Creating Artist 7..."
+puts 'Creating Vince Van Goat...'
 
-    user = User.create!(
-      first_name: 'January',
-      last_name: 'Fisher',
-      email: 'januaryfisher@gmail.com',
-      password: '123456',
-      address: '100 Picasso Strasse, London, E2 4DY'
-    )
-    Artist.create!(
-      biography: 'During the first decade of the 20th century, his style changed as he experimented with different theories, techniques, and ideas.',
-      user: user
-    )
-    add_photo_to_user(user, 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')
+  user = User.create!(
+    first_name: 'Vince',
+    last_name: 'Van Goat',
+    email: 'vince@goat.com',
+    password: '123456',
+    address: Faker::Address.full_address
+  )
+  Artist.create!(
+    biography: "I specialised in (self-)portraits in art school, but on Amoobl's pieces of furniture I prefer painting flowers, swirly skies and cypresses. I have an impulsive and expressive brushwork.",
+    user: user
+  )
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1525334893167-477cff937ef8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZHV0Y2glMjBtYW58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
 
-  puts "Creating Artist 8..."
+puts 'Creating Frida Kahlodinary...'
 
-    user = User.create!(
-      first_name: 'Claude',
-      last_name: 'Monet',
-      email: Faker::Internet.email,
-      password: '123456',
-      address: Faker::Address.full_address
-    )
-    Artist.create!(
-      biography: 'Born in Paris, the son of a grocer, Monet grew up in Le Havre. Contact with Eugène Boudin in about 1856 introduced Monet to painting from nature.',
-      user: user
-    )
-    add_photo_to_user(user, 'https://www.claude-monet.com/images/claude-monet-photo.jpg')
+  user = User.create!(
+    first_name: 'Frida',
+    last_name: 'Kahlodinary',
+    email: 'frida@cloudinary.mx',
+    password: '123456',
+    address: Faker::Address.full_address
+  )
+  Artist.create!(
+    biography: 'I love floral prints and people seem to like them too as they often shout "TGIF" when they go past me in the street.',
+    user: user
+  )
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1617296539691-67feaadf389e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fG1leGljYW4lMjB3b21hbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
 
-  puts "Creating Artist 9..."
+puts 'Creating January Fisher...'
 
-    user = User.create!(
-      first_name: 'Leonardo',
-      last_name: 'da Vinci',
-      email: Faker::Internet.email,
-      password: '123456',
-      address: Faker::Address.full_address
-    )
-    Artist.create!(
-      biography: 'While his fame initially rested on his achievements as a painter, he also became known for his notebooks, in which he made drawings and notes on a variety of subjects, including anatomy, astronomy, botany and paleontology.',
-      user: user
-    )
-    add_photo_to_user(user, 'https://i.natgeofe.com/n/37c3c776-b8cb-4be1-988a-cf593c776b88/01-leonardo-da-vinci-book-talk.jpg?w=795&h=953.75')
+  user_january = User.create!(
+    first_name: 'January',
+    last_name: 'Fisher',
+    email: 'jan@fisher.com',
+    password: '123456',
+    address: '100 Picasso Strasse, London, E2 4DY'
+  )
+  Artist.create!(
+    biography: "I fish out the best items to upcycle, especially in January when I'm stuck at home because of the cold weather. I mostly use pastel colours or QR code designs in my art, that's how I roll.",
+    user: user_january
+  )
+  add_photo_to_user(user_january, 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618951328/coj12cu8ljrmsmtp4xrs.jpg')
+  
+puts 'creating januarys item in progress'
+  item_january = createItem('https://static.turbosquid.com/Preview/001222/574/Y9/old-chair-3D-model_600.jpg',
+    'chair',
+    'Victorian-era Dining Chair',
+    'A beautiful updated Victorian chair. Pastel colours with a touch of gold. Perfect addition to any kitchen.',
+    'Grey',
+    'collected',
+    2899
+  )
 
-  puts "Creating Artist 10..."
+puts 'adding january to january item'
+puts "#{item_january}"
+item_january.update(user: user_january)
+puts "#{item_january.user.first_name}"
 
-    user = User.create!(
-      first_name: 'Salvador',
-      last_name: 'Dali',
-      email: Faker::Internet.email,
-      password: '123456',
-      address: Faker::Address.full_address
-    )
-    
-    Artist.create!(
-      biography: 'Born in Figueres, Catalonia, Dalí received his formal education in fine arts in Madrid. Influenced by Impressionism and the Renaissance masters from a young age, he became increasingly attracted to Cubism and avant-garde movements.',
-      user: user
-    )
-    add_photo_to_user(user, 'https://ih1.redbubble.net/image.608638179.9013/flat,750x1000,075,f.jpg')
+puts 'finished created january'
 
+puts 'Creating Anna Belle...'
+
+  user = User.create!(
+    first_name: 'Anna',
+    last_name: 'Belle',
+    email: 'annabelle@yahoo.com',
+    password: '123456',
+    address: Faker::Address.full_address
+  )
+  Artist.create!(
+    biography: "I've helped my father restore my grandparents' house since I was a child. I love giving furniture a second life, and blue is usually my go-to colour as it goes well with anything golden (I'm a princess and there's a lot of gold in my castle).",
+    user: user
+  )
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1602591936046-2c34cd379ab4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJpbmNlc3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
+
+puts 'Creating Claude Moonay...'
+
+  user = User.create!(
+    first_name: 'Claude',
+    last_name: 'Moonay',
+    email: 'water@lilies.fr',
+    password: '123456',
+    address: Faker::Address.full_address
+  )
+  Artist.create!(
+    biography: 'If you like waterlilies, poppies, cows and impressionism, you are sure to love my art! Cowme on, follow me!',
+    user: user
+  )
+  add_photo_to_user(user, 'https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2014/10/27/1414431774676/994c4ba3-296d-4013-b0d5-b0bf980bd03f-620x372.jpeg?width=300&quality=45&auto=format&fit=max&dpr=2&s=0346e7820d2e74c1284a9cb2a5659c1e')
+
+puts 'Creating Paulo Flatpickaso...'
+
+  user = User.create!(
+    first_name: 'Paulo',
+    last_name: 'Flatpickaso',
+    email: 'pablo@gmail.com',
+    password: '123456',
+    address: Faker::Address.full_address
+  )
+  Artist.create!(
+    biography: "When I don't sculpt my own furniture, I like to upcycle surreal pieces. Anything round I turn into colourful cubes. And my calendar is always neatly organised, I choose my dates carefully to go work at Amoobl's warehouse.",
+    user: user
+  )
+  add_photo_to_user(user, 'https://images.unsplash.com/photo-1589207622637-c08e6d9efc14?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmFsZCUyMG1hbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60')
 
 puts "Created Users and Artists"
 puts "Creating Items..."
 # create items method. just plug in the correct data
-  def createItem(img_url, category, name, item_description, item_color, item_status, price)
-    item = Item.new(
-      category: category,
-      name: name,
-      description: item_description,
-      color: item_color,
-      status: item_status,
-      user: User.all.sample,
-      price_cents: price
-    )
-    img = URI.open(img_url)
-    item.photos.attach(io: img, filename: "#{name}.png", content_type: 'image/png')
-    item.save
-  end
 
   puts "Creating Collected items"
   # SOFAS
@@ -881,5 +940,3 @@ puts "Creating Items..."
   )
 
   puts "For Sale items created"
-  
-  
