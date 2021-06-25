@@ -5,11 +5,11 @@
   </div>
   <br>
 
-  <%# SLIDER %>
   <div class="mt-5 item-show-wrapper">
     <div class="show-item-image">
-      <% if @decorate %>
-      <div class="wrapper">
+      <%# SLIDER %>
+      <%# <% if @decorate %>
+      <%# <div class="wrapper">
         <div class="images">
           <div class="img-1"></div>
           <div class="img-2"></div>
@@ -31,10 +31,10 @@
           img.style.width = sliderVal + "%";
         }
       </script>
-      <% else %>
+      <% else %> 
         <%# PHOTOS THAT LINK TO THE ITEM %>
         <%= cl_image_tag(@item.photos.first.key) %>
-      <% end %>
+      <%# <% end %> 
       <div class="index-decorate-card-text">
           <% if current_user %>
             <%= link_to toggle_favorite_item_path(@item), remote: true, method: :post do %>
